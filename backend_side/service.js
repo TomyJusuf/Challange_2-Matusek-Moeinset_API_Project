@@ -17,12 +17,11 @@ async function getData(req, res) {
     const responseData = response.data;
     for (let i = 0; i < responseData.data.length; i++) {
       const element = responseData.data[i];
-      console.log(responseData.data[i]);
       database.push(element);
     }
 
-    res.status(200).json(database);
     console.log('Data length: ', responseData.data.length);
+    res.status(200).json(database);
   } catch (error) {
     console.error(
       'Error making API request:',
