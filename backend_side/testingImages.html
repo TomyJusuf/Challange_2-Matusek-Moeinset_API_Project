@@ -6,16 +6,20 @@
     <title>Document</title>
   </head>
   <style>
+    body {
+      background: gray;
+    }
     .demo {
       display: flex;
+      justify-content: space-evenly;
       flex-wrap: wrap;
       width: 100%;
       height: 100%;
-      gap: 5px;
+      gap: 15px;
     }
     .imageBox-1 {
-      width: 750px;
-      height: 550px;
+      width: 250px;
+      height: 200px;
       background: red;
     }
     .imageBox-2 {
@@ -23,10 +27,25 @@
       height: 250px;
       background: blue;
     }
+    h1 {
+      width: 100%;
+      text-align: center;
+      font-size: 2.5rem;
+    }
+    .btnBox {
+      width: 100%;
+      text-align: center;
+    }
+    button {
+      font-size: 2rem;
+    }
   </style>
   <body>
     <div class="demo">
-      <div class="imageBox-1">image</div>
+      <h1>Show Gallery</h1>
+      <div class="btnBox">
+        <button onclick="showData()">CLick here</button>
+      </div>
     </div>
     <script src="appTestingImage.js"></script>
   </body>
