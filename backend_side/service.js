@@ -2,12 +2,15 @@ import axios from 'axios';
 const API_URL = 'https://sumsi.dev.webundsoehne.com';
 import dotenv from 'dotenv';
 dotenv.config();
+
 const database = [];
+
 let headers = {
   'Content-Type': 'application/json',
   Accept: 'application/json',
   Authorization: `Bearer ${process.env.DB_token}`, // Include the token in the Authorization header
 };
+
 async function getData(req, res) {
   try {
     const response = await axios.get(`${API_URL}/api/v1/submissions`, {
@@ -33,4 +36,19 @@ async function getData(req, res) {
   }
 }
 
-export { getData };
+// POST
+async function postData(req, res) {
+  const { data } = req.body;
+
+  try {
+    const response = await axios.post(`${API_URL}/api/v1/submissions`, data);
+    console.log(req.body);
+    // Handle the response from the external API
+    res.status(200).json(response.data);
+  } catch (error) {
+    // Handle errors
+    // console.error(error);
+    res.status(500).send('Internal Server Error');
+  }
+}
+export { getData, postData };
