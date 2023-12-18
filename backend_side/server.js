@@ -15,8 +15,8 @@ app.use(
 );
 app.use(bodyParser.json());
 
-// http://localhost:3000/get-data
-app.use('/api', router);
+// http://localhost:3000/api/v1/get-data
+app.use('/api/v1', router);
 
 app.listen(PORT, () => {
   console.log('Server listen on port: ', PORT);

@@ -36,7 +36,7 @@ async function getData(req, res) {
   }
 }
 
-// POST
+// POST - testing
 async function postData(req, res) {
   const { data } = req.body;
 
@@ -51,4 +51,4 @@ async function postData(req, res) {
     res.status(500).send('Internal Server Error');
   }
 }
-export { getData, postData };
+export { getData };
