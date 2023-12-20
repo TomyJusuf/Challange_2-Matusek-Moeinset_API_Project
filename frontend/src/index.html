@@ -17,39 +17,41 @@
   </head>
   <body class="m-0 p-0">
     <div class="">
-      <nav class="mt-1 flex justify-between p-2 bg-[#ffeb00] sticky top-0 z-50">
+      <nav class="flex justify-between p-5 bg-[#ffeb00] sticky top-[0px] z-50">
         <img
           class="w-[15rem]"
           src="/assets/ci_rlb_kaernten/Logo RLB/RLB_Logo_4c_NEW.png"
           alt="logo"
         />
-        <div class="flex space-x-[3rem] uppercase font-bold">
-          <a href="">home</a>
-          <a href="">teilnahmeinfos</a>
-          <a href="">sumsi galerie</a>
+        <div
+          class="flex space-x-[3rem] uppercase font-bold items-center text-3xl"
+        >
+          <a href="" class="hover:underline">home</a>
+          <a href="" class="hover:underline">teilnahmeinfos</a>
+          <a href="" class="hover:underline">sumsi galerie</a>
         </div>
       </nav>
-      <header class="bg-[#ffeb00]">
-        <div
-          class="relative overflow-hidden bg-cover bg-no-repeat text-center"
-          style="
-            background-image: url('/assets/img/header2.jpg');
-            height: 50vh;
-            object-fit: cover;
-          "
-        >
+      <header
+        class="relative overflow-hidden bg-cover bg-fixed bg-no-repeat bg-top"
+        style="
+          background-image: url('/assets/img/kidPaintFInder.jpg');
+          height: 90vh;
+          object-fit: cover;
+        "
+      >
+        <div class="">
           <div
             class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
-            style="background-color: rgba(0, 0, 0, 0.6)"
+            style="background-color: rgba(0, 0, 0, 0.1)"
           >
             <div
               class="flex h-full absolute top-0 right-0 translate-x-[-10%] translate-y-[60%]"
             >
               <div class="text-white">
-                <h2 class="uppercase text-2xl font-semibold bg-black text-left">
+                <h2 class="uppercase text-5xl font-semibold bg-black text-left">
                   wilkommen beim
                 </h2>
-                <h4 class="uppercase text-2xl font-semibold bg-[#ffeb00]">
+                <h4 class="uppercase text-7xl font-semibold bg-[#ffeb00]">
                   sumi malwettbewerb!
                 </h4>
               </div>
@@ -64,15 +66,26 @@
               class="p-6 space-y-2 flex flex-col bg-white w-[30rem] h-[15rem] absolute rounded-2xl translate-x-[10%] translate-y-[-20%]"
             >
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor
-                saepe alias nisi quasi adipisci tempore nobis illum laborum
-                perspiciatis! Ut!
+                Wir verwenden nur funtionelle Cookies, um unsere Website und
+                unseren Service zu optimieren
               </p>
               <div class="flex flex-col space-y-1">
-                <a href="">Datenschutz</a>
-                <a href="">Cookie-Praeferenzen</a>
-                <a class="bg-[#ffeb00] flex p-2 w-fit px-4 rounded-lg" href=""
-                  >cookies akzeptieren</a
+                <a
+                  class="underline font-bold"
+                  href="https://sumsifliiiegt.dev.webundsoehne.com/datenschutz"
+                  target="_blank"
+                  >Datenschutz</a
+                >
+                <a
+                  class="underline font-bold"
+                  href="https://sumsifliiiegt.dev.webundsoehne.com/cookie"
+                  target="_blank"
+                  >Cookie-Praeferenzen</a
+                >
+                <a
+                  class="bg-[#ffeb00] flex p-4 w-fit px-4 rounded-lg font-bold"
+                  href=""
+                  >COOKIES AKZEPTIEREN</a
                 >
               </div>
             </div>
@@ -86,18 +99,18 @@
               />
             </div>
             <div class="container mx-[5rem] px-[5rem]">
-              <h3 class="font-bold">Lorem ipsum, dolor sit amet</h3>
+              <h3 class="font-bold">Liebe Kinder, liebe Eltern!</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi
-                corporis dolores assumenda eius amet inventore magni, natus,
-                iusto, incidunt iure odit velit alias nihil similique soluta
-                culpa sed praesentium vitae? Lorem ipsum, dolor sit amet
-                consectetur adipisicing elit. Asperiores, quae quis officiis
-                laboriosam, natus id, impedit delectus quidem reprehenderit rem
-                repellendus? Cupiditate incidunt ipsum sint libero facilis,
-                animi nobis hic.
+                Wie jedes Jahr gibt es auch heuer unseren traditionellen Sumsi
+                Malwettbewerb. Wieder digital, wieder mit Voting und großer
+                Online-Galerie. Jedes Elternteil, das bis zum Invalid Date die
+                Zeichnung seines Kindes mithilfe des nachstehenden
+                Kontaktformulares hochlädt und einreicht, wird anschließend in
+                der großen Sumsi Galerie auf www.raiffeisen-sumsi.at
+                veröffentlicht. Ich freue mich auf viele bunte Zeichnungen & ein
+                spannendes Voting!
               </p>
-              <h3 class="font-bold">Lorem ipsumt</h3>
+              <h3 class="font-bold">EURE RAIFFEISEN</h3>
             </div>
             <div class="flex justify-between mx-[4rem]">
               <img
@@ -111,54 +124,59 @@
         </section>
         <section class="pageTwo flex flex-col bg-white mt-5">
           <div class="slideContainer flex flex-row">
+            <!-- ADD HERE FONTS ICONE!! -->
             <div
-              class="prev bg-[#ffeb00] items-center flex rounded-r-xl w-10 justify-center cursor-pointer"
+              class="prev bg-[#ffeb00] items-center flex rounded-r-xl w-20 justify-center cursor-pointer text-7xl font-bold"
             >
               <
             </div>
             <div
               id="slide_1"
-              class="h-[60vh] w-full bg-white slide p-8 flex justify-center items-center content-center flex-col m-auto"
+              class="h-[99vh] w-full bg-white slide p-8 flex justify-center items-center content-center flex-col m-auto mb-20"
             >
               <div
                 class="relative flex flex-col justify-center items-center space-y-8"
               >
-                <div class="flex flex-row space-x-8 items-center">
+                <div class="flex flex-row space-x-8 items-center flex-wrap">
                   <div class="text-white">
                     <h2
-                      class="uppercase text-2xl font-semibold bg-black text-left"
+                      class="uppercase text-7xl font-semibold bg-black text-left"
                     >
                       Mitmachen ist ganz einfach
                     </h2>
                     <h4
-                      class="uppercase text-2xl font-semibold bg-[#ffeb00] w-fit"
+                      class="uppercase text-7xl font-semibold bg-[#ffeb00] w-fit"
                     >
                       So funktioniert's!
                     </h4>
                   </div>
                   <div>
                     <img
-                      class="w-[20rem] rounded-2xl"
+                      class="w-[20rem] rounded-2xl mt-14"
                       src="/assets/img/girlPainting1.jpg"
                       alt="painting girl"
                     />
                   </div>
                 </div>
               </div>
-              <div class="flex flex-row items-center space-x-8">
+              <div class="flex flex-row items-center space-x-8 mx-20">
                 <img
-                  class=""
+                  class="w-[30rem] space-x-8"
                   src="/assets/img/paintingBeepng.png"
                   alt="paintingBee"
                 />
                 <div class="flex flex-col space-y-4">
-                  <h2 class="bg-[#ffeb00] w-fit p-1">1.Schritt</h2>
-                  <h3 class="uppercase font-bold text-lg">zeichnen</h3>
+                  <h2 class="bg-[#ffeb00] w-fit p-1 text-4xl font-bold">
+                    1.Schritt
+                  </h2>
+                  <h3 class="uppercase font-bold text-6xl">zeichnen</h3>
                   <p class="w-[30rem]">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Similique ex nulla, harum enim amet temporibus laborum
-                    dolore ad cum earum iste dolorum, laudantium ab, aut veniam
-                    neque soluta nam excepturi.
+                    Beim heurigen Malwettbewerb dreht sich alles um das Thema
+                    „Gesunde Ernährung“. Die Lieblingsspeise von Sumsi ist
+                    frischer Blütenstaub und natürlich zuckersüßer Honig.
+                    Ernährst du dich auch gesund, so wie Sumsi? Zeichne Deine
+                    Lieblingsspeise. Frisches Essen aus der Natur, alles, was
+                    man im Herbst so ernten kann...
                   </p>
                 </div>
               </div>
@@ -167,25 +185,25 @@
 
             <div
               id="slide_2"
-              class="h-[60vh] w-full bg-white slide p-8 justify-center items-center flex flex-col"
+              class="h-[99vh] w-full bg-white slide p-8 justify-center items-center flex flex-col mb-20 mt-20"
             >
               <div class="relative flex flex-col justify-center items-center">
                 <div class="flex flex-row space-x-[10rem]">
                   <div class="text-white">
                     <h2
-                      class="uppercase text-2xl font-semibold bg-black text-left"
+                      class="uppercase text-7xl font-semibold bg-black text-left"
                     >
                       Mitmachen ist ganz einfach
                     </h2>
                     <h4
-                      class="uppercase text-2xl font-semibold bg-[#ffeb00] w-fit"
+                      class="uppercase text-7xl font-semibold bg-[#ffeb00] w-fit"
                     >
                       So funktioniert's!
                     </h4>
                   </div>
                   <div>
                     <img
-                      class="w-[10rem] h-[15rem] rounded-2xl"
+                      class="w-[25rem] h-[20rem] rounded-2xl"
                       src="/assets/img/boyMobile.jpg"
                       alt="boy with mobile"
                     />
@@ -194,19 +212,19 @@
               </div>
               <div class="flex flex-row items-center space-x-20">
                 <img
-                  class=""
+                  class="w-[30rem]"
                   src="/assets/img/mobileBee.png"
                   alt="bee with mobile
                   "
                 />
                 <div class="flex flex-col space-y-1">
-                  <h2 class="bg-[#ffeb00] w-fit p-1">2.Schritt</h2>
-                  <h3 class="uppercase font-bold text-lg">digitalisiern</h3>
+                  <h2 class="bg-[#ffeb00] w-fit p-1 text-4xl">2.Schritt</h2>
+                  <h3 class="uppercase font-bold text-6xl">digitalisiern</h3>
                   <p class="w-[30rem]">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Similique ex nulla, harum enim amet temporibus laborum
-                    dolore ad cum earum iste dolorum, laudantium ab, aut veniam
-                    neque soluta nam excepturi.
+                    Jedes Elternteil, dass die Zeichnung seines Kindes mithilfe
+                    des nachstehenden Kontaktformulares hochlädt und einreicht,
+                    wird anschließend in der großen Sumsi Galerie auf
+                    www.raiffeisen-sumsi.at veröffentlicht.
                   </p>
                 </div>
               </div>
@@ -214,25 +232,25 @@
             </div>
             <div
               id="slide_3"
-              class="h-[60vh] w-full bg-white slide p-8 justify-center items-center flex flex-col"
+              class="h-[99vh] w-full bg-white slide p-8 justify-center items-center flex flex-col mt-20 mb-20"
             >
               <div class="relative flex flex-col justify-center items-center">
                 <div class="flex flex-row space-x-[10rem]">
                   <div class="text-white">
                     <h2
-                      class="uppercase text-2xl font-semibold bg-black text-left"
+                      class="uppercase text-7xl font-semibold bg-black text-left"
                     >
                       Mitmachen ist ganz einfach
                     </h2>
                     <h4
-                      class="uppercase text-2xl font-semibold bg-[#ffeb00] w-fit"
+                      class="uppercase text-7xl font-semibold bg-[#ffeb00] w-fit"
                     >
                       So funktioniert's!
                     </h4>
                   </div>
                   <div>
                     <img
-                      class="w-[20rem] rounded-2xl"
+                      class="w-[25rem] h-[20rem] rounded-2xl"
                       src="/assets/img/eltern.jpg"
                       alt="painting girl"
                     />
@@ -241,18 +259,20 @@
               </div>
               <div class="flex flex-row items-center space-x-20">
                 <img
-                  class=""
+                  class="w-[30rem]"
                   src="/assets/img/laptopBee.png"
                   alt="bee with laptop "
                 />
                 <div class="flex flex-col space-y-1">
-                  <h2 class="bg-[#ffeb00] w-fit p-1">3.Schritt</h2>
-                  <h3 class="uppercase font-bold text-lg">ausstellen</h3>
+                  <h2 class="bg-[#ffeb00] w-fit p-1 text-4xl font-bold">
+                    3.Schritt
+                  </h2>
+                  <h3 class="uppercase font-bold text-6xl">ausstellen</h3>
                   <p class="w-[30rem]">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Similique ex nulla, harum enim amet temporibus laborum
-                    dolore ad cum earum iste dolorum, laudantium ab, aut veniam
-                    neque soluta nam excepturi.
+                    In der großen Sumsi Galerie werden dann alle Kunstwerke
+                    online ausgestellt. Deine Freunde, Familie, Großeltern und
+                    Nachbarn können dort deine Zeichnung bewundern & für dich
+                    voten.
                   </p>
                 </div>
               </div>
@@ -260,25 +280,25 @@
             </div>
             <div
               id="slide_4"
-              class="h-[60vh] w-full bg-white slide p-8 justify-center items-center flex flex-col"
+              class="h-[99vh] w-full bg-white slide p-8 justify-center items-center flex flex-col mt-20 mb-20"
             >
               <div class="relative flex flex-col justify-center items-center">
                 <div class="flex flex-row space-x-[10rem]">
                   <div class="text-white">
                     <h2
-                      class="uppercase text-2xl font-semibold bg-black text-left"
+                      class="uppercase text-7xl font-semibold bg-black text-left"
                     >
                       Mitmachen ist ganz einfach
                     </h2>
                     <h4
-                      class="uppercase text-2xl font-semibold bg-[#ffeb00] w-fit"
+                      class="uppercase text-7xl font-semibold bg-[#ffeb00] w-fit"
                     >
                       So funktioniert's!
                     </h4>
                   </div>
                   <div>
                     <img
-                      class="w-[20rem] rounded-2xl"
+                      class="w-[30rem] h-[20rem] rounded-2xl"
                       src="/assets/img/kidVotting.jpeg"
                       alt="painting girl"
                     />
@@ -287,13 +307,15 @@
               </div>
               <div class="flex flex-row items-center space-x-20">
                 <img
-                  class=""
+                  class="w-[30rem]"
                   src="/assets/img/vottingBee.jpeg"
                   alt="votting bee"
                 />
                 <div class="flex flex-col space-y-1">
-                  <h2 class="bg-[#ffeb00] w-fit p-1">4.Schritt</h2>
-                  <h3 class="uppercase font-bold text-lg">voting</h3>
+                  <h2 class="bg-[#ffeb00] w-fit p-1 text-4xl font-bold">
+                    4.Schritt
+                  </h2>
+                  <h3 class="uppercase font-bold text-6xl">voting</h3>
                   <p class="w-[30rem]">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Similique ex nulla, harum enim amet temporibus laborum
@@ -304,26 +326,27 @@
               </div>
               <div></div>
             </div>
+            <!-- ADD HERE FONTS ICONE!! -->
             <div
-              class="next bg-[#ffeb00] w-10 justify-center flex rounded-l-xl items-center cursor-pointer"
+              class="next bg-[#ffeb00] w-20 justify-center flex rounded-l-xl items-center cursor-pointer font-bold text-7xl"
             >
               >
             </div>
           </div>
 
-          <div class="h-[70vh] bg-white mt-5">
+          <div class="h-[90vh] bg-white mt-36">
             <div
               class="text-white flex flex-col text-center justify-center w-fit m-auto items-center"
             >
-              <h2 class="uppercase text-2xl font-semibold bg-black">
+              <h2 class="uppercase text-7xl font-semibold bg-black">
                 macht mit & gewinnen!
               </h2>
-              <h4 class="uppercase text-2xl font-semibold bg-[#ffeb00]">
+              <h4 class="uppercase text-7xl font-semibold bg-[#ffeb00]">
                 Sumsi freut sich
               </h4>
               <div class="flex justify-center">
                 <img
-                  class="w-[10rem]"
+                  class="w-[20rem]"
                   src="/assets/img/magniBee.png"
                   alt="bee with magnifier"
                 />
@@ -519,10 +542,14 @@
         </section>
         <footer>
           <div
-            class="bg-[#ffeb00] w-full h-[20vh] flex flex-col justify-center items-center space-y-10"
+            class="bg-[#ffeb00] bg-center w-full h-[80vh] flex flex-col justify-center items-center space-y-10"
+            style="
+              background-image: url('/assets/img/galeryOfKids.jpg');
+              height: 90vh;
+            "
           >
             <div
-              class="flex flex-row items-center justify-center space-x-4 space-y-4"
+              class="flex flex-row items-center justify-center space-x-4 space-y-4 mb-56"
             >
               <div
                 class="rounded-xl w-[3rem] h-[3rem] flex items-center justify-center"
@@ -547,17 +574,20 @@
               <div
                 class="flex flex-col justify-center items-center text-center space-y-2"
               >
-                <h1 class="bg-black text-white font-bold w-fit px-10 uppercase">
+                <h1
+                  class="bg-black text-white font-bold text-7xl w-fit px-10 uppercase"
+                >
                   Die Sumsi Galerie
                 </h1>
-                <h2>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Eveniet, numquam.
+                <h2 class="bg-[#ffeb00] p-5 text-4xl">
+                  Schau dir alle eingerechten Kunstwerke des Sumsi
+                  Malwettbewertes an.
                 </h2>
               </div>
               <div
                 class="rounded-xl w-[3rem] h-[3rem] flex items-center justify-center"
               >
+                <!-- USE FONT ICONS - SVG no please (I can not style it) -->
                 <svg
                   class="h-14 w-14 text-black"
                   width="24"
@@ -576,9 +606,9 @@
                 </svg>
               </div>
             </div>
-            <div>
+            <div class="top-24">
               <a
-                class="bg-white text-black p-2 rounded-lg text-center uppercase font-bold"
+                class="bg-red-600 text-white p-5 rounded-lg text-center uppercase font-bold text-3xl"
                 href=""
                 >Die Galerie ist hier</a
               >
