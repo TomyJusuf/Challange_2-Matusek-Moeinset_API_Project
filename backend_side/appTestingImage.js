@@ -11,6 +11,8 @@ let headers = {
 };
 
 // GET ALL
+const vote = [];
+let saveData;
 async function showData() {
   try {
     const response = await fetch(API_URL, { headers });
@@ -18,8 +20,7 @@ async function showData() {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const data = await response.json();
-    const saveData = data.data;
-
+    saveData = data.data;
     console.log(saveData);
     let html = ''; // Initialize an empty string to concatenate HTML content
 
@@ -38,12 +39,120 @@ async function showData() {
       console.error('Check if the API server is running and accessible.');
     }
   }
-}
+  const imageContainers = document.querySelectorAll('.imageContainer');
+  imageContainers.forEach((element, i) => {
+    element.addEventListener('click', () => {
+      const currentDate = new Date();
+      const currendDataFull =
+        currentDate.getFullYear() +
+        '-' +
+        (currentDate.getMonth() + 1).toString().padStart(2, '0') +
+        '-' +
+        currentDate.getDate().toString().padStart(2, '0') +
+        'T' +
+        currentDate.getHours().toString().padStart(2, '0') +
+        ':' +
+        currentDate.getMinutes().toString().padStart(2, '0') +
+        ':' +
+        currentDate.getSeconds().toString().padStart(2, '0') +
+        '.' +
+        currentDate.getMilliseconds().toString().padStart(6, '0') +
+        'Z';
+      // console.log(currentDate);
+      const voteSingle = {
+        id: element.id,
+        email: saveData[i].email,
+        submission_id: saveData[i].id,
+        created_at: currendDataFull,
 
+        updated_at: currendDataFull,
+      };
+      vote.push(voteSingle);
+      const index = saveData.findIndex((todo) => todo.id === element.id);
+      console.log(index);
+      console.log('Element ID:', element.id);
+      console.log('saveData:ID:', saveData[i].id); // Access the ID from the vote array
+      console.log('saveData:email:', saveData[i].email);
+      // console.log('saveData:voting:', saveData[i].votings);
+      console.log(vote);
+    });
+  });
+}
+// showData();
 // VOTING METHOD
 async function voting() {
+  const imageContainers = document.querySelectorAll('.imageContainer');
+  imageContainers.forEach((element, i) => {
+    element.addEventListener('click', () => {
+      const currentDate = new Date();
+      const currendDataFull =
+        currentDate.getFullYear() +
+        '-' +
+        (currentDate.getMonth() + 1).toString().padStart(2, '0') +
+        '-' +
+        currentDate.getDate().toString().padStart(2, '0') +
+        'T' +
+        currentDate.getHours().toString().padStart(2, '0') +
+        ':' +
+        currentDate.getMinutes().toString().padStart(2, '0') +
+        ':' +
+        currentDate.getSeconds().toString().padStart(2, '0') +
+        '.' +
+        currentDate.getMilliseconds().toString().padStart(6, '0') +
+        'Z';
+      // console.log(currentDate);
+      const voteSingle = {
+        id: element.id, //<---each element what was ben clicked(current id)
+        email: saveData[i].email,
+        submission_id: saveData[i].id,
+        created_at: currendDataFull,
+        updated_at: currendDataFull,
+      };
+      vote.push(voteSingle);
+      const index = saveData.findIndex((todo) => todo.id === element.id);
+      console.log(index);
+      console.log('Element ID:', element.id);
+      console.log('saveData:ID:', saveData[i].id); // Access the ID from the vote array
+      console.log('saveData:email:', saveData[i].email);
+      // console.log('saveData:voting:', saveData[i].votings);
+      console.log(vote);
+    });
+  });
+  let body = {
+    email: 'homerrrr@thesimpsons.com',
+  };
   try {
-  } catch (error) {}
+    const response = await fetch(`${API_URL}/${element.id}/votings`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify(body),
+    });
+    if (!response.ok) {
+      console.error(`HTTP error! Status: ${response.status}`);
+
+      // Log the entire response for debugging purposes
+      const responseText = await response.text();
+      console.log('Response text:', responseText);
+
+      if (response.headers.get('Content-Type')?.includes('application/json')) {
+        try {
+          const validationErrors = JSON.parse(responseText);
+          console.error('Validation Errors:', validationErrors);
+          // Display validation errors to the user or handle them accordingly
+        } catch (jsonError) {
+          console.error('Error parsing JSON:', jsonError);
+        }
+      } else {
+        console.error('Response is not in JSON format.');
+        // Handle non-JSON response as needed
+      }
+    } else {
+      const responseData = await response.json();
+      console.log('Response data:', responseData);
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
 }
 // POST
 async function postDataFunction() {
@@ -52,7 +161,7 @@ async function postDataFunction() {
   const postData = new FormData();
   postData.append('legalguardian_firstname', 'Pokemon');
   postData.append('legalguardian_lastname', 'Poke');
-  postData.append('email', 'bububu@thekkk.com');
+  postData.append('email', 'baman@thekkk.com');
   postData.append('child_firstname', 'Poken_Purpur');
   postData.append('child_age', '120');
   postData.append('approval_privacypolicy', '1');
@@ -80,7 +189,7 @@ async function postDataFunction() {
       console.error(`HTTP error! Status: ${postResponse.status}`);
 
       // Log the entire response for debugging purposes
-      const responseText = await postResponse.text();
+      const responseText = await postResponse.json();
       console.log('Response text:', responseText);
 
       if (
@@ -110,3 +219,4 @@ document.getElementById('showData').addEventListener('click', showData);
 document
   .getElementById('postDataFunction')
   .addEventListener('click', postDataFunction);
+document.getElementById('vote').addEventListener('click', voting);
