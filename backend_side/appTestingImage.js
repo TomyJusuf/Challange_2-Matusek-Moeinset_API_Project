@@ -1,5 +1,6 @@
 const demo = document.querySelector('.demo');
 const API_URL = 'https://sumsi.dev.webundsoehne.com/api/v1/submissions';
+const submissionId = '2c7bd64a-5d3c-4ed7-ae22-7c237cc5b07d';
 
 const DB_token =
   'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZDhjYmMzNTVmYzcxYTk1YjU5MWNkZDBmNzBjNTI4ZjVkNDU5NDU2MTBlNWMwNTRjOTZhOTZiZmQ2NzY4NTE5MjU5ZmI3YWY1NzIxMTAxMGYiLCJpYXQiOjE3MDI3NTc3NzEuNzM5OTQsIm5iZiI6MTcwMjc1Nzc3MS43Mzk5NDMsImV4cCI6MTczNDM4MDE3MS43MzM4NjUsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.qldlYkU025o_qa_0mqUFr-J_Bam6sPMjrNoz-WPcVO8Z81Ur0zuAt4rAr_qZnL1lojE1eyuCCw-YwCkL6arpryV0z1yJ3pXpSVwb8zppusTbjjvWFCNfZWPnB7s8N5KzoUGRcnfq4_T0he_oP4SPrQfjN8QLMtJwfA6eByXyhmB20jhmbXgNcVOWiKDGO1E14TQA4jKER3DhEUD4j9huq3ruGCWJlzBRBpFqSY4GP8-6GTKshIsyUg4vyzrnrgIGLR7nhxzp5XFL647OdBRKuvRb72Kmnj98vglPqNmvBs-M0_xzTl5yusezktX00A6cOO8czgsnipS_q-fqMDyOpdea7bIa7bHbIFTKDavV7YsS1EHRQ1djKnpgqFAi8642uoeh7wvTtvpOjWQhp_3_q3Gt4Cm3pOUrUd8CPAYcbQiDQEyhV7apOU5pr0DBSDqRgaw7ggeUSpQU6O0dY3I25GzWWevRekF1IcBUHprRrErL81GhZbrGUHlPk2ULo7z8JeNG4SwSTa-RRuaaV8AKU5SpgHe3TnQLOimF8l5r9wOUTPcoqnTI_s-Xox9CdBD4WXh3k4Pk67_L4o7TDa6TVcfrk728yIQl0XGr_xz_LRDKQuCGXVbfUTO7oZWbm95aOqL5zcbQVVM5roHyUUA7u5AGqc-u1x3wtixpnI950zc';
@@ -70,16 +71,19 @@ async function showData() {
       vote.push(voteSingle);
       const index = saveData.findIndex((todo) => todo.id === element.id);
       console.log(index);
-      console.log('Element ID:', element.id);
-      console.log('saveData:ID:', saveData[i].id); // Access the ID from the vote array
-      console.log('saveData:email:', saveData[i].email);
+      // console.log('Element ID:', element.id);
+      // console.log('saveData:ID:', saveData[i].id); // Access the ID from the vote array
+      // console.log('saveData:email:', saveData[i].email);
+      email = saveData[i].email;
       // console.log('saveData:voting:', saveData[i].votings);
       console.log(vote);
     });
   });
+  //---------------------------------------------------------------------------------
 }
 // showData();
 // VOTING METHOD
+let email;
 async function voting() {
   const imageContainers = document.querySelectorAll('.imageContainer');
   imageContainers.forEach((element, i) => {
@@ -110,30 +114,29 @@ async function voting() {
       };
       vote.push(voteSingle);
       const index = saveData.findIndex((todo) => todo.id === element.id);
-      console.log(index);
+      // console.log(index);
       console.log('Element ID:', element.id);
-      console.log('saveData:ID:', saveData[i].id); // Access the ID from the vote array
-      console.log('saveData:email:', saveData[i].email);
+      // console.log('saveData:ID:', saveData[i].id); // Access the ID from the vote array
+      // console.log('saveData:email:', saveData[i].email);
       // console.log('saveData:voting:', saveData[i].votings);
+      email = saveData[i].email;
       console.log(vote);
     });
   });
   let body = {
-    email: 'homerrrr@thesimpsons.com',
+    email: email,
   };
   try {
-    const response = await fetch(`${API_URL}/${element.id}/votings`, {
+    const response = await fetch(`${API_URL}/${submissionId}/votings`, {
       method: 'POST',
       headers,
       body: JSON.stringify(body),
     });
     if (!response.ok) {
       console.error(`HTTP error! Status: ${response.status}`);
-
       // Log the entire response for debugging purposes
       const responseText = await response.text();
       console.log('Response text:', responseText);
-
       if (response.headers.get('Content-Type')?.includes('application/json')) {
         try {
           const validationErrors = JSON.parse(responseText);
@@ -153,7 +156,37 @@ async function voting() {
   } catch (error) {
     console.error('Error:', error);
   }
+  // -------------------------------------------
 }
+// Retrieve Votes
+//Work well
+async function getVotes() {
+  try {
+    const response = await fetch(`${API_URL}/${submissionId}/votings`, {
+      method: 'GET',
+      headers,
+    });
+    const data = await response.json();
+    console.log('Votes:', data);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+// Count Votes
+const countVotes = () => {
+  const url = new URL(
+    `https://sumsi.dev.webundsoehne.com/api/v1/submissions/${submissionId}/votes/count`
+  );
+
+  fetch(url, {
+    method: 'GET',
+    headers,
+  })
+    .then((response) => response.json())
+    .then((data) => console.log('Vote Count:', data))
+    .catch((error) => console.error('Error:', error));
+};
 // POST
 async function postDataFunction() {
   // Assuming you have a FormData object stored in the postData variable
@@ -161,7 +194,7 @@ async function postDataFunction() {
   const postData = new FormData();
   postData.append('legalguardian_firstname', 'Pokemon');
   postData.append('legalguardian_lastname', 'Poke');
-  postData.append('email', 'baman@thekkk.com');
+  postData.append('email', 'barbieCar@theBarbieb.com');
   postData.append('child_firstname', 'Poken_Purpur');
   postData.append('child_age', '120');
   postData.append('approval_privacypolicy', '1');
