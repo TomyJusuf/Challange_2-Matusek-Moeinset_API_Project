@@ -42,18 +42,51 @@
   </style>
   <body>  
     <button id="showData">Click here for Show Data</button>
-    <button id="postDataFunction">Click here for Post Data(registration)</button>
+   
     <button id="vote">Save ur VOTE here</button> 
     <button onclick="getVotes()">Get(show ur VOTE here) Votes</button>
     <!-- <button onclick="storeVote()">Store Vote</button> -->
-    <button onclick="countVotes()">Count Votes</button><div class="btnBox">
+    <button onclick="countVotes()">Count Votes</button>
+    <div class="btnBox">
       <br>
       
         <form id="yourFormId">
         <!-- other form fields -->
-        <input type="file" name="image" />
+        <!-- <input type="file" name="image" /> -->
       </div>
-      <br>
+      <br> 
+       <form id="myForm">
+    <label for="legalguardian_firstname">Legal Guardian First Name:</label>
+    <input type="text" id="legalguardian_firstname" name="legalguardian_firstname" value=""><br>
+
+    <label for="legalguardian_lastname">Legal Guardian Last Name:</label>
+    <input type="text" id="legalguardian_lastname" name="legalguardian_lastname" value=""><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value=""><br>
+
+    <label for="child_firstname">Child First Name:</label>
+    <input type="text" id="child_firstname" name="child_firstname" value=""><br>
+
+    <label for="child_age">Child Age:</label>
+    <input type="number" id="child_age" name="child_age" value=""><br>
+
+    <label for="approval_privacypolicy">Approval Privacy Policy:</label>
+    <input type="checkbox" id="approval_privacypolicy" name="approval_privacypolicy" value="1" checked><br>
+
+    <label for="approval_participation">Approval Participation:</label>
+    <input type="checkbox" id="approval_participation" name="approval_participation" value="1" checked><br>
+
+    <label for="approval_mailnotification">Approval Mail Notification:</label>
+    <input type="checkbox" id="approval_mailnotification" name="approval_mailnotification" value="1" checked><br>
+
+    <label for="image">Image:</label>
+    <input type="file" id="image" name="image"><br>
+
+    <button id="submit" type="button" >Submit</button>
+  </form>
+
+  <!-- DEMO -->
     <div class="demo">
       <h1>Show Gallery</h1>
       
