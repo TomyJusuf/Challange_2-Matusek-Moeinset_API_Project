@@ -1,6 +1,6 @@
 const demo = document.querySelector('.demo');
 const API_URL = 'https://sumsi.dev.webundsoehne.com/api/v1/submissions';
-const submissionId = '2c7bd64a-5d3c-4ed7-ae22-7c237cc5b07d';
+let submissionId;
 
 const DB_token =
   'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZDhjYmMzNTVmYzcxYTk1YjU5MWNkZDBmNzBjNTI4ZjVkNDU5NDU2MTBlNWMwNTRjOTZhOTZiZmQ2NzY4NTE5MjU5ZmI3YWY1NzIxMTAxMGYiLCJpYXQiOjE3MDI3NTc3NzEuNzM5OTQsIm5iZiI6MTcwMjc1Nzc3MS43Mzk5NDMsImV4cCI6MTczNDM4MDE3MS43MzM4NjUsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.qldlYkU025o_qa_0mqUFr-J_Bam6sPMjrNoz-WPcVO8Z81Ur0zuAt4rAr_qZnL1lojE1eyuCCw-YwCkL6arpryV0z1yJ3pXpSVwb8zppusTbjjvWFCNfZWPnB7s8N5KzoUGRcnfq4_T0he_oP4SPrQfjN8QLMtJwfA6eByXyhmB20jhmbXgNcVOWiKDGO1E14TQA4jKER3DhEUD4j9huq3ruGCWJlzBRBpFqSY4GP8-6GTKshIsyUg4vyzrnrgIGLR7nhxzp5XFL647OdBRKuvRb72Kmnj98vglPqNmvBs-M0_xzTl5yusezktX00A6cOO8czgsnipS_q-fqMDyOpdea7bIa7bHbIFTKDavV7YsS1EHRQ1djKnpgqFAi8642uoeh7wvTtvpOjWQhp_3_q3Gt4Cm3pOUrUd8CPAYcbQiDQEyhV7apOU5pr0DBSDqRgaw7ggeUSpQU6O0dY3I25GzWWevRekF1IcBUHprRrErL81GhZbrGUHlPk2ULo7z8JeNG4SwSTa-RRuaaV8AKU5SpgHe3TnQLOimF8l5r9wOUTPcoqnTI_s-Xox9CdBD4WXh3k4Pk67_L4o7TDa6TVcfrk728yIQl0XGr_xz_LRDKQuCGXVbfUTO7oZWbm95aOqL5zcbQVVM5roHyUUA7u5AGqc-u1x3wtixpnI950zc';
@@ -14,7 +14,8 @@ let headers = {
 // GET ALL
 const vote = [];
 let saveData;
-async function showData() {
+async function showData(e) {
+  console.log(e);
   try {
     const response = await fetch(API_URL, { headers });
     if (!response.ok) {
@@ -23,10 +24,17 @@ async function showData() {
     const data = await response.json();
     saveData = data.data;
     console.log(saveData);
+    const index = saveData.findIndex((todo) => todo.email === e);
+    console.log(index);
+    console.log(saveData[index]);
+    if (index == -1) {
+      false;
+    } else {
+      submissionId = saveData[index].id;
+    }
     let html = ''; // Initialize an empty string to concatenate HTML content
 
     for (let i = 0; i < saveData.length; i++) {
-      // console.log(saveData[i]);
       html += `
       <div class="imageContainer" id="${saveData[i].id}">
        <img class="imageBox-1" src="https://sumsi.dev.webundsoehne.com/${saveData[i].image.public_location}"></img>
@@ -187,16 +195,24 @@ const countVotes = () => {
     .then((data) => console.log('Vote Count:', data))
     .catch((error) => console.error('Error:', error));
 };
-// POST
-async function postDataFunction() {
-  // Assuming you have a FormData object stored in the postData variable
-  // For POST data you must care about dont use same users information(data specifications :email !!)
+//submit
+
+async function submitForm() {
+  // Get the form element by its ID
+
+  const firstName = document.getElementById('legalguardian_firstname').value;
+  const lastName = document.getElementById('legalguardian_lastname').value;
+  const email = document.getElementById('email').value;
+  const child_firstname = document.getElementById('child_firstname').value;
+  const child_age = document.getElementById('child_age').value;
+
+  // Create FormData using the form element
   const postData = new FormData();
-  postData.append('legalguardian_firstname', 'Pokemon');
-  postData.append('legalguardian_lastname', 'Poke');
-  postData.append('email', 'barbieCar@theBarbieb.com');
-  postData.append('child_firstname', 'Poken_Purpur');
-  postData.append('child_age', '120');
+  postData.append('legalguardian_firstname', firstName);
+  postData.append('legalguardian_lastname', lastName);
+  postData.append('email', email);
+  postData.append('child_firstname', child_firstname);
+  postData.append('child_age', child_age);
   postData.append('approval_privacypolicy', '1');
   postData.append('approval_participation', '1');
   postData.append('approval_mailnotification', '1');
@@ -204,9 +220,9 @@ async function postDataFunction() {
     'image',
     document.querySelector('input[name="image"]').files[0]
   );
-
+  localStorage.setItem('savedEmail', email);
   try {
-    const postResponse = await fetch(
+    const response = await fetch(
       'https://sumsi.dev.webundsoehne.com/api/v1/submissions',
       {
         method: 'POST',
@@ -218,38 +234,19 @@ async function postDataFunction() {
       }
     );
 
-    if (!postResponse.ok) {
-      console.error(`HTTP error! Status: ${postResponse.status}`);
-
-      // Log the entire response for debugging purposes
-      const responseText = await postResponse.json();
-      console.log('Response text:', responseText);
-
-      if (
-        postResponse.headers.get('Content-Type')?.includes('application/json')
-      ) {
-        try {
-          const validationErrors = JSON.parse(responseText);
-          console.error('Validation Errors:', validationErrors);
-          // Display validation errors to the user or handle them accordingly
-        } catch (jsonError) {
-          console.error('Error parsing JSON:', jsonError);
-        }
-      } else {
-        console.error('Response is not in JSON format.');
-        // Handle non-JSON response as needed
-      }
-    } else {
-      const responseData = await postResponse.json();
-      console.log('Response data:', responseData);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
     }
+
+    const data = await response.json();
+    console.log(data);
   } catch (error) {
     console.error('Error:', error);
   }
+  showData(email);
 }
 
 document.getElementById('showData').addEventListener('click', showData);
-document
-  .getElementById('postDataFunction')
-  .addEventListener('click', postDataFunction);
+
 document.getElementById('vote').addEventListener('click', voting);
+document.getElementById('submit').addEventListener('click', submitForm);
