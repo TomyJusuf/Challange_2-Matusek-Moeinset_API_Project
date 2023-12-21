@@ -42,16 +42,21 @@
   </style>
   <body>  
     <button id="showData">Click here for Show Data</button>
-        <button id="postDataFunction">Click here for Post Data(registration)</button>
-        <button id="vote">Click here VOTE</button>
-    <div class="demo">
-      <h1>Show Gallery</h1>
-      <div class="btnBox">
+    <button id="postDataFunction">Click here for Post Data(registration)</button>
+    <button id="vote">Save ur VOTE here</button> 
+    <button onclick="getVotes()">Get(show ur VOTE here) Votes</button>
+    <!-- <button onclick="storeVote()">Store Vote</button> -->
+    <button onclick="countVotes()">Count Votes</button><div class="btnBox">
+      <br>
       
         <form id="yourFormId">
         <!-- other form fields -->
         <input type="file" name="image" />
       </div>
+      <br>
+    <div class="demo">
+      <h1>Show Gallery</h1>
+      
     </div>
    
     <script  src="appTestingImage.js"></script>
