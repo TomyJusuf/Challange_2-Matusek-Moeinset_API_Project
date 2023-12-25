@@ -12,10 +12,9 @@ let headers = {
 };
 
 // GET ALL
-const vote = [];
+
 let saveData;
-async function showData(e) {
-  console.log(e);
+async function showData() {
   try {
     const response = await fetch(API_URL, { headers });
     if (!response.ok) {
@@ -23,10 +22,13 @@ async function showData(e) {
     }
     const data = await response.json();
     saveData = data.data;
-    console.log(saveData);
-    const index = saveData.findIndex((todo) => todo.email === e);
-    console.log(index);
-    console.log(saveData[index]);
+    // console.log(saveData);
+    const index = saveData.findIndex(
+      (todo) => todo.email === localStorage.getItem('savedEmail')
+    );
+
+    // console.log(index);
+    // console.log(saveData[index]);
     if (index == -1) {
       false;
     } else {
@@ -51,86 +53,15 @@ async function showData(e) {
   const imageContainers = document.querySelectorAll('.imageContainer');
   imageContainers.forEach((element, i) => {
     element.addEventListener('click', () => {
-      const currentDate = new Date();
-      const currendDataFull =
-        currentDate.getFullYear() +
-        '-' +
-        (currentDate.getMonth() + 1).toString().padStart(2, '0') +
-        '-' +
-        currentDate.getDate().toString().padStart(2, '0') +
-        'T' +
-        currentDate.getHours().toString().padStart(2, '0') +
-        ':' +
-        currentDate.getMinutes().toString().padStart(2, '0') +
-        ':' +
-        currentDate.getSeconds().toString().padStart(2, '0') +
-        '.' +
-        currentDate.getMilliseconds().toString().padStart(6, '0') +
-        'Z';
-      // console.log(currentDate);
-      const voteSingle = {
-        id: element.id,
-        email: saveData[i].email,
-        submission_id: saveData[i].id,
-        created_at: currendDataFull,
-
-        updated_at: currendDataFull,
-      };
-      vote.push(voteSingle);
-      const index = saveData.findIndex((todo) => todo.id === element.id);
-      console.log(index);
-      // console.log('Element ID:', element.id);
-      // console.log('saveData:ID:', saveData[i].id); // Access the ID from the vote array
-      // console.log('saveData:email:', saveData[i].email);
-      email = saveData[i].email;
-      // console.log('saveData:voting:', saveData[i].votings);
-      console.log(vote);
+      email = saveData[i].email; //testing
+      elementID = element.id;
     });
   });
-  //---------------------------------------------------------------------------------
 }
-// showData();
+let elementID;
 // VOTING METHOD
 let email;
 async function voting() {
-  const imageContainers = document.querySelectorAll('.imageContainer');
-  imageContainers.forEach((element, i) => {
-    element.addEventListener('click', () => {
-      const currentDate = new Date();
-      const currendDataFull =
-        currentDate.getFullYear() +
-        '-' +
-        (currentDate.getMonth() + 1).toString().padStart(2, '0') +
-        '-' +
-        currentDate.getDate().toString().padStart(2, '0') +
-        'T' +
-        currentDate.getHours().toString().padStart(2, '0') +
-        ':' +
-        currentDate.getMinutes().toString().padStart(2, '0') +
-        ':' +
-        currentDate.getSeconds().toString().padStart(2, '0') +
-        '.' +
-        currentDate.getMilliseconds().toString().padStart(6, '0') +
-        'Z';
-      // console.log(currentDate);
-      const voteSingle = {
-        id: element.id, //<---each element what was ben clicked(current id)
-        email: saveData[i].email,
-        submission_id: saveData[i].id,
-        created_at: currendDataFull,
-        updated_at: currendDataFull,
-      };
-      vote.push(voteSingle);
-      const index = saveData.findIndex((todo) => todo.id === element.id);
-      // console.log(index);
-      console.log('Element ID:', element.id);
-      // console.log('saveData:ID:', saveData[i].id); // Access the ID from the vote array
-      // console.log('saveData:email:', saveData[i].email);
-      // console.log('saveData:voting:', saveData[i].votings);
-      email = saveData[i].email;
-      console.log(vote);
-    });
-  });
   let body = {
     email: email,
   };
@@ -143,10 +74,10 @@ async function voting() {
     if (!response.ok) {
       console.error(`HTTP error! Status: ${response.status}`);
       // Log the entire response for debugging purposes
-      const responseText = await response.text();
-      console.log('Response text:', responseText);
+
       if (response.headers.get('Content-Type')?.includes('application/json')) {
         try {
+          const responseText = await response.text();
           const validationErrors = JSON.parse(responseText);
           console.error('Validation Errors:', validationErrors);
           // Display validation errors to the user or handle them accordingly
@@ -166,40 +97,53 @@ async function voting() {
   }
   // -------------------------------------------
 }
+
 // Retrieve Votes
-//Work well
 async function getVotes() {
   try {
     const response = await fetch(`${API_URL}/${submissionId}/votings`, {
       method: 'GET',
       headers,
     });
-    const data = await response.json();
-    console.log('Votes:', data);
+    // ERROR HANDLING
+    if (!response.ok) {
+      console.error(`HTTP error! Status: ${response.status}`);
+    } else {
+      const responseData = await response.json();
+      console.log('Votes:', responseData);
+    }
   } catch (error) {
     console.error('Error:', error);
   }
 }
 
 // Count Votes
-const countVotes = () => {
-  const url = new URL(
-    `https://sumsi.dev.webundsoehne.com/api/v1/submissions/${submissionId}/votes/count`
-  );
+async function countVotes() {
+  try {
+    const url = new URL(
+      `https://sumsi.dev.webundsoehne.com/api/v1/submissions/${submissionId}/votes/count`
+    );
+    const response = await fetch(url, {
+      method: 'GET',
+      headers,
+    });
 
-  fetch(url, {
-    method: 'GET',
-    headers,
-  })
-    .then((response) => response.json())
-    .then((data) => console.log('Vote Count:', data))
-    .catch((error) => console.error('Error:', error));
-};
+    // ERROR HANDLING
+    if (!response.ok) {
+      console.error(`HTTP error! Status: ${response.status}`);
+      // Log the entire response for debugging purposes
+    } else {
+      const responseData = await response.json();
+      console.log('Vote count:', responseData.data.votes);
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
 //submit
-
 async function submitForm() {
   // Get the form element by its ID
-
   const firstName = document.getElementById('legalguardian_firstname').value;
   const lastName = document.getElementById('legalguardian_lastname').value;
   const email = document.getElementById('email').value;
@@ -233,20 +177,128 @@ async function submitForm() {
         body: postData,
       }
     );
-
+    // ERROR HANDLING
     if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
+      console.error(`HTTP error! Status: ${response.status}`);
+      // Log the entire response for debugging purposes
 
-    const data = await response.json();
-    console.log(data);
+      if (response.headers.get('Content-Type')?.includes('application/json')) {
+        try {
+          const responseText = await response.text();
+          const validationErrors = JSON.parse(responseText);
+          console.error('Validation Errors:', validationErrors);
+        } catch (jsonError) {
+          console.error('Error parsing JSON:', jsonError);
+        }
+      } else {
+        console.error('Response is not in JSON format.');
+        // Handle non-JSON response as needed
+      }
+    } else {
+      const responseData = await response.json();
+      console.log('Response data:', responseData);
+    }
   } catch (error) {
     console.error('Error:', error);
   }
-  showData(email);
+  showData();
 }
 
-document.getElementById('showData').addEventListener('click', showData);
+// DELETE
+async function deleteFn() {
+  const localStorageData = localStorage.getItem('savedEmail');
+  const index = saveData.findIndex((todo) => todo.email === localStorageData);
+  console.log(index);
+  console.log(submissionId);
+  if (index !== -1) {
+    // Assuming 'saveData' is an array, splice to remove the item locally
+    saveData.splice(index, 1);
 
+    try {
+      // Assuming 'submissionId' is defined somewhere in your code
+      const response = await fetch(`${API_URL}/${submissionId}`, {
+        headers,
+        method: 'DELETE',
+      });
+
+      const data = await response.json();
+      localStorage.removeItem('savedEmail');
+      console.log(data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  } else {
+    console.log('Item not found in saveData');
+  }
+}
+async function deleteAllItems() {
+  try {
+    // Loop through all items in saveData
+    for (const item of saveData) {
+      const response = await fetch(`${API_URL}/${item.id}`, {
+        headers,
+        method: 'DELETE',
+      });
+
+      const data = await response.json();
+      console.log(data);
+    }
+
+    // Clear saveData array
+    saveData = [];
+
+    // Clear localStorage if needed
+    localStorage.removeItem('savedEmail');
+
+    console.log('All items deleted successfully');
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+//Winner
+async function determineWinnerAndRest() {
+  const allVotes = [];
+  const voteTest = [];
+
+  // Collect all votes from the votings array of each user
+  saveData.forEach((user) => {
+    if (user.votings) {
+      allVotes.push(user.votings[0]);
+    }
+  });
+
+  // Extract emails from the voting objects
+  for (const vote of allVotes) {
+    if (vote && vote.email) {
+      voteTest.push(vote.email);
+    }
+  }
+
+  console.log(voteTest);
+  // Calculate the top three winners using reduce
+  const voteCount = voteTest.reduce((acc, email) => {
+    acc[email] = (acc[email] || 0) + 1;
+    return acc;
+  }, {});
+
+  // Sort the emails by vote count in descending order
+  const sortedEmails = Object.keys(voteCount).sort(
+    (a, b) => voteCount[b] - voteCount[a]
+  );
+
+  // Get the top three winners
+  const topThreeWinners = sortedEmails.slice(0, 3);
+
+  // Display the top three winners
+  console.log('Top Three Winners:');
+  topThreeWinners.forEach((winner, index) => {
+    console.log(`${index + 1}. ${winner} with ${voteCount[winner]} votes`);
+  });
+}
+
+// Example usage
+// await determineWinnerAndRest();
+
+document.getElementById('showData').addEventListener('click', showData);
 document.getElementById('vote').addEventListener('click', voting);
 document.getElementById('submit').addEventListener('click', submitForm);
