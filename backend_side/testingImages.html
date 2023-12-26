@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body {
+      background: gray;
+    }
+    .demo {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      width: 100%;
+      height: 100%;
+      gap: 15px;
+    }
+    .imageBox-1 {
+      width: 250px;
+      height: 200px;
+      background: red;
+    }
+    .imageBox-2 {
+      width: 350px;
+      height: 250px;
+      background: blue;
+    }
+    h1 {
+      width: 100%;
+      text-align: center;
+      font-size: 2.5rem;
+    }
+    .btnBox {
+      width: 100%;
+      text-align: center;
+    }
+    button {
+      font-size: 2rem;
+    }
+  </style>
+  <body>  
+    <button id="showData">Click here for Show Data</button>
+   
+    <button id="vote">Save ur VOTE here</button> 
+    <button onclick="getVotes()">Get(show ur VOTE here) Votes</button>
+    <!-- <button onclick="storeVote()">Store Vote</button> -->
+    <button onclick="countVotes()">Count Votes</button>
+    <button onclick="deleteFn()">Delete User</button>
+    <button onclick="deleteAllItems()">Delete All</button>
+    <button onclick="determineWinnerAndRest()">Winner of All</button>
+  
+    <div class="btnBox">
+      <br>
+      
+        <form id="yourFormId">
+        <!-- other form fields -->
+        <!-- <input type="file" name="image" /> -->
+      </div>
+      <br> 
+       <form id="myForm">
+    <label for="legalguardian_firstname">Legal Guardian First Name:</label>
+    <input type="text" id="legalguardian_firstname" name="legalguardian_firstname" value=""><br>
+
+    <label for="legalguardian_lastname">Legal Guardian Last Name:</label>
+    <input type="text" id="legalguardian_lastname" name="legalguardian_lastname" value=""><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" value=""><br>
+
+    <label for="child_firstname">Child First Name:</label>
+    <input type="text" id="child_firstname" name="child_firstname" value=""><br>
+
+    <label for="child_age">Child Age:</label>
+    <input type="number" id="child_age" name="child_age" value=""><br>
+
+    <label for="approval_privacypolicy">Approval Privacy Policy:</label>
+    <input type="checkbox" id="approval_privacypolicy" name="approval_privacypolicy" value="1" checked><br>
+
+    <label for="approval_participation">Approval Participation:</label>
+    <input type="checkbox" id="approval_participation" name="approval_participation" value="1" checked><br>
+
+    <label for="approval_mailnotification">Approval Mail Notification:</label>
+    <input type="checkbox" id="approval_mailnotification" name="approval_mailnotification" value="1" checked><br>
+
+    <label for="image">Image:</label>
+    <input type="file" id="image" name="image"><br>
+
+    <button id="submit" type="button" >Submit</button>
+  </form>
+
+  <!-- DEMO -->
+    <div class="demo">
+      <h1>Show Gallery</h1>
+      
+    </div>
+   
+    <script  src="appTestingImage.js"></script>
+  </body>
+</html>

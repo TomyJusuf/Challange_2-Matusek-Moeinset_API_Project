@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- jQuery (required for Slick) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Slick JS -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <link rel="stylesheet" href="../dist/output.css" />
+    <title>Document</title>
+  </head>
+  <body class="m-0 p-0">
+    <div class="">
+      <nav class="flex justify-between p-5 bg-[#ffeb00] sticky top-[0px] z-50">
+        <img
+          class="w-[15rem]"
+          src="/assets/ci_rlb_kaernten/Logo RLB/RLB_Logo_4c_NEW.png"
+          alt="logo"
+        />
+        <div
+          class="flex space-x-[3rem] uppercase font-bold items-center text-3xl"
+        >
+          <a href="" class="hover:underline">home</a>
+          <a href="" class="hover:underline">teilnahmeinfos</a>
+          <a href="" class="hover:underline">sumsi galerie</a>
+        </div>
+      </nav>
+      <header
+        class="relative overflow-hidden bg-cover bg-fixed bg-no-repeat bg-top"
+        style="
+          background-image: url('/assets/img/kidPaintFInder.jpg');
+          height: 90vh;
+          object-fit: cover;
+        "
+      >
+        <div class="">
+          <div
+            class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-fixed"
+            style="background-color: rgba(0, 0, 0, 0.1)"
+          >
+            <div
+              class="flex h-full absolute top-0 right-0 translate-x-[-10%] translate-y-[60%]"
+            >
+              <div class="text-white">
+                <h2 class="uppercase text-5xl font-semibold bg-black text-left">
+                  wilkommen beim
+                </h2>
+                <h4 class="uppercase text-7xl font-semibold bg-[#ffeb00]">
+                  sumi malwettbewerb!
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="flex flex-col">
+        <section class="pageOne bg-[#ffeb00]">
+          <div>
+            <div
+              class="p-6 space-y-2 flex flex-col bg-white w-[30rem] h-[15rem] absolute rounded-2xl translate-x-[10%] translate-y-[-20%]"
+            >
+              <p>
+                Wir verwenden nur funtionelle Cookies, um unsere Website und
+                unseren Service zu optimieren
+              </p>
+              <div class="flex flex-col space-y-1">
+                <a
+                  class="underline font-bold"
+                  href="https://sumsifliiiegt.dev.webundsoehne.com/datenschutz"
+                  target="_blank"
+                  >Datenschutz</a
+                >
+                <a
+                  class="underline font-bold"
+                  href="https://sumsifliiiegt.dev.webundsoehne.com/cookie"
+                  target="_blank"
+                  >Cookie-Praeferenzen</a
+                >
+                <a
+                  class="bg-[#ffeb00] flex p-4 w-fit px-4 rounded-lg font-bold"
+                  href=""
+                  >COOKIES AKZEPTIEREN</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col">
+            <div class="w-full flex justify-end">
+              <img
+                class="w-[20rem]"
+                src="/assets/img/sumsi-vignette-downloads.png"
+                alt="bee"
+              />
+            </div>
+            <div class="container mx-[5rem] px-[5rem]">
+              <h3 class="font-bold">Liebe Kinder, liebe Eltern!</h3>
+              <p>
+                Wie jedes Jahr gibt es auch heuer unseren traditionellen Sumsi
+                Malwettbewerb. Wieder digital, wieder mit Voting und großer
+                Online-Galerie. Jedes Elternteil, das bis zum Invalid Date die
+                Zeichnung seines Kindes mithilfe des nachstehenden
+                Kontaktformulares hochlädt und einreicht, wird anschließend in
+                der großen Sumsi Galerie auf www.raiffeisen-sumsi.at
+                veröffentlicht. Ich freue mich auf viele bunte Zeichnungen & ein
+                spannendes Voting!
+              </p>
+              <h3 class="font-bold">EURE RAIFFEISEN</h3>
+            </div>
+            <div class="flex justify-between mx-[4rem]">
+              <img
+                class="w-[6rem] h-[3rem] ml-[15rem]"
+                src="/assets/img/sumsi-logo.png"
+                alt="sumi-logo"
+              />
+              <h1 class="font-bold text-[5rem]">::</h1>
+            </div>
+          </div>
+        </section>
+        <section class="pageTwo flex flex-col bg-white mt-5">
+          <div class="slideContainer flex flex-row">
+            <!-- ADD HERE FONTS ICONE!! -->
+            <div
+              class="prev bg-[#ffeb00] items-center flex rounded-r-xl w-20 justify-center cursor-pointer text-7xl font-bold"
+            >
+              <
+            </div>
+            <div
+              id="slide_1"
+              class="h-[99vh] w-full bg-white slide p-8 flex justify-center items-center content-center flex-col m-auto mb-20"
+            >
+              <div
+                class="relative flex flex-col justify-center items-center space-y-8"
+              >
+                <div class="flex flex-row space-x-8 items-center flex-wrap">
+                  <div class="text-white">
+                    <h2
+                      class="uppercase text-7xl font-semibold bg-black text-left"
+                    >
+                      Mitmachen ist ganz einfach
+                    </h2>
+                    <h4
+                      class="uppercase text-7xl font-semibold bg-[#ffeb00] w-fit"
+                    >
+                      So funktioniert's!
+                    </h4>
+                  </div>
+                  <div>
+                    <img
+                      class="w-[20rem] rounded-2xl mt-14"
+                      src="/assets/img/girlPainting1.jpg"
+                      alt="painting girl"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-row items-center space-x-8 mx-20">
+                <img
+                  class="w-[30rem] space-x-8"
+                  src="/assets/img/paintingBeepng.png"
+                  alt="paintingBee"
+                />
+                <div class="flex flex-col space-y-4">
+                  <h2 class="bg-[#ffeb00] w-fit p-1 text-4xl font-bold">
+                    1.Schritt
+                  </h2>
+                  <h3 class="uppercase font-bold text-6xl">zeichnen</h3>
+                  <p class="w-[30rem]">
+                    Beim heurigen Malwettbewerb dreht sich alles um das Thema
+                    „Gesunde Ernährung“. Die Lieblingsspeise von Sumsi ist
+                    frischer Blütenstaub und natürlich zuckersüßer Honig.
+                    Ernährst du dich auch gesund, so wie Sumsi? Zeichne Deine
+                    Lieblingsspeise. Frisches Essen aus der Natur, alles, was
+                    man im Herbst so ernten kann...
+                  </p>
+                </div>
+              </div>
+              <div></div>
+            </div>
+
+            <div
+              id="slide_2"
+              class="h-[99vh] w-full bg-white slide p-8 justify-center items-center flex flex-col mb-20 mt-20"
+            >
+              <div class="relative flex flex-col justify-center items-center">
+                <div class="flex flex-row space-x-[10rem]">
+                  <div class="text-white">
+                    <h2
+                      class="uppercase text-7xl font-semibold bg-black text-left"
+                    >
+                      Mitmachen ist ganz einfach
+                    </h2>
+                    <h4
+                      class="uppercase text-7xl font-semibold bg-[#ffeb00] w-fit"
+                    >
+                      So funktioniert's!
+                    </h4>
+                  </div>
+                  <div>
+                    <img
+                      class="w-[25rem] h-[20rem] rounded-2xl"
+                      src="/assets/img/boyMobile.jpg"
+                      alt="boy with mobile"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-row items-center space-x-20">
+                <img
+                  class="w-[30rem]"
+                  src="/assets/img/mobileBee.png"
+                  alt="bee with mobile
+                  "
+                />
+                <div class="flex flex-col space-y-1">
+                  <h2 class="bg-[#ffeb00] w-fit p-1 text-4xl">2.Schritt</h2>
+                  <h3 class="uppercase font-bold text-6xl">digitalisiern</h3>
+                  <p class="w-[30rem]">
+                    Jedes Elternteil, dass die Zeichnung seines Kindes mithilfe
+                    des nachstehenden Kontaktformulares hochlädt und einreicht,
+                    wird anschließend in der großen Sumsi Galerie auf
+                    www.raiffeisen-sumsi.at veröffentlicht.
+                  </p>
+                </div>
+              </div>
+              <div></div>
+            </div>
+            <div
+              id="slide_3"
+              class="h-[99vh] w-full bg-white slide p-8 justify-center items-center flex flex-col mt-20 mb-20"
+            >
+              <div class="relative flex flex-col justify-center items-center">
+                <div class="flex flex-row space-x-[10rem]">
+                  <div class="text-white">
+                    <h2
+                      class="uppercase text-7xl font-semibold bg-black text-left"
+                    >
+                      Mitmachen ist ganz einfach
+                    </h2>
+                    <h4
+                      class="uppercase text-7xl font-semibold bg-[#ffeb00] w-fit"
+                    >
+                      So funktioniert's!
+                    </h4>
+                  </div>
+                  <div>
+                    <img
+                      class="w-[25rem] h-[20rem] rounded-2xl"
+                      src="/assets/img/eltern.jpg"
+                      alt="painting girl"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-row items-center space-x-20">
+                <img
+                  class="w-[30rem]"
+                  src="/assets/img/laptopBee.png"
+                  alt="bee with laptop "
+                />
+                <div class="flex flex-col space-y-1">
+                  <h2 class="bg-[#ffeb00] w-fit p-1 text-4xl font-bold">
+                    3.Schritt
+                  </h2>
+                  <h3 class="uppercase font-bold text-6xl">ausstellen</h3>
+                  <p class="w-[30rem]">
+                    In der großen Sumsi Galerie werden dann alle Kunstwerke
+                    online ausgestellt. Deine Freunde, Familie, Großeltern und
+                    Nachbarn können dort deine Zeichnung bewundern & für dich
+                    voten.
+                  </p>
+                </div>
+              </div>
+              <div></div>
+            </div>
+            <div
+              id="slide_4"
+              class="h-[99vh] w-full bg-white slide p-8 justify-center items-center flex flex-col mt-20 mb-20"
+            >
+              <div class="relative flex flex-col justify-center items-center">
+                <div class="flex flex-row space-x-[10rem]">
+                  <div class="text-white">
+                    <h2
+                      class="uppercase text-7xl font-semibold bg-black text-left"
+                    >
+                      Mitmachen ist ganz einfach
+                    </h2>
+                    <h4
+                      class="uppercase text-7xl font-semibold bg-[#ffeb00] w-fit"
+                    >
+                      So funktioniert's!
+                    </h4>
+                  </div>
+                  <div>
+                    <img
+                      class="w-[30rem] h-[20rem] rounded-2xl"
+                      src="/assets/img/kidVotting.jpeg"
+                      alt="painting girl"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-row items-center space-x-20">
+                <img
+                  class="w-[30rem]"
+                  src="/assets/img/vottingBee.jpeg"
+                  alt="votting bee"
+                />
+                <div class="flex flex-col space-y-1">
+                  <h2 class="bg-[#ffeb00] w-fit p-1 text-4xl font-bold">
+                    4.Schritt
+                  </h2>
+                  <h3 class="uppercase font-bold text-6xl">voting</h3>
+                  <p class="w-[30rem]">
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                    Similique ex nulla, harum enim amet temporibus laborum
+                    dolore ad cum earum iste dolorum, laudantium ab, aut veniam
+                    neque soluta nam excepturi.
+                  </p>
+                </div>
+              </div>
+              <div></div>
+            </div>
+            <!-- ADD HERE FONTS ICONE!! -->
+            <div
+              class="next bg-[#ffeb00] w-20 justify-center flex rounded-l-xl items-center cursor-pointer font-bold text-7xl"
+            >
+              >
+            </div>
+          </div>
+
+          <div class="h-[90vh] bg-white mt-36">
+            <div
+              class="text-white flex flex-col text-center justify-center w-fit m-auto items-center"
+            >
+              <h2 class="uppercase text-7xl font-semibold bg-black">
+                macht mit & gewinnen!
+              </h2>
+              <h4 class="uppercase text-7xl font-semibold bg-[#ffeb00]">
+                Sumsi freut sich
+              </h4>
+              <div class="flex justify-center">
+                <img
+                  class="w-[20rem]"
+                  src="/assets/img/magniBee.png"
+                  alt="bee with magnifier"
+                />
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 justify-center content-center items-center container m-auto space-y-3"
+            >
+              <div class="flex flex-row gap-2">
+                <div
+                  class="bg-[#ffeb00] rounded-xl w-[3rem] h-[3rem] content-center items-center justify-center flex"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    data-slot="icon"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.395m3.42 3.42a15.995 15.995 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a15.996 15.996 0 0 0-4.649 4.763m3.42 3.42a6.776 6.776 0 0 0-3.42-3.42"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h1 class="font-bold">Zeichne deine Lieblingsspeise</h1>
+                  <h2>Zeichne deinen größten Wunsch</h2>
+                </div>
+              </div>
+              <div class="flex flex-row gap-2">
+                <div
+                  class="bg-[#ffeb00] rounded-xl w-[3rem] h-[3rem] content-center items-center justify-center flex"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    data-slot="icon"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z"
+                    />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h1 class="font-bold">Digitalisieren</h1>
+                  <h2>Foto oder Scan.</h2>
+                </div>
+              </div>
+              <div class="flex flex-row gap-2">
+                <div
+                  class="bg-[#ffeb00] rounded-xl w-[3rem] h-[3rem] content-center items-center justify-center flex"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    data-slot="icon"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5m-13.5-9L12 3m0 0 4.5 4.5M12 3v13.5"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h1 class="font-bold">Hochladen</h1>
+                  <h2>Lade dein Kunstwerk in die Gallerie.</h2>
+                </div>
+              </div>
+              <div class="flex flex-row gap-2">
+                <div
+                  class="bg-[#ffeb00] rounded-xl w-[3rem] h-[3rem] content-center items-center justify-center flex"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    data-slot="icon"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h1 class="font-bold">Info kommt per Mail</h1>
+                  <h2>Willkommen in der großen Sumsi Gallerie!</h2>
+                </div>
+              </div>
+              <div class="flex flex-row gap-2">
+                <div
+                  class="bg-[#ffeb00] rounded-xl w-[3rem] h-[3rem] content-center items-center justify-center flex"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    data-slot="icon"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h1 class="font-bold">
+                    Online-Ausstellung deine Lieblingsspeise
+                  </h1>
+                  <h2>Willkommen in der großen Sumsi Gallerie!</h2>
+                </div>
+              </div>
+              <div class="flex flex-row gap-2">
+                <div
+                  class="bg-[#ffeb00] rounded-xl w-[3rem] h-[3rem] content-center items-center justify-center flex"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    data-slot="icon"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16.5 3.75V16.5L12 14.25 7.5 16.5V3.75m9 0H18A2.25 2.25 0 0 1 20.25 6v12A2.25 2.25 0 0 1 18 20.25H6A2.25 2.25 0 0 1 3.75 18V6A2.25 2.25 0 0 1 6 3.75h1.5m9 0h-9"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h1 class="font-bold">Votting</h1>
+                  <h2>ote für 3 Zeichnungen, die dir am besten gefallen.</h2>
+                </div>
+              </div>
+              <div class="flex flex-row gap-2">
+                <div
+                  class="bg-[#ffeb00] rounded-xl w-[3rem] h-[3rem] content-center items-center justify-center flex"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    data-slot="icon"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21 11.25v8.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 1 0 9.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1 1 14.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <h1 class="font-bold">Preise gewinnen</h1>
+                  <h2>Mit Glück tolle Preise gewinnen.</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer>
+          <div
+            class="bg-[#ffeb00] bg-center w-full h-[80vh] flex flex-col justify-center items-center space-y-10"
+            style="
+              background-image: url('/assets/img/galeryOfKids.jpg');
+              height: 90vh;
+            "
+          >
+            <div
+              class="flex flex-row items-center justify-center space-x-4 space-y-4 mb-56"
+            >
+              <div
+                class="rounded-xl w-[3rem] h-[3rem] flex items-center justify-center"
+              >
+                <svg
+                  class="h-14 w-14 text-black"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" />
+                  <rect x="5" y="3" width="14" height="6" rx="2" />
+                  <path d="M19 6h1a2 2 0 0 1 2 2a5 5 0 0 1 -5 5l-5 0v2" />
+                  <rect x="10" y="15" width="4" height="6" rx="1" />
+                </svg>
+              </div>
+              <div
+                class="flex flex-col justify-center items-center text-center space-y-2"
+              >
+                <h1
+                  class="bg-black text-white font-bold text-7xl w-fit px-10 uppercase"
+                >
+                  Die Sumsi Galerie
+                </h1>
+                <h2 class="bg-[#ffeb00] p-5 text-4xl">
+                  Schau dir alle eingerechten Kunstwerke des Sumsi
+                  Malwettbewertes an.
+                </h2>
+              </div>
+              <div
+                class="rounded-xl w-[3rem] h-[3rem] flex items-center justify-center"
+              >
+                <!-- USE FONT ICONS - SVG no please (I can not style it) -->
+                <svg
+                  class="h-14 w-14 text-black"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="2"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" />
+                  <rect x="5" y="3" width="14" height="6" rx="2" />
+                  <path d="M19 6h1a2 2 0 0 1 2 2a5 5 0 0 1 -5 5l-5 0v2" />
+                  <rect x="10" y="15" width="4" height="6" rx="1" />
+                </svg>
+              </div>
+            </div>
+            <div class="top-24">
+              <a
+                class="bg-red-600 text-white p-5 rounded-lg text-center uppercase font-bold text-3xl"
+                href=""
+                >Die Galerie ist hier</a
+              >
+            </div>
+          </div>
+
+          <div class="">
+            <div
+              class="bg-[#696969] w-full h-[30vh] text-white flex justify-center content-center items-center space-x-10"
+            >
+              <div>
+                <img
+                  class="w-[15rem]"
+                  src="/assets/ci_rlb_kaernten/Logo RLB/RLB_Logo_4c_NEW_TypoWEISS.png"
+                  alt="logo"
+                />
+              </div>
+              <div class="flex flex-row space-x-10">
+                <div class="space-y-3">
+                  <div>
+                    <div>
+                      <h1 class="font-bold uppercase">kontakt</h1>
+                    </div>
+                    <p>Raiffeisen Landesbank Kärnten</p>
+                    <p>Raiffeisenplatz 1</p>
+                    <p>9020 Klagenfurt am Wörthersee</p>
+                  </div>
+                  <div>
+                    <p class="">T +43 4632 993 00</p>
+                    <p>E info@rbgk.raiffeisen.at</p>
+                  </div>
+                </div>
+                <div class="w-10">
+                  <h1 class="font-bold uppercase">info/bedinung</h1>
+                  <p>
+                    Datenschutz TeilnahmebedinungenI mpressum AGB Disclaimer
+                    Cookie-Präferenzen
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex text-center bg-[#696969] justify-center items-center"
+            >
+              <p class="text-white">
+                &copy;Tomas Matusk & Moein Kermanizadeh Tavakoli - Kaernten -
+                Villach 2023
+              </p>
+            </div>
+          </div>
+        </footer>
+      </main>
+    </div>
+  </body>
+  <script src="./slider.js"></script>
+</html>
