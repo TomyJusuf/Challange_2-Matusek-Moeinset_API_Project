@@ -12,7 +12,7 @@
     />
     <title>sumi gallery</title>
   </head>
-  <body class="m-0 p-0 flex flex-col">
+  <body class="m-0 p-0 flex flex-col bg-slate-500">
     <!-- NAVIGATION -------------------------------------------------->
     <nav class="flex justify-between p-5 bg-[#fff] sticky top-[0px] z-50">
       <img
@@ -23,10 +23,11 @@
       <div
         class="flex space-x-[3rem] uppercase font-bold items-center text-3xl"
       >
-        <a href="" class="hover:underline">home | Show data</a>
-        <a href="" class="hover:underline">teilnahmeinfos</a>
-        <button id="showData">Show Galery</button>
+        <!-- <a href="" class="hover:underline">home</a> -->
+        <!-- <a href="" class="hover:underline">teilnahmeinfos</a> -->
+        <!-- <button id="showData">Show Galery</button> -->
         <button id="vote">Vote in Galery</button>
+        <button onclick="determineWinnerAndRest()">Winner</button>
         <!-- <button onclick="deleteAllItems()">Delete Galery</button> -->
         <a href="#gallery-boarder" class="hover:underline">sumsi galerie</a>
       </div>
@@ -105,9 +106,11 @@
       </div>
     </header>
     <!-- MAIN PAGES -->
-    <main class="m-0 p-0 flex flex-col">
+    <main class="flex flex-col mx-auto">
       <!-- PAGE 1 ------------------------------------------------------------->
-      <div class="h-[90vh] p-4 flex flex-col justify-center content-center">
+      <div
+        class="h-[90vh] p-4 flex flex-col justify-center content-center container"
+      >
         <!-- LOGO -->
 
         <img
@@ -147,7 +150,7 @@
       </div>
       <!-- PAGE 2 -------------------------------------------------------->
       <div
-        class="h-[90vh] relative flex flex-col justify-center content-center"
+        class="h-[90vh] relative flex flex-col justify-center content-center container"
       >
         <h1 class="text-center font-bold text-2xl">
           Der beste Malwettbewerb aller Zeiten.
@@ -234,7 +237,7 @@
         </div>
       </div>
       <!-- PAGE 3 --------------------->
-      <div class="h-[90vh] flex flex-col p-4">
+      <div class="h-[90vh] flex flex-col container mx-auto">
         <!-- LOGO -->
         <img
           class="w-[15rem]"
@@ -289,125 +292,46 @@
       </div>
       <!-- PAGE 4 -->
       <div
-        class="h-[90vh] p-4 text-center flex flex-col justify-center items-center content-center"
+        class="h-[90vh] mb-16 text-center flex flex-col justify-center items-center content-center container mx-auto"
       >
         <!-- TITLE -->
-        <div class="text-[#F63799] font-bold text-2xl mb-2">
-          <h1>Der beste Malwettbewerb aller Zeiten</h1>
-          <h2>Und so funktioniert's!</h2>
-        </div>
+
         <!-- YELLOW PART -->
         <div
-          class="bg-[#ffeb00] w-full h-[90%] relative flex flex-col justify-center items-center content-center"
+          class="bg-[#ffeb00] w-full h-[90%] relative flex flex-wrap justify-center items-center content-center"
         >
+          <div class="text-[#F63799] font-bold text-2xl mb-2 w-full">
+            <h1>Der beste Malwettbewerb aller Zeiten</h1>
+            <h2>Und so funktioniert's!</h2>
+          </div>
           <!-- FLOATING IMAGES -->
-          <div
-            class="grid grid-cols-3 grid-rows-4 absolute p-4 px-20 content-center justify-center items-center h-[100%] m-auto w-full"
-          >
+          <div class="flex flex-wrap justify-center h-auto">
             <!-- IMAGE 1 -->
-            <div class="row-start-1 row-span-2 flex flex-col h-full w-full p-4">
+            <div class="flex flex-col h-full w-96 p-4">
               <img
-                class="h-full object-cover"
+                class="h-60 object-cover"
                 src="/assets/img/gallery/gallery6.jpg"
                 alt=""
               />
               <p class="bg-white">Nikolas.1</p>
             </div>
-            <!-- IMAGE 2 -->
-            <!-- <div class="flex flex-col h-full w-full row-span-3 p-4">
-              <img
-                class="h-full object-cover"
-                src="/assets/img/gallery/gallery6.jpg"
-                alt=""
-              />
-              <p class="bg-white">Nikolas.2</p>
-            </div> -->
-            <!-- IMAGE 3 -->
-            <!-- <div
-              class="flex flex-col h-full w-full col-start-3 row-start-1 row-span-2 p-4"
-            >
-              <img
-                class="h-full object-cover"
-                src="/assets/img/gallery/gallery6.jpg"
-                alt=""
-              />
-              <p class="bg-white">Nikolas.3</p>
-            </div> -->
-            <!-- IMAGE 4 -->
-            <!-- <div
-              class="flex flex-col h-full w-full col-start-1 row-start-3 row-span-2 p-4"
-            >
-              <img
-                class="h-full object-cover"
-                src="/assets/img/gallery/gallery6.jpg"
-                alt=""
-              />
-              <p class="bg-white">Nikolas.4</p>
-            </div> -->
-            <!-- IMAGE 5 -->
-            <!-- <div class="flex flex-col h-full w-full row-start-4 p-4">
-              <img
-                class="h-full object-cover"
-                src="/assets/img/gallery/gallery6.jpg"
-                alt=""
-              />
-              <p class="bg-white">Nikolas.5</p>
-            </div> -->
-            <!-- IMAGE 6 -->
-            <!-- <div
-              class="flex flex-col h-full w-full row-start-3 col-start-3 row-span-2 p-4"
-            >
-              <img
-                class="h-full object-cover"
-                src="/assets/img/gallery/gallery6.jpg"
-                alt=""
-              />
-              <p class="bg-white">Nikolas.6</p>
-            </div> -->
           </div>
         </div>
       </div>
       <!-- PAGE 5 -->
-      <div class="h-[99vh] p-4 text-center bg-yellow-300" id="gallery-boarder">
-        <!-- PURPEL PART -->
 
-        <div
-          class="bg-[#490e2c] w-full h-full relative flex flex-col justify-center items-center content-center"
-        >
-          <!-- FLOATING IMAGES -->
-          <div
-            class="demo grid grid-cols-4 grid-rows-3 absolute p-4 px-20 content-center justify-center items-center h-[100%] w-[100%] m-auto"
-            id=""
-          >
-            <!-- IMAGE 1 -->
-            <!-- <div
-              class="row-start-1 row-span-2 flex flex-col h-full w-full p-4 even-picture"
-            >
-              <img
-                class="h-full object-cover"
-                src="/assets/img/gallery/gallery6.jpg"
-                alt=""
-              />
-            </div> -->
-            <!-- IMAGE 2 -->
-            <!-- <div class="flex flex-col h-full w-full row-span-3 p-4 odd-picture">
-              <img
-                class="h-full object-cover"
-                src="/assets/img/gallery/gallery6.jpg"
-                alt=""
-              />
-            </div> -->
-          </div>
-        </div>
-      </div>
+      <div
+        class="h-full w-[100%] mx-auto px-5 py-7 gap-5 gap-y-5 text-center bg-yellow-300 demo flex flex-wrap justify-around container"
+        id="gallery-boarder"
+      ></div>
 
       <!-- CONTACT PAGE -->
-      <div class="flex flex-col">
+      <div class="flex flex-col container mx-auto mt-16">
         <!-- PART 1 -->
         <div
-          class="h-[30vh] bg-slate-300 m-7 text-center content-center items-center flex flex-col space-y-4"
+          class="h-[30vh] bg-slate-300 my-5 text-center content-center items-center flex flex-col space-y-4"
         >
-          <h1 class="font-bold text-2xl mt-6">
+          <h1 class="font-bold text-2xl mt-16">
             Kontaktformular zum Bilder-Hochladen
           </h1>
           <h4>
@@ -425,7 +349,7 @@
         <!-- PART 2 -->
         <div class="h-[110vh]">
           <div
-            class="container mx-auto bg-slate-300 text-center justify-center items-center content-center p-8"
+            class="mx-auto bg-slate-300 text-center justify-center items-center content-center px-36 py-14"
           >
             <h1 class="text-center text-2xl mb-6 pt-6">
               Kontaktformular zum Bilder-Hochladen
@@ -499,7 +423,7 @@
               <hr />
               <!-- <input type="file" id="image" name="image" /><br /> -->
 
-              <div class="flex items-center mb-6">
+              <div class="flex items-center my-6">
                 <input
                   type="checkbox"
                   name="approval_privacypolicy"
@@ -542,7 +466,7 @@
               <button
                 id="submit"
                 type="button"
-                class="bg-[#ffeb00] text-white font-bold py-2 px-4 rounded w-fit"
+                class="bg-[#ffeb00] text-black text-3xl font-bold py-5 px-14 rounded w-fit"
               >
                 Submit
               </button>
@@ -552,25 +476,21 @@
       </div>
     </main>
     <!-- FOOTER -->
-    <footer class="">
-      <div
-        class="bg-[#ffeb00] m-8 p-4 justify-center content-center items-center flex flex-col"
-      >
+    <footer class="container mx-auto h-[430px]">
+      <div class="flex flex-col bg-[#ffeb00]">
         <!-- COLUMNS -->
-        <div
-          class="flex flex-row space-x-4 content-center justify-center text-center mt-4"
-        >
+        <div class="flex justify-evenly text-center my-14">
           <!-- COLUMN 1 -->
           <div class="flex flex-col space-y-6">
             <h1
-              class="uppercase font-bold text-white text-2xl underline bg-black p-2 rounded-xl px-8"
+              class="uppercase font-bold text-white text-3xl underline bg-black py-5 rounded-xl px-8"
             >
               kontakt
             </h1>
             <div class="flex flex-col">
               <div class="flex flex-row">
                 <span class="material-symbols-outlined"> location_on </span>
-                <div>
+                <div class="">
                   <p>Raiffeisen Landesbanf Kärnten</p>
                   <p>Raiffeisenplatz 1</p>
                   <p>9020 Klagenfurt am Wörthersee</p>
@@ -595,33 +515,33 @@
           <!-- COLUMN 2 -->
           <div class="flex flex-col">
             <h1
-              class="uppercase font-bold text-white text-2xl underline bg-black p-2 rounded-xl px-8 mb-4"
+              class="uppercase font-bold text-white text-3xl underline bg-black py-5 rounded-xl px-8 mb-4"
             >
               INFO / BEDINGUNGEN
             </h1>
             <div>
-              <p class="underline">Datenschutz</p>
+              <p class="underline my-2">Datenschutz</p>
             </div>
             <div>
-              <p class="underline">Teilnahmebedinung</p>
+              <p class="underline my-2">Teilnahmebedinung</p>
             </div>
             <div>
-              <p class="underline">Impressum</p>
+              <p class="underline my-2">Impressum</p>
             </div>
             <div>
-              <p class="underline">AGB</p>
+              <p class="underline my-2">AGB</p>
             </div>
             <div>
-              <p class="underline">Disclaimer</p>
+              <p class="underline my-2">Disclaimer</p>
             </div>
             <div>
-              <p class="underline">Cookie-Praefrenzen</p>
+              <p class="underline my-2">Cookie-Praefrenzen</p>
             </div>
           </div>
           <!-- COLUMN 3 -->
           <div class="flex flex-col space-y-6 items-center content-center">
             <h1
-              class="uppercase font-bold text-white text-2xl underline bg-black p-2 rounded-xl px-8 mb-4"
+              class="uppercase font-bold text-white text-3xl underline bg-black py-5 rounded-xl px-8 mb-4"
             >
               SOCIAL MEDIA
             </h1>
@@ -629,7 +549,7 @@
               <div>
                 <p>FACEBOOK</p>
               </div>
-              <div class="flex flex-row">
+              <div class="flex flex-row my-5">
                 <span class="material-symbols-outlined">
                   youtube_activity
                 </span>
@@ -647,7 +567,7 @@
           </div>
         </div>
         <!-- COPYRIGHT -->
-        <div class="mt-4">
+        <div class="text-center mt-16 bg-slate-500 text-yellow-400 py-3">
           <p>
             &copy; WEBDESIGN&DEVELOPERS Tomas Matusef und Moin Levin Kärnten
             Villach 2023

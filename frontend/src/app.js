@@ -1,3 +1,6 @@
+window.addEventListener('DOMContentLoaded', () => {
+  showData();
+});
 const demo = document.querySelector('.demo');
 const API_URL = 'https://sumsi.dev.webundsoehne.com/api/v1/submissions';
 let submissionId;
@@ -37,36 +40,18 @@ async function showData() {
     let html = ''; // Initialize an empty string to concatenate HTML content
 
     for (let i = 0; i < saveData.length; i++) {
-      const isEven = i % 2 === 0; // Check if the index is even
+      // Check if the index is even
 
-      if (isEven) {
-        html += `
-      <div class="row-start-1 row-span-2 flex flex-col h-full w-full p-4 even-picture">
+      html += `
+      <div class="flex even-picture">
         <img
-          class="h-full w-56 object-cover"
+          class="h-64 w-56 object-cover"
           src="https://sumsi.dev.webundsoehne.com/${saveData[i].image.public_location}"
            alt="Bild von ${saveData[i].child_firstname}"
         />
       </div>`;
-      } else {
-        html += `
-      <div class="flex flex-col h-full w-full row-span-3 p-4 odd-picture">
-        <img
-          class="h-full w-52 object-cover"
-          src="https://sumsi.dev.webundsoehne.com/${saveData[i].image.public_location}"
-          alt="Bild von ${saveData[i].child_firstname}"
-        />
-      </div>`;
-      }
     }
 
-    // Rest of your code...
-
-    // Rest of your code...
-
-    //    <div class="imageContainer" id="${saveData[i].id}">
-    //     // <img class="imageBox-1" src="https://sumsi.dev.webundsoehne.com/${saveData[i].image.public_location}"></img>
-    //    </div>
     demo.innerHTML = html; // Set the HTML content after the loop
   } catch (error) {
     console.error('Error fetching data:', error);
@@ -74,17 +59,20 @@ async function showData() {
       console.error('Check if the API server is running and accessible.');
     }
   }
-  const imageContainers = document.querySelectorAll('.imageContainer');
+  const imageContainers = document.querySelectorAll('.even-picture');
   imageContainers.forEach((element, i) => {
     element.addEventListener('click', () => {
       email = saveData[i].email; //testing
+
       elementID = element.id;
     });
   });
 }
+
 let elementID;
 // VOTING METHOD
 let email;
+
 async function voting() {
   let body = {
     email: email,
@@ -324,6 +312,6 @@ async function determineWinnerAndRest() {
 // Example usage
 // await determineWinnerAndRest();
 
-document.getElementById('showData').addEventListener('click', showData);
+// document.getElementById('showData').addEventListener('click', showData);
 document.getElementById('vote').addEventListener('click', voting);
 document.getElementById('submit').addEventListener('click', submitForm);
