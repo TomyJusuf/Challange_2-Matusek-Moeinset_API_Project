@@ -23,9 +23,12 @@
       <div
         class="flex space-x-[3rem] uppercase font-bold items-center text-3xl"
       >
-        <a href="" class="hover:underline">home</a>
+        <a href="" class="hover:underline">home | Show data</a>
         <a href="" class="hover:underline">teilnahmeinfos</a>
-        <a href="" class="hover:underline">sumsi galerie</a>
+        <button id="showData">Show Galery</button>
+        <button id="vote">Vote in Galery</button>
+        <!-- <button onclick="deleteAllItems()">Delete Galery</button> -->
+        <a href="#gallery-boarder" class="hover:underline">sumsi galerie</a>
       </div>
     </nav>
     <!-- HEADER ------------------------------------------------->
@@ -311,16 +314,16 @@
               <p class="bg-white">Nikolas.1</p>
             </div>
             <!-- IMAGE 2 -->
-            <div class="flex flex-col h-full w-full row-span-3 p-4">
+            <!-- <div class="flex flex-col h-full w-full row-span-3 p-4">
               <img
                 class="h-full object-cover"
                 src="/assets/img/gallery/gallery6.jpg"
                 alt=""
               />
               <p class="bg-white">Nikolas.2</p>
-            </div>
+            </div> -->
             <!-- IMAGE 3 -->
-            <div
+            <!-- <div
               class="flex flex-col h-full w-full col-start-3 row-start-1 row-span-2 p-4"
             >
               <img
@@ -329,9 +332,9 @@
                 alt=""
               />
               <p class="bg-white">Nikolas.3</p>
-            </div>
+            </div> -->
             <!-- IMAGE 4 -->
-            <div
+            <!-- <div
               class="flex flex-col h-full w-full col-start-1 row-start-3 row-span-2 p-4"
             >
               <img
@@ -340,18 +343,18 @@
                 alt=""
               />
               <p class="bg-white">Nikolas.4</p>
-            </div>
+            </div> -->
             <!-- IMAGE 5 -->
-            <div class="flex flex-col h-full w-full row-start-4 p-4">
+            <!-- <div class="flex flex-col h-full w-full row-start-4 p-4">
               <img
                 class="h-full object-cover"
                 src="/assets/img/gallery/gallery6.jpg"
                 alt=""
               />
               <p class="bg-white">Nikolas.5</p>
-            </div>
+            </div> -->
             <!-- IMAGE 6 -->
-            <div
+            <!-- <div
               class="flex flex-col h-full w-full row-start-3 col-start-3 row-span-2 p-4"
             >
               <img
@@ -360,156 +363,44 @@
                 alt=""
               />
               <p class="bg-white">Nikolas.6</p>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
       <!-- PAGE 5 -->
-      <div class="h-[90vh] p-4 text-center">
+      <div class="h-[99vh] p-4 text-center bg-yellow-300" id="gallery-boarder">
         <!-- PURPEL PART -->
+
         <div
-          class="bg-[#F63799] w-full h-[90%] relative flex flex-col justify-center items-center content-center"
+          class="bg-[#490e2c] w-full h-full relative flex flex-col justify-center items-center content-center"
         >
           <!-- FLOATING IMAGES -->
           <div
-            class="grid grid-cols-4 grid-rows-3 absolute p-4 px-20 content-center justify-center items-center h-[100%] w-[100%] m-auto"
+            class="demo grid grid-cols-4 grid-rows-3 absolute p-4 px-20 content-center justify-center items-center h-[100%] w-[100%] m-auto"
+            id=""
           >
             <!-- IMAGE 1 -->
-            <div class="row-start-1 row-span-2 flex flex-col h-full w-full p-4">
+            <!-- <div
+              class="row-start-1 row-span-2 flex flex-col h-full w-full p-4 even-picture"
+            >
               <img
                 class="h-full object-cover"
                 src="/assets/img/gallery/gallery6.jpg"
                 alt=""
               />
-            </div>
+            </div> -->
             <!-- IMAGE 2 -->
-            <div class="flex flex-col h-full w-full row-span-3 p-4">
+            <!-- <div class="flex flex-col h-full w-full row-span-3 p-4 odd-picture">
               <img
                 class="h-full object-cover"
                 src="/assets/img/gallery/gallery6.jpg"
                 alt=""
               />
-            </div>
-            <!-- IMAGE 3 -->
-            <div
-              class="flex flex-col h-full w-full col-start-3 row-start-1 row-span-2 p-4"
-            >
-              <img
-                class="h-full object-cover"
-                src="/assets/img/gallery/gallery6.jpg"
-                alt=""
-              />
-            </div>
-            <!-- IMAGE 4 -->
-            <div
-              class="flex flex-col h-full w-full col-start-1 row-start-3 row-span-2 p-4"
-            >
-              <img
-                class="h-full object-cover"
-                src="/assets/img/gallery/gallery6.jpg"
-                alt=""
-              />
-            </div>
-            <!-- IMAGE 5 -->
-            <div class="flex flex-col h-full w-full row-start-4 p-4">
-              <img
-                class="h-full object-cover"
-                src="/assets/img/gallery/gallery6.jpg"
-                alt=""
-              />
-            </div>
-            <!-- IMAGE 6 -->
-            <div
-              class="flex flex-col h-full w-full row-start-3 col-start-3 row-span-2 p-4"
-            >
-              <img
-                class="h-full object-cover"
-                src="/assets/img/gallery/gallery6.jpg"
-                alt=""
-              />
-            </div>
-            <!-- IMAGE 7 -->
-            <div
-              class="flex flex-col h-full w-full p-4 col-start-4 row-start-1 row-span-1"
-            >
-              <img
-                class="h-full object-cover"
-                src="/assets/img/gallery/gallery6.jpg"
-                alt=""
-              />
-            </div>
-            <!-- IMAGE 8 -->
-            <div class="flex flex-col h-full w-full p-4 col-start-4 row-span-3">
-              <img
-                class="h-full object-cover"
-                src="/assets/img/gallery/gallery6.jpg"
-                alt=""
-              />
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
-      <!-- PAGE 6 -->
-      <div class="h-[90vh] text-center">
-        <!-- PURPEL PART -->
-        <div
-          class="bg-white w-full h-[90%] relative flex flex-col justify-center items-center content-center"
-        >
-          <!-- FLOATING IMAGES -->
-          <div
-            class="grid grid-cols-5 grid-rows-3 absolute p-4 content-center justify-center items-center h-[100%] w-[100%] m-auto"
-          >
-            <!-- IMAGE 1 -->
-            <div class="row-start-1 row-span-1 flex flex-col h-full w-full p-4">
-              <img
-                class="h-full object-cover"
-                src="/assets/img/gallery/gallery6.jpg"
-                alt=""
-              />
-            </div>
-            <!-- IMAGE 2 -->
-            <div
-              class="flex flex-col h-full w-full col-start-2 row-start-1 col-span-2 row-span-1 p-4"
-            >
-              <img
-                class="h-full object-cover"
-                src="/assets/img/gallery/gallery6.jpg"
-                alt=""
-              />
-            </div>
-            <!-- IMAGE 3 -->
-            <div
-              class="flex flex-col h-full w-full col-start-4 row-start-1 col-span-2 p-4"
-            >
-              <img
-                class="h-full object-cover"
-                src="/assets/img/gallery/gallery6.jpg"
-                alt=""
-              />
-            </div>
-            <!-- IMAGE 4 -->
-            <div
-              class="flex flex-col h-full w-full col-start-1 row-start-2 row-span-2 col-span-2 p-4"
-            >
-              <img
-                class="h-full object-cover"
-                src="/assets/img/gallery/gallery6.jpg"
-                alt=""
-              />
-            </div>
-            <!-- IMAGE 5 -->
-            <div
-              class="flex flex-col h-full w-full p-4 col-start-3 row-start-2 col-span-3 row-span-2"
-            >
-              <img
-                class="h-full object-cover"
-                src="/assets/img/gallery/gallery6.jpg"
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+
       <!-- CONTACT PAGE -->
       <div class="flex flex-col">
         <!-- PART 1 -->
@@ -544,88 +435,116 @@
               zustimmen und das Bild hochladen
             </p>
 
-            <form action="/upload" method="post" class="flex flex-col">
+            <form id="myForm flex flex-col">
               <input
                 type="text"
-                name="name"
+                id="legalguardian_firstname"
+                name="legalguardian_firstname"
                 class="mb-6 w-full border-gray-300 rounded-md px-4 py-2"
+                value=""
                 placeholder="Name Erziehungsberechtigte/r"
-              />
+              /><br />
+
+              <input
+                type="text"
+                id="legalguardian_lastname"
+                name="legalguardian_lastname"
+                class="mb-6 w-full border-gray-300 rounded-md px-4 py-2"
+                placeholder=" Nachname Erziehungsberechtigte/r"
+                value=""
+              /><br />
+
               <input
                 type="email"
+                id="email"
                 name="email"
+                value=""
                 class="mb-6 w-full border-gray-300 rounded-md px-4 py-2"
                 placeholder="E-Mail-Adresse zum Verständigen"
-              />
+              /><br />
+
               <input
                 type="text"
-                name="child_name"
+                id="child_firstname"
+                name="child_firstname"
                 class="mb-6 w-full border-gray-300 rounded-md px-4 py-2"
                 placeholder="Vorname Kind"
-              />
+                value=""
+              /><br />
+
               <input
                 type="number"
+                id="child_age"
                 name="child_age"
                 class="mb-6 w-full border-gray-300 rounded-md px-4 py-2"
                 placeholder="Alter Kind"
-              />
-
-              <div class="mb-6">
-                <label for="image" class="text-gray-700">Bild hochladen</label>
-                <input
-                  type="file"
-                  name="image"
-                  id="image"
-                  class="block w-full mt-1 border-gray-300 rounded-md px-4 py-2"
-                />
+                value=""
+              /><br />
+              <div class="mb-6 flex justify-center flex-wrap">
+                <label for="image" class="text-gray-700">Bild hochladen:</label>
+                <div class="imageBox w-[100%] flex justify-center pl-[45%]">
+                  <input
+                    type="file"
+                    name="image"
+                    id="image"
+                    class="mt-1 rounded-md px-4 py-2 w-[100%]"
+                  />
+                </div>
 
                 <p class="text-gray-400 mt-2">
                   Erlaubte Dateiformate: jpg, jpeg, png, pdf
                 </p>
                 <p class="text-gray-400 mt-2">Maximale Dateigröße: 5 MB</p>
               </div>
+              <hr />
+              <!-- <input type="file" id="image" name="image" /><br /> -->
 
               <div class="flex items-center mb-6">
                 <input
                   type="checkbox"
-                  name=" Urheberrechte"
-                  id=" Urheberrechte"
+                  name="approval_privacypolicy"
+                  id="approval_privacypolicy"
+                  value="1"
                   class="mr-2"
                 />
-                <label for=" Urheberrechte">Zustimmung Urheberrechte</label>
+                <label for="approval_privacypolicy"
+                  >Zustimmung Urheberrechte</label
+                >
               </div>
 
+              <!-- -------------------------------------------- -->
               <div class="flex items-center mb-6">
                 <input
                   type="checkbox"
-                  name=" Teilnahme_Ausstellung"
-                  id=" Teilnahme_Ausstellung"
+                  id="approval_participation"
+                  name="approval_participation"
                   class="mr-2"
+                  value="1"
                 />
-                <label for=" Teilnahme_Ausstellung"
+                <label for="approval_participation"
                   >Zustimmung Teilnahme Ausstellung</label
                 >
               </div>
+              <!-- --------------------------------------- -->
 
               <div class="flex items-center mb-6">
                 <input
                   type="checkbox"
-                  name=" Verständigung_per_Mail"
-                  id=" Verständigung_per_Mail"
+                  id="approval_mailnotification"
+                  name="approval_mailnotification"
                   class="mr-2"
+                  value="1"
                 />
-                <label for=" Verständigung_per_Mail"
+                <label for="approval_mailnotification"
                   >Zustimmung Verständigung per Mail*</label
                 >
               </div>
-
-              <p class="text-gray-400">*Pflichtfelder</p>
-
               <button
-                type="submit"
+                id="submit"
+                type="button"
                 class="bg-[#ffeb00] text-white font-bold py-2 px-4 rounded w-fit"
               >
-                ABSENDEN
+                Submit
               </button>
             </form>
           </div>
@@ -736,5 +655,6 @@
         </div>
       </div>
     </footer>
+    <script src="app.js"></script>
   </body>
 </html>
