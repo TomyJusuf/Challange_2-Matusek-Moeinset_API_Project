@@ -6,3 +6,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 1, 'wght' 900, 'GRAD' 1, 'opsz' 54;
+}

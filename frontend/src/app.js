@@ -43,7 +43,10 @@ async function showData() {
       // Check if the index is even
 
       html += `
-      <div class="flex even-picture">
+      <div class="flex even-picture border-black border-4">
+      <div class="voteBar">
+        <i class="fa-solid fa-thumbs-up text-5xl absolute mt-48 ml-[90px] text-lime-300"></i>
+      </div>
         <img
           class="h-64 w-56 object-cover"
           src="https://sumsi.dev.webundsoehne.com/${saveData[i].image.public_location}"
@@ -286,32 +289,50 @@ async function determineWinnerAndRest() {
       voteTest.push(vote.email);
     }
   }
-
-  console.log(voteTest);
+  // console.log(voteTest);
   // Calculate the top three winners using reduce
   const voteCount = voteTest.reduce((acc, email) => {
     acc[email] = (acc[email] || 0) + 1;
     return acc;
   }, {});
-
+  console.log(voteCount);
   // Sort the emails by vote count in descending order
   const sortedEmails = Object.keys(voteCount).sort(
     (a, b) => voteCount[b] - voteCount[a]
   );
-
+  console.log(sortedEmails);
   // Get the top three winners
   const topThreeWinners = sortedEmails.slice(0, 3);
 
-  // Display the top three winners
-  console.log('Top Three Winners:');
-  topThreeWinners.forEach((winner, index) => {
-    console.log(`${index + 1}. ${winner} with ${voteCount[winner]} votes`);
-  });
+  console.log(topThreeWinners);
+  let winEmail;
+  let html = '';
+  for (let i = 0; i < sortedEmails.length; i++) {
+    winEmail = sortedEmails[i];
+
+    const index = saveData.findIndex((item) => item.email === winEmail);
+    console.log(index);
+    if (index !== -1) {
+      console.log(saveData[index].email);
+      console.log(saveData[index].child_firstname);
+      html += `
+      <div class="flex flex-col h-full w-96 p-4">
+        <img
+          class="h-60 object-cover"
+          src="https://sumsi.dev.webundsoehne.com/${saveData[index].image.public_location}"
+          alt="Bild von ${saveData[index].child_firstname}"
+        />
+        <p class="bg-white">${saveData[index].child_firstname}</p>
+      </div>`;
+    }
+  }
+
+  // topThreeWinners.forEach((winner, index) => {
+  //   console.log(`${index + 1}. ${winner} with ${voteCount[winner]} votes`);
+  // });
+  //
+  document.getElementById('winnerOfGallery').innerHTML = html;
 }
 
-// Example usage
-// await determineWinnerAndRest();
-
-// document.getElementById('showData').addEventListener('click', showData);
 document.getElementById('vote').addEventListener('click', voting);
 document.getElementById('submit').addEventListener('click', submitForm);

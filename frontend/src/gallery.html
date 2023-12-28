@@ -6,9 +6,13 @@
     <!-- CSS LINK -->
     <link rel="stylesheet" href="../dist/output.css" />
     <!-- GOOGLE ICON -->
+
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <title>sumi gallery</title>
   </head>
@@ -26,7 +30,7 @@
         <!-- <a href="" class="hover:underline">home</a> -->
         <!-- <a href="" class="hover:underline">teilnahmeinfos</a> -->
         <!-- <button id="showData">Show Galery</button> -->
-        <button id="vote">Vote in Galery</button>
+        <!-- <button id="vote">Vote in Galery</button> -->
         <button onclick="determineWinnerAndRest()">Winner</button>
         <!-- <button onclick="deleteAllItems()">Delete Galery</button> -->
         <a href="#gallery-boarder" class="hover:underline">sumsi galerie</a>
@@ -53,21 +57,21 @@
           >
             <div class="text-white">
               <div class="flex flex-row">
-                <h2 class="text-5xl font-semibold bg-[#ffeb00] text-left w-fit">
+                <h2 class="text-6xl font-semibold bg-[#ffeb00] text-left w-fit">
                   Zuhause zeichnen ist
                 </h2>
-                <h2 class="text-5xl font-semibold bg-black text-left w-fit">
+                <h2 class="text-6xl font-semibold bg-black text-left w-fit">
                   cool.
                 </h2>
               </div>
-              <h4 class="text-5xl font-semibold bg-[#ffeb00] w-fit">
+              <h4 class="text-6xl font-semibold bg-[#ffeb00] w-fit">
                 Eine Ausstellung mit
               </h4>
               <div class="flex flex-row">
-                <h2 class="text-5xl font-semibold bg-[#ffeb00] text-left w-fit">
+                <h2 class="text-6xl font-semibold bg-[#ffeb00] text-left w-fit">
                   Deinem Bild ist
                 </h2>
-                <h2 class="text-5xl font-semibold bg-black text-left w-fit">
+                <h2 class="text-6xl font-semibold bg-black text-left w-fit">
                   cooler.
                 </h2>
               </div>
@@ -79,28 +83,26 @@
           >
             <div class="text-white">
               <div class="flex flex-row">
-                <h2 class="text-5xl font-semibold bg-black text-left w-fit">
+                <h2 class="text-6xl font-semibold bg-black text-left w-fit">
                   Genießen
                 </h2>
-                <h2 class="text-5xl font-semibold bg-[#ffeb00] text-left w-fit">
+                <h2 class="text-6xl font-semibold bg-[#ffeb00] text-left w-fit">
                   mit Uns
                 </h2>
               </div>
-              <h4 class="text-5xl font-semibold bg-black w-fit">
+              <h4 class="text-6xl font-semibold bg-black w-fit">
                 viel spaß und
               </h4>
-              <h4 class="text-5xl font-semibold bg-[#ffeb00] w-fit">
+              <h4 class="text-6xl font-semibold bg-[#ffeb00] w-fit">
                 erlebnis
               </h4>
             </div>
           </div>
           <!-- ICON -->
           <div
-            class="bg-[#ffeb00] flex flex-row w-[3rem] h-[3rem] absolute bottom-0 left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-full justify-center items-center"
+            class="bg-[#ffeb00] flex flex-row w-[5rem] h-[5rem] absolute bottom-0 left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-full justify-center items-center"
           >
-            <span class="material-symbols-outlined font-bold">
-              arrow_downward
-            </span>
+            <i class="fa-solid fa-arrow-down text-4xl"></i>
           </div>
         </div>
       </div>
@@ -109,54 +111,61 @@
     <main class="flex flex-col mx-auto">
       <!-- PAGE 1 ------------------------------------------------------------->
       <div
-        class="h-[90vh] p-4 flex flex-col justify-center content-center container"
+        class="h-[90vh] p-4 flex flex-col justify-center container my-14 bg-white"
       >
         <!-- LOGO -->
 
         <img
-          class="w-[15rem]"
+          class="w-[20rem] pl-12"
           src="/assets/ci_rlb_kaernten/Logo RLB/RLB_Logo_4c_NEW.png"
           alt="logo"
         />
         <!-- TEXT 1 -->
-        <div class="flex flex-col ml-[15rem] mt-10">
-          <h1 class="uppercase font-bold text-xl w-[22rem]">
-            Herzlich willkommen beim grossen Sumsi malwettbewerb
+        <div class="flex flex-col justify-center w-[42rem] mt-10">
+          <h1 class="uppercase text-center font-bold text-3xl w-full">
+            Herzlich willkommen beim
+          </h1>
+          <h1 class="uppercase text-center font-bold text-3xl w-full">
+            grossen Sumsi malwettbewerb
           </h1>
         </div>
         <!-- TELLOW PART -->
         <div
-          class="flex flex-col content-center items-center mt-[5rem] uppercase"
+          class="flex flex-col content-center items-center mt-[5rem] uppercase h-auto"
         >
-          <div class="flex flex-row">
-            <img class="w-[20em]" src="/assets/img/magniBee.png" alt="" />
+          <div class="flex flex-row flex-wrap justify-center">
             <div
-              class="bg-[#ffeb00] w-[40em] h-[20em] text-center items-center content-center flex flex-col justify-center space-y-3"
+              class="bg-[#ffeb00] w-[80%] h-auto text-center items-center content-center flex flex-col justify-center space-y-3 px-7"
             >
-              <p class="font-bold">Liebe Kinder, liebe Eltern,</p>
-              <p>
+              <p class="font-bold mt-16">Liebe Kinder, liebe Eltern,</p>
+              <p class="py-5">
                 wie jedes Jahr gibt es auch heuer unseren traditionellen Sumsi
                 Malwettbewerb Wieder digital, wieder mit Voting und großer
-                Online-Galerie Jedes Elternteil, das bis zum 5 November 2021 die
-                Zeichnung seines Kindes mithilfe des nachstehenden
-                Kontaktformulares hochlädt und einreicht, wird anschließend in
-                der großen Sumsi Galerie auf www.raiffeisen- sumsi at
-                veröffentlicht Ich freue mich auf viele bunte Zeichnungen
+                Online-Galerie
               </p>
-              <p class="font-bold">Eure Raiffeisen Sumsi</p>
+              <p>
+                Jedes Elternteil, das bis zum 5 November 2021 die Zeichnung
+                seines Kindes mithilfe des nachstehenden Kontaktformulares
+                hochlädt und einreicht, wird anschließend in der großen Sumsi
+                Galerie auf www.raiffeisen- sumsi at veröffentlicht Ich freue
+                mich auf viele bunte Zeichnungen
+              </p>
+              <p class="font-bold py-8 mb-20">Eure Raiffeisen Sumsi</p>
             </div>
           </div>
         </div>
       </div>
       <!-- PAGE 2 -------------------------------------------------------->
       <div
-        class="h-[90vh] relative flex flex-col justify-center content-center container"
+        class="h-auto relative flex flex-col justify-center content-center container bg-white"
       >
-        <h1 class="text-center font-bold text-2xl">
+        <h1 class="text-center font-bold text-2xl mt-16">
           Der beste Malwettbewerb aller Zeiten.
         </h1>
 
-        <h2 class="text-center font-bold text-2xl">Und so funktioniert's</h2>
+        <h2 class="text-center font-bold text-2xl mb-16">
+          Und so funktioniert's
+        </h2>
         <img
           class="w-[20rem] ml-[7rem]"
           src="/assets/img/gallery/jumpingbee.jpg"
@@ -237,16 +246,16 @@
         </div>
       </div>
       <!-- PAGE 3 --------------------->
-      <div class="h-[90vh] flex flex-col container mx-auto">
+      <div class="h-[90vh] flex flex-col container mx-auto bg-white mt-8">
         <!-- LOGO -->
         <img
-          class="w-[15rem]"
+          class="w-[15rem] mt-5 ml-16"
           src="/assets/ci_rlb_kaernten/Logo RLB/RLB_Logo_4c_NEW.png"
           alt="logo"
         />
         <!-- BACKGROUND IMAGE -->
         <div
-          class="justify-center items-center content-center flex flex-col overflow-hidden mt-4 relative"
+          class="container items-center content-center flex flex-col overflow-hidden mt-4 relative"
         >
           <img
             class="object-cover h-full w-full"
@@ -255,36 +264,50 @@
           />
           <!-- FLOATING PARTS -->
           <!-- TEXT TITLE -->
-          <div class="absolute flex flex-col top-0 text-[2rem] p-4">
-            <h1 class="bg-[#ffeb00] p-2 w-fit">Sumsi Malwettbewerb</h1>
-            <h2 class="bg-black text-white p-2 ml-[8rem]">
+          <div
+            class="absolute flex flex-col top-0 text-5xl font-bold pt-7 left-[5%]"
+          >
+            <h1 class="bg-[#ffeb00] py-5 px-20 w-fit">Sumsi Malwettbewerb</h1>
+            <h2 class="bg-black text-white py-5 px-20 ml-[16rem]">
               Mach mit & gewinne!
             </h2>
           </div>
           <!-- TEXT -->
           <div
-            class="bg-[#ffeb00] w-[70%] h-[50%] absolute bottom-[2rem] left-[2rem] p-[2rem] flex flex-col"
+            class="bg-[#ffeb00] w-[52%] h-[50%] absolute bottom-[2rem] left-[5%] p-[2rem] flex flex-wrap justify-start"
           >
-            <li>Zeichnen & malen</li>
-            <li>Digitalisirn(Foto oder Scan)</li>
-            <li>Hochladnundinrichnbis5.Novmbr202e</li>
-            <li>Digitalisirn(Foto oder Scan)</li>
-            <li>Digitalisirn(Foto oder Scan)</li>
-            <li>Digitalisirn(Foto oder Scan)</li>
+            <li class="font-bold">Zeichnen & malen</li>
+            <li class="">
+              <span class="font-bold">Digitalisieren</span>(Foto oder Scan)
+            </li>
+            <li class="font-bold">
+              Hochladen und einreichen bis 5.Februar 2024
+            </li>
+            <li class="">
+              Die Ausstellung in der Sumsi Galerie läuft ab 20.Oktober 2023
+            </li>
+            <li class="">
+              Mit Glück einen der
+              <span class="font-bold">10 tollen Prises gewinnen</span>
+            </li>
+            <li class="font-bold">
+              Die Eltern der Gewinner werden per Mail verstandigt. Der Rechtweg
+              ist ausgeschossen.
+            </li>
 
-            <p class="mt-2">
+            <p class="my-5">
               Ich freu mich auf viele bunte Zeichnung, Macht mit und schicft mir
               Eure Träumel
             </p>
-            <p class="mt-2 font-bold">EurRaiffisnSumsi</p>
+            <p class="mt-2 font-bold">Eure Raiffeisen Sumsi</p>
           </div>
           <img
-            class="w-[8rem] absolute rounded-2xl bottom-10 right-40"
+            class="w-[200px] h-[300px] absolute rounded-2xl bottom-14 left-[53%]"
             src="/assets/img/gallery/boywithcup.jpg"
             alt="boy with cup"
           />
           <img
-            class="w-[8rem] absolute right-10 top-20 rounded-2xl"
+            class="w-[220px] h-[230px] absolute left-[68%] top-56 rounded-2xl"
             src="/assets/img/gallery/cup.avif"
             alt="cup"
           />
@@ -292,7 +315,7 @@
       </div>
       <!-- PAGE 4 -->
       <div
-        class="h-[90vh] mb-16 text-center flex flex-col justify-center items-center content-center container mx-auto"
+        class="h-[100vh] mt-16 text-center flex flex-col justify-center items-center content-center container mx-auto"
       >
         <!-- TITLE -->
 
@@ -305,7 +328,10 @@
             <h2>Und so funktioniert's!</h2>
           </div>
           <!-- FLOATING IMAGES -->
-          <div class="flex flex-wrap justify-center h-auto">
+          <div
+            class="flex flex-wrap justify-center h-auto"
+            id="winnerOfGallery"
+          >
             <!-- IMAGE 1 -->
             <div class="flex flex-col h-full w-96 p-4">
               <img
@@ -329,7 +355,7 @@
       <div class="flex flex-col container mx-auto mt-16">
         <!-- PART 1 -->
         <div
-          class="h-[30vh] bg-slate-300 my-5 text-center content-center items-center flex flex-col space-y-4"
+          class="h-[40vh] bg-slate-300 my-5 text-center content-center items-center flex flex-col space-y-4"
         >
           <h1 class="font-bold text-2xl mt-16">
             Kontaktformular zum Bilder-Hochladen
@@ -339,7 +365,7 @@
             zustimmen und das Bild hochladen!
           </h4>
           <div
-            class="bg-[#ffeb00] w-[70%] h-[30%] justify-center items-center content-center flex flex-col font-bold"
+            class="bg-[#ffeb00] w-[70%] h-[30%] justify-center items-center content-center flex flex-col font-bold py-20"
           >
             <p>Vielen Dank für Deine Teilnahme!</p>
             <p>Dein Kunstwerk wird in Kürze in der Sumsi Galerie zu sehen</p>
@@ -479,18 +505,18 @@
     <footer class="container mx-auto h-[430px]">
       <div class="flex flex-col bg-[#ffeb00]">
         <!-- COLUMNS -->
-        <div class="flex justify-evenly text-center my-14">
+        <div class="flex flex-wrap justify-evenly text-center my-14 h-auto">
           <!-- COLUMN 1 -->
-          <div class="flex flex-col space-y-6">
+          <div class="flex flex-col space-y-8 mb-16">
             <h1
-              class="uppercase font-bold text-white text-3xl underline bg-black py-5 rounded-xl px-8"
+              class="uppercase font-bold text-white text-3xl underline bg-black py-4 rounded-xl px-12 w-72"
             >
               kontakt
             </h1>
             <div class="flex flex-col">
-              <div class="flex flex-row">
-                <span class="material-symbols-outlined"> location_on </span>
-                <div class="">
+              <div class="flex flex-row gap-5">
+                <i class="fa-solid fa-location-dot text-4xl"></i>
+                <div class="flex flex-wrap w-44 text-start text-xl">
                   <p>Raiffeisen Landesbanf Kärnten</p>
                   <p>Raiffeisenplatz 1</p>
                   <p>9020 Klagenfurt am Wörthersee</p>
@@ -498,16 +524,16 @@
               </div>
             </div>
             <div>
-              <div class="flex flex-row">
-                <span class="material-symbols-outlined"> call </span>
+              <div class="flex flex-row gap-2 mb-7">
+                <i class="fa-solid fa-phone text-3xl mr-2"></i>
                 <div>
-                  <p>T +43 4632 993 00</p>
+                  <p class="text-xl">+43 4632 993 00</p>
                 </div>
               </div>
-              <div class="flex flex-row">
-                <span class="material-symbols-outlined"> mail </span>
+              <div class="flex flex-row gap-2">
+                <i class="fa-solid fa-envelope text-3xl mr-2"></i>
                 <div>
-                  <p>E info@rbgf.raiffeisen.at</p>
+                  <p class="text-xl">info@rbgf.raiffeisen.at</p>
                 </div>
               </div>
             </div>
@@ -519,46 +545,60 @@
             >
               INFO / BEDINGUNGEN
             </h1>
-            <div>
-              <p class="underline my-2">Datenschutz</p>
-            </div>
-            <div>
-              <p class="underline my-2">Teilnahmebedinung</p>
-            </div>
-            <div>
-              <p class="underline my-2">Impressum</p>
-            </div>
-            <div>
-              <p class="underline my-2">AGB</p>
-            </div>
-            <div>
-              <p class="underline my-2">Disclaimer</p>
-            </div>
-            <div>
-              <p class="underline my-2">Cookie-Praefrenzen</p>
+            <div class="info_bedingungen flex flex-wrap justify-start w-96">
+              <div>
+                <p class="w-full my-2 text-start text-2xl font-normal">
+                  Datenschutz
+                </p>
+              </div>
+              <hr class="bg-black h-[2px] w-full overflow-hidden" />
+              <div class="w-full">
+                <p class="my-2 text-start text-2xl font-normal">
+                  Teilnahmebedinung
+                </p>
+              </div>
+              <hr class="bg-black h-[2px] w-full" />
+              <div class="w-full">
+                <p class="my-2 text-start text-2xl font-normal">Impressum</p>
+              </div>
+              <hr class="bg-black h-[2px] w-full" />
+              <div class="w-full">
+                <p class="my-2 text-start text-2xl font-normal">AGB</p>
+              </div>
+              <hr class="bg-black h-[2px] w-full" />
+              <div class="w-full">
+                <p class="my-2 text-start text-2xl font-normal">Disclaimer</p>
+              </div>
+              <hr class="bg-black h-[2px] w-full" />
+              <div class="w-full">
+                <p class="my-2 text-start text-2xl font-normal">
+                  Cookie-Praefrenzen
+                </p>
+              </div>
             </div>
           </div>
           <!-- COLUMN 3 -->
-          <div class="flex flex-col space-y-6 items-center content-center">
+          <div class="flex flex-col space-y-6 justify-start">
             <h1
               class="uppercase font-bold text-white text-3xl underline bg-black py-5 rounded-xl px-8 mb-4"
             >
               SOCIAL MEDIA
             </h1>
-            <div class="uppercase">
-              <div>
-                <p>FACEBOOK</p>
+            <div class="uppercase w-36 flex flex-wrap justify-between">
+              <div class="flex flex-row justify-between w-36 items-end">
+                <i class="fa-brands fa-square-facebook text-3xl"></i>
+                <div>
+                  <p>FACEBOOK</p>
+                </div>
               </div>
-              <div class="flex flex-row my-5">
-                <span class="material-symbols-outlined">
-                  youtube_activity
-                </span>
+              <div class="flex flex-row my-5 w-36 justify-between items-end">
+                <i class="fa-brands fa-youtube text-3xl"></i>
                 <div>
                   <p>YOUTUBE</p>
                 </div>
               </div>
-              <div class="flex flex-row">
-                <span class="material-symbols-outlined"> photo_camera </span>
+              <div class="flex flex-row justify-between w-36 items-end">
+                <i class="fa-brands fa-instagram text-3xl"></i>
                 <div>
                   <p>INSTAGRAM</p>
                 </div>
