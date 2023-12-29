@@ -27,12 +27,12 @@
       <div
         class="flex space-x-[3rem] uppercase font-bold items-center text-3xl"
       >
-        <!-- <a href="" class="hover:underline">home</a> -->
-        <!-- <a href="" class="hover:underline">teilnahmeinfos</a> -->
+        <a href="" class="hover:underline">home</a>
+        <a href="" class="hover:underline">teilnahmeinfos</a>
         <!-- <button id="showData">Show Galery</button> -->
         <!-- <button id="vote">Vote in Galery</button> -->
-        <button onclick="determineWinnerAndRest()">Winner</button>
-        <!-- <button onclick="deleteAllItems()">Delete Galery</button> -->
+        <!-- <button onclick="determineWinnerAndRest()">Winner</button> -->
+        <button onclick="deleteFn()">Delete user</button>
         <a href="#gallery-boarder" class="hover:underline">sumsi galerie</a>
       </div>
     </nav>
@@ -276,8 +276,9 @@
           <div
             class="bg-[#ffeb00] w-[52%] h-[50%] absolute bottom-[2rem] left-[5%] p-[2rem] flex flex-wrap justify-start"
           >
-            <li class="font-bold">Zeichnen & malen</li>
-            <li class="">
+            <li class="font-bold w-full">Zeichnen & malen</li>
+
+            <li class="w-full">
               <span class="font-bold">Digitalisieren</span>(Foto oder Scan)
             </li>
             <li class="font-bold">
@@ -315,17 +316,20 @@
       </div>
       <!-- PAGE 4 -->
       <div
-        class="h-[100vh] mt-16 text-center flex flex-col justify-center items-center content-center container mx-auto"
+        class="h-[100vh] mt-16 text-center flex flex-col justify-center items-center content-center container mx-auto mb-24"
       >
         <!-- TITLE -->
 
         <!-- YELLOW PART -->
         <div
-          class="bg-[#ffeb00] w-full h-[90%] relative flex flex-wrap justify-center items-center content-center"
+          class="bg-[#ffeb00] w-full h-auto relative flex flex-wrap justify-center items-center content-center"
         >
-          <div class="text-[#F63799] font-bold text-2xl mb-2 w-full">
+          <div
+            class="text-[#F63799] font-bold text-5xl mb-2 w-full uppercase mt-5"
+          >
             <h1>Der beste Malwettbewerb aller Zeiten</h1>
             <h2>Und so funktioniert's!</h2>
+            <hr class="border-dotted border-t-8 border-red-700 mt-10" />
           </div>
           <!-- FLOATING IMAGES -->
           <div
@@ -344,12 +348,14 @@
           </div>
         </div>
       </div>
-      <!-- PAGE 5 -->
+      <!-- SHOW GALLERY PICTURS -->
 
       <div
-        class="h-full w-[100%] mx-auto px-5 py-7 gap-5 gap-y-5 text-center bg-yellow-300 demo flex flex-wrap justify-around container"
+        class="demo h-full w-[100%] mx-auto px-5 py-7 gap-5 gap-y-5 text-center bg-yellow-600 flex flex-wrap justify-around container mt-12"
         id="gallery-boarder"
-      ></div>
+      >
+        <h1 class="bg-white p-5">Bitte Registrieren sich am erzte</h1>
+      </div>
 
       <!-- CONTACT PAGE -->
       <div class="flex flex-col container mx-auto mt-16">

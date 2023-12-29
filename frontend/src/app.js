@@ -1,5 +1,6 @@
-window.addEventListener('DOMContentLoaded', () => {
-  showData();
+window.addEventListener('DOMContentLoaded', async () => {
+  await showData();
+  await determineWinnerAndRest();
 });
 const demo = document.querySelector('.demo');
 const API_URL = 'https://sumsi.dev.webundsoehne.com/api/v1/submissions';
@@ -26,57 +27,56 @@ async function showData() {
     const data = await response.json();
     saveData = data.data;
     console.log(saveData);
+    // console.log(saveData);
     const index = saveData.findIndex(
       (todo) => todo.email === localStorage.getItem('savedEmail')
     );
 
-    // console.log(index);
-    // console.log(saveData[index]);
     if (index == -1) {
-      false;
+      return false;
     } else {
       submissionId = saveData[index].id;
     }
-    let html = ''; // Initialize an empty string to concatenate HTML content
 
+    let html = '';
     for (let i = 0; i < saveData.length; i++) {
-      // Check if the index is even
-
+      // console.log(i);
       html += `
-      <div class="flex even-picture border-black border-4">
-      <div class="voteBar">
-        <i class="fa-solid fa-thumbs-up text-5xl absolute mt-48 ml-[90px] text-lime-300"></i>
-      </div>
-        <img
-          class="h-64 w-56 object-cover"
-          src="https://sumsi.dev.webundsoehne.com/${saveData[i].image.public_location}"
-           alt="Bild von ${saveData[i].child_firstname}"
-        />
-      </div>`;
+  <div class="flex even-picture border-black border-4" id="picture-${i}">
+    <div class="voteBar ">
+      <i class="fa-solid fa-thumbs-up text-lg absolute mt-[205px] ml-[170px] text-white bg-slate-700 p-2 rounded-full border-4 border-yellow-400 hover:text-blue-400 hover:bg-black"
+      onclick="voting('${saveData[i].id}', '${saveData[i].email}')"></i>
+    </div>
+    <img
+      class="h-64 w-56 object-cover"
+      src="https://sumsi.dev.webundsoehne.com/${saveData[i].image.public_location}"
+      alt="Bild von ${saveData[i].child_firstname}"
+    />
+  </div>`;
     }
+    demo.innerHTML = html;
 
-    demo.innerHTML = html; // Set the HTML content after the loop
+    const imageContainers = document.querySelectorAll('.even-picture');
+
+    imageContainers.forEach((element, i) => {
+      element.addEventListener('click', () => {
+        email = saveData[i].email; // testing
+        elementID = element.id;
+      });
+    });
   } catch (error) {
     console.error('Error fetching data:', error);
     if (error instanceof TypeError) {
       console.error('Check if the API server is running and accessible.');
     }
   }
-  const imageContainers = document.querySelectorAll('.even-picture');
-  imageContainers.forEach((element, i) => {
-    element.addEventListener('click', () => {
-      email = saveData[i].email; //testing
-
-      elementID = element.id;
-    });
-  });
 }
-
+// showData();
 let elementID;
 // VOTING METHOD
 let email;
 
-async function voting() {
+async function voting(submissionId) {
   let body = {
     email: email,
   };
@@ -110,7 +110,6 @@ async function voting() {
   } catch (error) {
     console.error('Error:', error);
   }
-  // -------------------------------------------
 }
 
 // Retrieve Votes
@@ -246,6 +245,7 @@ async function deleteFn() {
   } else {
     console.log('Item not found in saveData');
   }
+  showData();
 }
 async function deleteAllItems() {
   try {
@@ -276,12 +276,14 @@ async function determineWinnerAndRest() {
   const allVotes = [];
   const voteTest = [];
 
-  // Collect all votes from the votings array of each user
-  saveData.forEach((user) => {
-    if (user.votings) {
-      allVotes.push(user.votings[0]);
-    }
-  });
+  // Check if saveData is defined before iterating over it
+  if (saveData) {
+    saveData.forEach((user) => {
+      if (user.votings) {
+        allVotes.push(user.votings[0]);
+      }
+    });
+  }
 
   // Extract emails from the voting objects
   for (const vote of allVotes) {
@@ -289,50 +291,42 @@ async function determineWinnerAndRest() {
       voteTest.push(vote.email);
     }
   }
-  // console.log(voteTest);
+
   // Calculate the top three winners using reduce
   const voteCount = voteTest.reduce((acc, email) => {
     acc[email] = (acc[email] || 0) + 1;
     return acc;
   }, {});
+
   console.log(voteCount);
   // Sort the emails by vote count in descending order
   const sortedEmails = Object.keys(voteCount).sort(
     (a, b) => voteCount[b] - voteCount[a]
   );
-  console.log(sortedEmails);
-  // Get the top three winners
-  const topThreeWinners = sortedEmails.slice(0, 3);
 
-  console.log(topThreeWinners);
   let winEmail;
   let html = '';
   for (let i = 0; i < sortedEmails.length; i++) {
     winEmail = sortedEmails[i];
-
     const index = saveData.findIndex((item) => item.email === winEmail);
-    console.log(index);
+
     if (index !== -1) {
-      console.log(saveData[index].email);
-      console.log(saveData[index].child_firstname);
+      // console.log(saveData[index].email);
+      // console.log(saveData[index].child_firstname);
       html += `
-      <div class="flex flex-col h-full w-96 p-4">
+      <div class="flex flex-wrap flex-col h-full w-96 p-4 ">
         <img
-          class="h-60 object-cover"
+          class="h-60 object-cover border-x-2 border-t-2 border-black""
           src="https://sumsi.dev.webundsoehne.com/${saveData[index].image.public_location}"
           alt="Bild von ${saveData[index].child_firstname}"
         />
-        <p class="bg-white">${saveData[index].child_firstname}</p>
+        <p class="bg-white border-2 border-black py-4">${saveData[index].child_firstname}</p>
       </div>`;
     }
   }
 
-  // topThreeWinners.forEach((winner, index) => {
-  //   console.log(`${index + 1}. ${winner} with ${voteCount[winner]} votes`);
-  // });
-  //
   document.getElementById('winnerOfGallery').innerHTML = html;
 }
-
-document.getElementById('vote').addEventListener('click', voting);
+// document.getElementById('showData').addEventListener('click', showData);
+// document.getElementById('vote').addEventListener('click', voting);
 document.getElementById('submit').addEventListener('click', submitForm);
