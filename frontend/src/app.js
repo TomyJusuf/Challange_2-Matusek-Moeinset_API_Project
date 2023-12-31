@@ -10,6 +10,7 @@ const DB_token =
   'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZDhjYmMzNTVmYzcxYTk1YjU5MWNkZDBmNzBjNTI4ZjVkNDU5NDU2MTBlNWMwNTRjOTZhOTZiZmQ2NzY4NTE5MjU5ZmI3YWY1NzIxMTAxMGYiLCJpYXQiOjE3MDI3NTc3NzEuNzM5OTQsIm5iZiI6MTcwMjc1Nzc3MS43Mzk5NDMsImV4cCI6MTczNDM4MDE3MS43MzM4NjUsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.qldlYkU025o_qa_0mqUFr-J_Bam6sPMjrNoz-WPcVO8Z81Ur0zuAt4rAr_qZnL1lojE1eyuCCw-YwCkL6arpryV0z1yJ3pXpSVwb8zppusTbjjvWFCNfZWPnB7s8N5KzoUGRcnfq4_T0he_oP4SPrQfjN8QLMtJwfA6eByXyhmB20jhmbXgNcVOWiKDGO1E14TQA4jKER3DhEUD4j9huq3ruGCWJlzBRBpFqSY4GP8-6GTKshIsyUg4vyzrnrgIGLR7nhxzp5XFL647OdBRKuvRb72Kmnj98vglPqNmvBs-M0_xzTl5yusezktX00A6cOO8czgsnipS_q-fqMDyOpdea7bIa7bHbIFTKDavV7YsS1EHRQ1djKnpgqFAi8642uoeh7wvTtvpOjWQhp_3_q3Gt4Cm3pOUrUd8CPAYcbQiDQEyhV7apOU5pr0DBSDqRgaw7ggeUSpQU6O0dY3I25GzWWevRekF1IcBUHprRrErL81GhZbrGUHlPk2ULo7z8JeNG4SwSTa-RRuaaV8AKU5SpgHe3TnQLOimF8l5r9wOUTPcoqnTI_s-Xox9CdBD4WXh3k4Pk67_L4o7TDa6TVcfrk728yIQl0XGr_xz_LRDKQuCGXVbfUTO7oZWbm95aOqL5zcbQVVM5roHyUUA7u5AGqc-u1x3wtixpnI950zc';
 
 let headers = {
+  'Cache-Control': 'max-age=31536000, must-revalidate',
   'Content-Type': 'application/json',
   Accept: 'application/json',
   Authorization: `Bearer ${DB_token}`, // Include the token in the Authorization header
@@ -48,9 +49,12 @@ async function showData() {
       onclick="voting('${saveData[i].id}', '${saveData[i].email}')"></i>
     </div>
     <img
-      class="h-64 w-56 object-cover"
+      class="h-64 w-56 object-cover aspect-square"
       src="https://sumsi.dev.webundsoehne.com/${saveData[i].image.public_location}"
       alt="Bild von ${saveData[i].child_firstname}"
+      sizes="(max-width: 200px)"
+      loading=lazy
+      
     />
   </div>`;
     }
@@ -316,7 +320,7 @@ async function determineWinnerAndRest() {
       html += `
       <div class="flex flex-wrap flex-col h-full w-96 p-4 ">
         <img
-          class="h-60 object-cover border-x-2 border-t-2 border-black""
+          class="h-60 w-96 object-cover border-x-2 border-t-2 border-black""
           src="https://sumsi.dev.webundsoehne.com/${saveData[index].image.public_location}"
           alt="Bild von ${saveData[index].child_firstname}"
         />
