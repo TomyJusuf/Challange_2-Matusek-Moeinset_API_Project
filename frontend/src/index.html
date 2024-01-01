@@ -12,25 +12,75 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
     ></script>
+    <!-- STYLES -->
     <link rel="stylesheet" href="../dist/output.css" />
-    <title>Document</title>
+    <!-- GOOGLE ICONE -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <title>SUMSI</title>
   </head>
   <body class="m-0 p-0">
     <div class="">
-      <nav class="flex justify-between p-5 bg-[#ffeb00] sticky top-[0px] z-50">
-        <img
-          style="width: 21%"
-          src="/assets/ci_rlb_kaernten/Logo RLB/RLB_Logo_4c_NEW.png"
-          alt="logo"
-        />
+      <nav
+        class="flex justify-between items-center p-5 bg-[#ffeb00] sticky top-0 z-50 max-sm:h-[5rem]"
+      >
+        <!-- LOGOS -->
+        <div class="flex items-center">
+          <img
+            id="logo"
+            class="hidden sm:block w-[20rem] sm:w-1/2"
+            src="/assets/ci_rlb_kaernten/Logo RLB/RLB_Logo_4c_NEW.png"
+            alt="logo"
+          />
+          <img
+            id="logoMobile"
+            class="sm:hidden w-[10rem] max-sm:w-[5rem]"
+            src="/assets/img/LogoMobile.png"
+            alt="logo in mobile size"
+          />
+        </div>
+        <!-- BUTTONS -->
         <div
-          class="flex space-x-[3rem] uppercase font-bold items-center text-3xl"
+          class="hidden sm:flex space-x-6 uppercase font-bold text-2xl sm:text-xl"
         >
-          <a href="" class="hover:underline">home</a>
-          <a href="" class="hover:underline">teilnahmeinfos</a>
-          <a href="" class="hover:underline">sumsi galerie</a>
+          <a href="" class="hover:underline uppercase">home</a>
+          <a href="" class="hover:underline uppercase">teilnahmeinfos</a>
+          <a href="" class="hover:underline uppercase">sumsi galerie</a>
+        </div>
+        <button
+          class="sm:hidden text-2xl focus:outline-none"
+          id="mobile-menu-button"
+        >
+          <svg
+            class="text-gray-800"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+        <div class="sm:hidden" id="mobile-menu">
+          <a href="" class="block py-[0.5] hover:underline uppercase font-bold"
+            >Home</a
+          >
+          <a href="" class="block py-[0.5] hover:underline uppercase font-bold"
+            >Teilnahmeinfos</a
+          >
+          <a href="" class="block py-[0.5] hover:underline uppercase font-bold"
+            >Sumsi Galerie</a
+          >
         </div>
       </nav>
+
       <header
         class="relative overflow-hidden bg-cover bg-fixed bg-no-repeat bg-top"
         style="
@@ -45,13 +95,17 @@
             style="background-color: rgba(0, 0, 0, 0.1)"
           >
             <div
-              class="flex h-full absolute top-0 right-0 translate-x-[-10%] translate-y-[60%]"
+              class="flex h-full absolute top-0 right-0 translate-x-[-12%] translate-y-[30%]"
             >
               <div class="text-white">
-                <h2 class="uppercase text-5xl font-semibold bg-black text-left">
+                <h2
+                  class="w-fit lg:text-6xl uppercase text-5xl font-semibold bg-black text-left md:text-4xl max-md:text-2xl max-sm:text-4xl max-sm:text-center"
+                >
                   wilkommen beim
                 </h2>
-                <h1 class="uppercase text-7xl font-semibold bg-[#ffeb00]">
+                <h1
+                  class="lg:text-6xl uppercase text-7xl font-semibold bg-[#ffeb00] md:text-4xl max-md:text-4xl max-sm:text-2xl"
+                >
                   sumi malwettbewerb!
                 </h1>
               </div>
@@ -61,15 +115,15 @@
       </header>
       <main class="flex flex-col">
         <section class="pageOne bg-[#ffeb00]">
-          <div class="fixed mt-[-190px] z-50">
+          <div id="popUp" class="fixed mt-[-190px] z-50">
             <div
-              class="p-6 space-y-2 flex flex-col bg-white w-[30rem] h-[15rem] absolute rounded-2xl translate-x-[10%] translate-y-[-20%]"
+              class="p-6 space-y-2 flex flex-col bg-white w-[30rem] h-[15rem] absolute rounded-2xl translate-x-[10%] translate-y-[-60%] max-sm:translate-x-[0%] max-sm:w-[20rem] max-sm:ml-4 max-sm:text-center max-sm:h-[12rem] max-sm:p-2"
             >
               <p>
                 Wir verwenden nur funtionelle Cookies, um unsere Website und
                 unseren Service zu optimieren
               </p>
-              <div class="flex flex-col space-y-1">
+              <div class="flex flex-col space-y-1 max-sm:items-center">
                 <a
                   class="underline font-bold"
                   href="https://sumsifliiiegt.dev.webundsoehne.com/datenschutz"
@@ -83,8 +137,7 @@
                   >Cookie-Praeferenzen</a
                 >
                 <a
-                  class="bg-[#ffeb00] flex p-4 w-fit px-4 rounded-lg font-bold"
-                  href=""
+                  class="bg-[#ffeb00] flex p-4 w-fit px-4 rounded-lg font-bold max-sm:p-1"
                   >COOKIES AKZEPTIEREN</a
                 >
               </div>
@@ -98,7 +151,7 @@
                 alt="bee"
               />
             </div> -->
-            <div class="container mx-[5%] mt-8 px-[5rem] flex flex-wrap">
+            <div class="mx-[5%] mt-8 px-[5rem] flex flex-wrap max-sm:mx-0">
               <div class="welcome w-[100%]">
                 <h1 class="font-bold">Liebe Kinder, liebe Eltern!</h1>
                 <p>
@@ -114,7 +167,7 @@
                 <h1 class="font-bold">EURE RAIFFEISEN</h1>
               </div>
               <img
-                class="w-[270px] h-[75px] ml-[15rem] mt-14"
+                class="w-[270px] h-[75px] ml-[15rem] mt-14 max-sm:hidden"
                 src="/assets/img/sumsi-logo.png"
                 alt="sumi-logo"
               />
@@ -124,55 +177,62 @@
             </div>
           </div>
         </section>
-        <section class="pageTwo flex flex-col bg-white mt-5">
-          <div class="slideContainer flex flex-row">
+        <section class="pageTwo flex flex-col bg-white mt-0">
+          <div class="slideContainer flex flex-col">
             <!-- ADD HERE FONTS ICONE!! -->
             <div
-              class="prev bg-[#ffeb00] items-center flex rounded-r-xl w-20 justify-center cursor-pointer text-7xl font-bold"
-            >
-              <
-            </div>
-            <div
               id="slide_1"
-              class="h-[99vh] w-full bg-white slide p-8 flex justify-center items-center content-center flex-col m-auto mb-20"
+              class="h-[90vh] w-full bg-white slide px-0 flex justify-center items-center content-center flex-col m-auto mb-0 max-sm:m-0 max-sm:p-0"
             >
               <div
                 class="relative flex flex-col justify-center items-center space-y-8"
               >
-                <div class="flex flex-row space-x-8 items-center flex-wrap">
-                  <div class="text-white">
+                <div
+                  class="flex flex-row space-x-4 items-center flex-wrap max-sm:text-center max-sm:flex-col"
+                >
+                  <div class="text-white max-sm:text-center">
                     <h1
-                      class="uppercase text-7xl font-semibold bg-black text-left"
+                      class="uppercase text-5xl font-semibold bg-black text-left max-sm:text-2xl max-sm:text-center"
                     >
                       Mitmachen ist ganz einfach
                     </h1>
                     <h2
-                      class="uppercase text-7xl font-semibold bg-[#ffeb00] w-fit"
+                      class="uppercase text-5xl font-semibold bg-[#ffeb00] w-fit max-sm:text-2xl max-sm:text-center max-sm:w-full"
                     >
                       So funktioniert's!
                     </h2>
                   </div>
-                  <div>
+                  <div
+                    class="flex flex-col justify-center content-center items-center"
+                  >
                     <img
-                      class="w-[20rem] rounded-2xl mt-14"
+                      class="w-[20rem] rounded-2xl mt-14 max-sm:w-[15rem]"
                       src="/assets/img/girlPainting1.jpg"
                       alt="painting girl"
                     />
                   </div>
                 </div>
               </div>
-              <div class="flex flex-row items-center space-x-8 mx-20">
+              <div
+                class="flex flex-row items-center space-y-4 mx-8 max-sm:mx-0 max-sm:justify-center"
+              >
                 <img
-                  class="w-[30rem] space-x-8"
+                  class="w-[20rem] space-x-8 max-sm:hidden"
                   src="/assets/img/paintingBeepng.png"
                   alt="paintingBee"
                 />
-                <div class="flex flex-col space-y-4">
-                  <h2 class="bg-[#ffeb00] w-fit p-1 text-4xl font-bold">
+                <div
+                  class="flex flex-col space-y-4 max-sm:space-y-1 max-sm:text-center max-sm:justify-center max-sm:items-center max-sm:content-center"
+                >
+                  <h2
+                    class="bg-[#ffeb00] w-fit p-1 text-4xl font-bold max-sm:text-2xl"
+                  >
                     1.Schritt
                   </h2>
-                  <h3 class="uppercase font-bold text-6xl">zeichnen</h3>
-                  <p class="w-[30rem]">
+                  <h3 class="uppercase font-bold text-4xl max-sm:text-2xl">
+                    zeichnen
+                  </h3>
+                  <p class="w-[30rem] max-sm:w-[20rem]">
                     Beim heurigen Malwettbewerb dreht sich alles um das Thema
                     „Gesunde Ernährung“. Die Lieblingsspeise von Sumsi ist
                     frischer Blütenstaub und natürlich zuckersüßer Honig.
@@ -182,47 +242,71 @@
                   </p>
                 </div>
               </div>
-              <div></div>
+              <div
+                class="bg-[#ffeb00] h-[3rem] flex flex-row justify-end items-center px-4 mx-6"
+              >
+                <span class="prev material-symbols-outlined"
+                  >arrow_circle_left</span
+                >
+                <span class="next material-symbols-outlined"
+                  >arrow_circle_right</span
+                >
+              </div>
             </div>
 
             <div
               id="slide_2"
-              class="h-[99vh] w-full bg-white slide p-8 justify-center items-center flex flex-col mb-20 mt-20"
+              class="h-[90vh] w-full bg-white slide px-0 flex justify-center items-center content-center flex-col m-auto mb-0 max-sm:m-0 max-sm:p-0"
             >
-              <div class="relative flex flex-col justify-center items-center">
-                <div class="flex flex-row space-x-[10rem]">
-                  <div class="text-white">
+              <div
+                class="relative flex flex-col justify-center items-center space-y-8"
+              >
+                <div
+                  class="flex flex-row space-x-4 items-center flex-wrap max-sm:text-center max-sm:flex-col"
+                >
+                  <div class="text-white max-sm:text-center">
                     <h1
-                      class="uppercase text-7xl font-semibold bg-black text-left"
+                      class="uppercase text-5xl font-semibold bg-black text-left max-sm:text-2xl max-sm:text-center"
                     >
                       Mitmachen ist ganz einfach
                     </h1>
                     <h2
-                      class="uppercase text-7xl font-semibold bg-[#ffeb00] w-fit"
+                      class="uppercase text-5xl font-semibold bg-[#ffeb00] w-fit max-sm:text-2xl max-sm:text-center max-sm:w-full"
                     >
                       So funktioniert's!
                     </h2>
                   </div>
-                  <div>
+                  <div
+                    class="flex flex-col justify-center content-center items-center"
+                  >
                     <img
-                      class="w-[25rem] h-[20rem] rounded-2xl"
+                      class="w-[20rem] h-[15rem] rounded-2xl mt-14 max-sm:w-[15rem]"
                       src="/assets/img/boyMobile.jpg"
-                      alt="boy with mobile"
+                      alt="painting girl"
                     />
                   </div>
                 </div>
               </div>
-              <div class="flex flex-row items-center space-x-20">
+              <div
+                class="flex flex-row items-center space-y-4 mx-8 max-sm:mx-0"
+              >
                 <img
-                  class="w-[30rem]"
+                  class="w-[20rem] space-x-8 max-sm:hidden"
                   src="/assets/img/mobileBee.png"
-                  alt="bee with mobile
-                  "
+                  alt="paintingBee"
                 />
-                <div class="flex flex-col space-y-1">
-                  <h2 class="bg-[#ffeb00] w-fit p-1 text-4xl">2.Schritt</h2>
-                  <h3 class="uppercase font-bold text-6xl">digitalisiern</h3>
-                  <p class="w-[30rem]">
+                <div
+                  class="flex flex-col space-y-4 max-sm:space-y-1 max-sm:text-center max-sm:justify-center max-sm:items-center max-sm:content-center"
+                >
+                  <h2
+                    class="bg-[#ffeb00] w-fit p-1 text-4xl font-bold max-sm:text-2xl"
+                  >
+                    2.Schritt
+                  </h2>
+                  <h3 class="uppercase font-bold text-4xl max-sm:text-2xl">
+                    digitalisiern
+                  </h3>
+                  <p class="w-[30rem] max-sm:w-[20rem]">
                     Jedes Elternteil, dass die Zeichnung seines Kindes mithilfe
                     des nachstehenden Kontaktformulares hochlädt und einreicht,
                     wird anschließend in der großen Sumsi Galerie auf
@@ -230,47 +314,71 @@
                   </p>
                 </div>
               </div>
-              <div></div>
+              <div
+                class="bg-[#ffeb00] h-[3rem] flex flex-row justify-end items-center px-4 mx-6"
+              >
+                <span class="prev material-symbols-outlined"
+                  >arrow_circle_left</span
+                >
+                <span class="next material-symbols-outlined"
+                  >arrow_circle_right</span
+                >
+              </div>
             </div>
+
             <div
               id="slide_3"
-              class="h-[99vh] w-full bg-white slide p-8 justify-center items-center flex flex-col mt-20 mb-20"
+              class="h-[90vh] w-full bg-white slide px-0 flex justify-center items-center content-center flex-col m-auto mb-0 max-sm:m-0 max-sm:p-0"
             >
-              <div class="relative flex flex-col justify-center items-center">
-                <div class="flex flex-row space-x-[10rem]">
-                  <div class="text-white">
+              <div
+                class="relative flex flex-col justify-center items-center space-y-8"
+              >
+                <div
+                  class="flex flex-row space-x-4 items-center flex-wrap max-sm:text-center max-sm:flex-col"
+                >
+                  <div class="text-white max-sm:text-center">
                     <h1
-                      class="uppercase text-7xl font-semibold bg-black text-left"
+                      class="uppercase text-5xl font-semibold bg-black text-left max-sm:text-2xl max-sm:text-center"
                     >
                       Mitmachen ist ganz einfach
                     </h1>
                     <h2
-                      class="uppercase text-7xl font-semibold bg-[#ffeb00] w-fit"
+                      class="uppercase text-5xl font-semibold bg-[#ffeb00] w-fit max-sm:text-2xl max-sm:text-center max-sm:w-full"
                     >
                       So funktioniert's!
                     </h2>
                   </div>
-                  <div>
+                  <div
+                    class="flex flex-col justify-center content-center items-center"
+                  >
                     <img
-                      class="w-[25rem] h-[20rem] rounded-2xl"
+                      class="w-[20rem] rounded-2xl mt-14 max-sm:w-[15rem]"
                       src="/assets/img/eltern.jpg"
                       alt="painting girl"
                     />
                   </div>
                 </div>
               </div>
-              <div class="flex flex-row items-center space-x-20">
+              <div
+                class="flex flex-row items-center space-y-4 mx-8 max-sm:mx-0"
+              >
                 <img
-                  class="w-[30rem]"
+                  class="w-[20rem] space-x-8 max-sm:hidden"
                   src="/assets/img/laptopBee.png"
-                  alt="bee with laptop "
+                  alt="paintingBee"
                 />
-                <div class="flex flex-col space-y-1">
-                  <h2 class="bg-[#ffeb00] w-fit p-1 text-4xl font-bold">
+                <div
+                  class="flex flex-col space-y-4 max-sm:space-y-1 max-sm:text-center max-sm:justify-center max-sm:items-center max-sm:content-center"
+                >
+                  <h2
+                    class="bg-[#ffeb00] w-fit p-1 text-4xl font-bold max-sm:text-2xl"
+                  >
                     3.Schritt
                   </h2>
-                  <h3 class="uppercase font-bold text-6xl">ausstellen</h3>
-                  <p class="w-[30rem]">
+                  <h3 class="uppercase font-bold text-4xl max-sm:text-2xl">
+                    ausstellen
+                  </h3>
+                  <p class="w-[30rem] max-sm:w-[20rem]">
                     In der großen Sumsi Galerie werden dann alle Kunstwerke
                     online ausgestellt. Deine Freunde, Familie, Großeltern und
                     Nachbarn können dort deine Zeichnung bewundern & für dich
@@ -278,47 +386,70 @@
                   </p>
                 </div>
               </div>
-              <div></div>
+              <div
+                class="bg-[#ffeb00] h-[3rem] flex flex-row justify-end items-center px-4 mx-6"
+              >
+                <span class="prev material-symbols-outlined"
+                  >arrow_circle_left</span
+                >
+                <span class="next material-symbols-outlined"
+                  >arrow_circle_right</span
+                >
+              </div>
             </div>
             <div
               id="slide_4"
-              class="h-[99vh] w-full bg-white slide p-8 justify-center items-center flex flex-col mt-20 mb-20"
+              class="h-[90vh] w-full bg-white slide px-0 flex justify-center items-center content-center flex-col m-auto mb-0 max-sm:m-0 max-sm:p-0"
             >
-              <div class="relative flex flex-col justify-center items-center">
-                <div class="flex flex-row space-x-[10rem]">
-                  <div class="text-white">
+              <div
+                class="relative flex flex-col justify-center items-center space-y-8"
+              >
+                <div
+                  class="flex flex-row space-x-4 items-center flex-wrap max-sm:text-center max-sm:flex-col"
+                >
+                  <div class="text-white max-sm:text-center">
                     <h1
-                      class="uppercase text-7xl font-semibold bg-black text-left"
+                      class="uppercase text-5xl font-semibold bg-black text-left max-sm:text-2xl max-sm:text-center"
                     >
                       Mitmachen ist ganz einfach
                     </h1>
                     <h2
-                      class="uppercase text-7xl font-semibold bg-[#ffeb00] w-fit"
+                      class="uppercase text-5xl font-semibold bg-[#ffeb00] w-fit max-sm:text-2xl max-sm:text-center max-sm:w-full"
                     >
                       So funktioniert's!
                     </h2>
                   </div>
-                  <div>
+                  <div
+                    class="flex flex-col justify-center content-center items-center"
+                  >
                     <img
-                      class="w-[30rem] h-[20rem] rounded-2xl"
+                      class="w-[20rem] rounded-2xl mt-14 max-sm:w-[15rem]"
                       src="/assets/img/kidVotting.jpeg"
                       alt="painting girl"
                     />
                   </div>
                 </div>
               </div>
-              <div class="flex flex-row items-center space-x-20">
+              <div
+                class="flex flex-row items-center space-y-4 mx-8 max-sm:mx-0"
+              >
                 <img
-                  class="w-[30rem]"
+                  class="w-[20rem] space-x-8 max-sm:hidden"
                   src="/assets/img/vottingBee.jpeg"
-                  alt="votting bee"
+                  alt="paintingBee"
                 />
-                <div class="flex flex-col space-y-1">
-                  <h2 class="bg-[#ffeb00] w-fit p-1 text-4xl font-bold">
+                <div
+                  class="flex flex-col space-y-4 max-sm:space-y-1 max-sm:text-center max-sm:justify-center max-sm:items-center max-sm:content-center"
+                >
+                  <h2
+                    class="bg-[#ffeb00] w-fit p-1 text-4xl font-bold max-sm:text-2xl"
+                  >
                     4.Schritt
                   </h2>
-                  <h3 class="uppercase font-bold text-6xl">voting</h3>
-                  <p class="w-[30rem]">
+                  <h3 class="uppercase font-bold text-4xl max-sm:text-2xl">
+                    voting
+                  </h3>
+                  <p class="w-[30rem] max-sm:w-[20rem]">
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                     Similique ex nulla, harum enim amet temporibus laborum
                     dolore ad cum earum iste dolorum, laudantium ab, aut veniam
@@ -326,27 +457,35 @@
                   </p>
                 </div>
               </div>
-              <div></div>
+              <div
+                class="bg-[#ffeb00] h-[3rem] flex flex-row justify-end items-center px-4 mx-6"
+              >
+                <span class="prev material-symbols-outlined"
+                  >arrow_circle_left</span
+                >
+                <span class="next material-symbols-outlined"
+                  >arrow_circle_right</span
+                >
+              </div>
             </div>
             <!-- ADD HERE FONTS ICONE!! -->
-            <div
-              class="next bg-[#ffeb00] w-20 justify-center flex rounded-l-xl items-center cursor-pointer font-bold text-7xl"
-            >
-              >
-            </div>
           </div>
 
-          <div class="h-[90vh] bg-white mt-36">
+          <div class="h-[100vh] bg-white mt-36 max-sm:ml-2">
             <div
-              class="text-white flex flex-col text-center justify-center w-fit m-auto items-center"
+              class="text-white flex flex-col text-center justify-center w-fit m-auto items-center max-sm:mb-4"
             >
-              <h1 class="uppercase text-7xl font-semibold bg-black">
+              <h1
+                class="uppercase text-7xl font-semibold bg-black max-sm:text-2xl"
+              >
                 macht mit & gewinnen!
               </h1>
-              <h2 class="uppercase text-7xl font-semibold bg-[#ffeb00]">
+              <h2
+                class="uppercase text-7xl font-semibold bg-[#ffeb00] max-sm:text-2xl"
+              >
                 Sumsi freut sich
               </h2>
-              <div class="flex justify-center">
+              <div class="flex justify-center max-sm:hidden">
                 <img
                   class="w-[20rem]"
                   src="/assets/img/magniBee.png"
@@ -355,7 +494,7 @@
               </div>
             </div>
             <div
-              class="grid grid-cols-2 justify-center content-center items-center container m-auto space-y-3"
+              class="container grid grid-cols-2 justify-center content-center items-center m-auto space-y-3 max-sm:grid-cols-1"
             >
               <div class="flex flex-row gap-2">
                 <div
@@ -551,10 +690,10 @@
             "
           >
             <div
-              class="flex flex-row items-center justify-center space-x-4 space-y-4 mb-56"
+              class="flex flex-row items-center justify-center space-x-4 space-y-4 mb-56 max-sm:mb-0"
             >
               <div
-                class="rounded-xl w-[3rem] h-[3rem] flex items-center justify-center"
+                class="rounded-xl w-[3rem] h-[3rem] flex items-center justify-center max-sm:hidden"
               >
                 <svg
                   class="h-14 w-14 text-black"
@@ -577,7 +716,7 @@
                 class="flex flex-col justify-center items-center text-center space-y-2"
               >
                 <h1
-                  class="bg-black text-white font-bold text-7xl w-fit px-10 uppercase"
+                  class="bg-black text-white font-bold text-7xl w-fit px-10 uppercase max-sm:text-3xl"
                 >
                   Die Sumsi Galerie
                 </h1>
@@ -587,7 +726,7 @@
                 </h2>
               </div>
               <div
-                class="rounded-xl w-[3rem] h-[3rem] flex items-center justify-center"
+                class="rounded-xl w-[3rem] h-[3rem] flex items-center justify-center max-sm:hidden"
               >
                 <!-- USE FONT ICONS - SVG no please (I can not style it) -->
                 <svg
@@ -610,7 +749,7 @@
             </div>
             <div class="top-24">
               <a
-                class="bg-red-600 text-white p-5 rounded-lg text-center uppercase font-bold text-3xl"
+                class="bg-red-600 text-white p-5 rounded-lg text-center uppercase font-bold text-3xl max-sm:text-2xl"
                 href=""
                 >Die Galerie ist hier</a
               >
@@ -619,16 +758,18 @@
 
           <div class="">
             <div
-              class="bg-[#696969] w-full h-[30vh] text-white flex justify-center content-center items-center space-x-10"
+              class="bg-[#696969] w-full h-[30vh] text-white flex justify-center content-center items-center space-x-10 max-sm:h-[70vh]"
             >
               <div>
                 <img
-                  class="w-[15rem]"
+                  class="w-[15rem] max-sm:hidden"
                   src="/assets/ci_rlb_kaernten/Logo RLB/RLB_Logo_4c_NEW_TypoWEISS.png"
                   alt="logo"
                 />
               </div>
-              <div class="flex flex-row space-x-10">
+              <div
+                class="flex flex-row space-x-10 max-sm:flex-col max-sm:space-x-0 max-sm:space-y-4"
+              >
                 <div class="space-y-3">
                   <div>
                     <div>
@@ -643,12 +784,18 @@
                     <p>E info@rbgk.raiffeisen.at</p>
                   </div>
                 </div>
-                <div class="w-10">
-                  <h1 class="font-bold uppercase">info/bedinung</h1>
-                  <p>
-                    Datenschutz TeilnahmebedinungenI mpressum AGB Disclaimer
-                    Cookie-Präferenzen
-                  </p>
+                <div class="space-y-3">
+                  <div>
+                    <div>
+                      <h1 class="font-bold uppercase">info/bedinung</h1>
+                    </div>
+                    <p>Datenschutz</p>
+                    <p>TeilnahmebedinungenI</p>
+                    <p>mpressum</p>
+                    <p>AGB</p>
+                    <p>Disclaimer</p>
+                    <p>Cookie-Präferenzen</p>
+                  </div>
                 </div>
               </div>
             </div>

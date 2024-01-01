@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Gallery fur kindern" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- CSS LINK -->
     <link rel="stylesheet" href="../dist/output.css" />
@@ -17,17 +16,61 @@
     />
     <title>sumi gallery</title>
   </head>
-  <body class="m-0 p-0 flex flex-col bg-slate-500">
+  <body class="m-auto p-0 flex flex-col bg-slate-500 container">
     <!-- NAVIGATION -------------------------------------------------->
-    <nav class="flex justify-between p-5 bg-[#fff] sticky top-[0px] z-50">
-      <img
-        class="logoCompany"
-        src="/assets/ci_rlb_kaernten/Logo RLB/RLB_Logo_4c_NEW.png"
-        alt="logo"
-      />
 
+    <nav
+      class="flex justify-between items-center p-5 bg-[#ffeb00] sticky top-0 z-50 max-sm:h-[7rem]"
+    >
+      <!-- LOGOS -->
+      <div class="flex items-center">
+        <img
+          id="logo"
+          class="hidden sm:block w-[20rem] sm:w-1/2"
+          src="/assets/ci_rlb_kaernten/Logo RLB/RLB_Logo_4c_NEW.png"
+          alt="logo"
+        />
+        <img
+          id="logoMobile"
+          class="sm:hidden w-[10rem] max-sm:w-[7rem]"
+          src="/assets/img/LogoMobile.png"
+          alt="logo in mobile size"
+        />
+      </div>
+      <!-- BUTTONS -->
       <div
-        class="flex space-x-[3rem] uppercase font-bold items-center text-3xl"
+        class="hidden sm:flex space-x-6 uppercase font-bold text-2xl sm:text-xl"
+      >
+        <a href="" class="hover:underline">home</a>
+        <a href="" class="hover:underline">teilnahmeinfos</a>
+        <!-- <button id="showData">Show Galery</button> -->
+        <!-- <button id="vote">Vote in Galery</button> -->
+        <!-- <button onclick="determineWinnerAndRest()">Winner</button> -->
+        <button onclick="deleteFn()">Delete user</button>
+        <a href="#gallery-boarder" class="hover:underline">sumsi galerie</a>
+      </div>
+      <button
+        class="sm:hidden text-2xl focus:outline-none"
+        id="mobile-menu-button"
+      >
+        <svg
+          class="text-gray-800"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16m-7 6h7"
+          ></path>
+        </svg>
+      </button>
+      <div
+        class="sm:hidden flex flex-col text-center uppercase"
+        id="mobile-menu"
       >
         <a href="" class="hover:underline">home</a>
         <a href="" class="hover:underline">teilnahmeinfos</a>
@@ -38,6 +81,7 @@
         <a href="#gallery-boarder" class="hover:underline">sumsi galerie</a>
       </div>
     </nav>
+
     <!-- HEADER ------------------------------------------------->
     <header
       class="relative overflow-hidden bg-cover bg-fixed bg-no-repeat bg-top"
@@ -46,7 +90,6 @@
         height: 90vh;
         object-fit: cover;
       "
-      layout="responsive"
     >
       <!-- FLOATING TEXTS UND ICON -->
       <div class="">
@@ -56,26 +99,35 @@
         >
           <!-- TOP LEFT -->
           <div
-            class="flex h-full absolute top-0 left-0 translate-x-[20%] translate-y-[20%]"
+            class="flex h-full absolute top-0 left-0 translate-x-[20%] translate-y-[20%] sm:translate-x-[10%] sm:translate-y-[10%] md:translate-x-[5%] md:translate-y-[5%]"
           >
             <div class="text-white">
               <div class="flex flex-row">
-                <h2 class="text-6xl font-semibold bg-[#ffeb00] text-left w-fit">
+                <h2
+                  class="text-4xl sm:text-5xl md:text-6xl font-semibold bg-[#ffeb00] text-left w-fit sm:w-auto max-sm:text-2xl"
+                >
                   Zuhause zeichnen ist
-                  <span
-                    class="text-5xl pt-2 font-semibold bg-black text-left w-fit"
-                    >cool</span
-                  >
+                </h2>
+                <h2
+                  class="text-4xl sm:text-5xl md:text-6xl font-semibold bg-black text-left w-fit sm:w-auto max-sm:text-2xl"
+                >
+                  cool.
                 </h2>
               </div>
-              <h2 class="text-6xl font-semibold bg-[#ffeb00] w-fit">
+              <h4
+                class="text-4xl sm:text-5xl md:text-6xl font-semibold bg-[#ffeb00] w-fit sm:w-auto max-sm:text-2xl"
+              >
                 Eine Ausstellung mit
-              </h2>
+              </h4>
               <div class="flex flex-row">
-                <h2 class="text-6xl font-semibold bg-[#ffeb00] text-left w-fit">
+                <h2
+                  class="text-4xl sm:text-5xl md:text-6xl font-semibold bg-[#ffeb00] text-left w-fit sm:w-auto max-sm:text-2xl"
+                >
                   Deinem Bild ist
                 </h2>
-                <h2 class="text-6xl font-semibold bg-black text-left w-fit">
+                <h2
+                  class="text-4xl sm:text-5xl md:text-6xl font-semibold bg-black text-left w-fit sm:w-auto max-sm:text-2xl"
+                >
                   cooler.
                 </h2>
               </div>
@@ -83,113 +135,128 @@
           </div>
           <!-- BOTTOM RIGHT -->
           <div
-            class="flex h-full absolute top-0 right-0 translate-x-[-10%] translate-y-[60%]"
+            class="flex h-full absolute top-0 right-0 translate-x-[-10%] translate-y-[60%] sm:translate-x-[-5%] sm:translate-y-[40%] md:translate-x-[-2%] md:translate-y-[20%]"
           >
             <div class="text-white">
               <div class="flex flex-row">
-                <h2 class="text-6xl font-semibold bg-black text-left w-fit">
+                <h2
+                  class="text-4xl sm:text-5xl md:text-6xl font-semibold bg-black text-left w-fit sm:w-auto max-sm:text-2xl"
+                >
                   Genießen
                 </h2>
-                <h2 class="text-6xl font-semibold bg-[#ffeb00] text-left w-fit">
+                <h2
+                  class="text-4xl sm:text-5xl md:text-6xl font-semibold bg-[#ffeb00] text-left w-fit sm:w-auto max-sm:text-2xl"
+                >
                   mit Uns
                 </h2>
               </div>
-              <h2 class="text-6xl font-semibold bg-black w-fit">
+              <h4
+                class="text-4xl sm:text-5xl md:text-6xl font-semibold bg-black w-fit sm:w-auto max-sm:text-2xl"
+              >
                 viel spaß und
-              </h2>
-              <h2 class="text-6xl font-semibold bg-[#ffeb00] w-fit">
+              </h4>
+              <h4
+                class="text-4xl sm:text-5xl md:text-6xl font-semibold bg-[#ffeb00] w-fit sm:w-auto max-sm:text-2xl"
+              >
                 erlebnis
-              </h2>
+              </h4>
             </div>
           </div>
           <!-- ICON -->
           <div
-            class="bg-[#ffeb00] flex flex-row w-[5rem] h-[5rem] absolute bottom-0 left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-full justify-center items-center"
+            class="bg-[#ffeb00] flex flex-row w-[3rem] h-[3rem] sm:w-[4rem] sm:h-[4rem] md:w-[5rem] md:h-[5rem] absolute bottom-0 left-[50%] translate-x-[-50%] translate-y-[-50%] rounded-full justify-center items-center max-sm:translate-y-[-100%]"
           >
-            <i class="fa-solid fa-arrow-down text-4xl"></i>
+            <i
+              class="fa-solid fa-arrow-down text-3xl sm:text-4xl md:text-5xl"
+            ></i>
           </div>
         </div>
       </div>
     </header>
-    <!-- MAIN PAGES -->
-    <main class="flex flex-col mx-auto">
-      <!-- PAGE 1 ------------------------------------------------------------->
-      <div
-        class="h-[90vh] p-4 flex flex-col justify-center container my-14 bg-white"
-      >
-        <!-- LOGO -->
 
+    <!-- MAIN PAGES -->
+    <main class="flex flex-col mx-auto container">
+      <!-- PAGE 1 ------------------------------------------------------------->
+      <div class="h-full p-4 flex flex-col mx-auto my-14 bg-white">
+        <!-- LOGO -->
         <img
-          class="logoCompany ml-32"
+          class="w-full max-w-[20rem] mx-auto max-sm:hidden"
           src="/assets/ci_rlb_kaernten/Logo RLB/RLB_Logo_4c_NEW.png"
           alt="logo"
         />
         <!-- TEXT 1 -->
-        <div class="flex flex-col justify-start w-[42rem] mt-10 ml-32">
-          <h1 class="uppercase font-bold text-3xl w-full">
+        <div
+          class="flex flex-col justify-center mt-10 text-center max-sm:text-center"
+        >
+          <h1
+            class="uppercase font-bold text-2xl md:text-3xl lg:text-4xl max-sm:text-center max-sm:w-[20rem] max-sm:text-lg"
+          >
             Herzlich willkommen beim
           </h1>
-          <h1 class="uppercase font-bold text-3xl w-full">
-            grossen Sumsi malwettbewerb
+          <h1
+            class="uppercase font-bold text-2xl md:text-3xl lg:text-4xl max-sm:w-[20rem] max-sm:text-lg"
+          >
+            großen Sumsi Malwettbewerb
           </h1>
         </div>
-        <!-- TELLOW PART -->
+        <!-- YELLOW PART -->
         <div
-          class="flex flex-col content-center items-center mt-[5rem] uppercase h-auto"
+          class="flex flex-col items-center mt-5 uppercase max-sm:text-center max-sm:w-[20rem]"
         >
-          <div class="flex flex-row flex-wrap justify-center">
-            <div
-              class="bg-[#ffeb00] w-[80%] h-auto text-center items-center content-center flex flex-col justify-center space-y-3 px-7"
-            >
-              <p class="font-bold mt-16">Liebe Kinder, liebe Eltern,</p>
-              <p class="py-5">
-                wie jedes Jahr gibt es auch heuer unseren traditionellen Sumsi
-                Malwettbewerb Wieder digital, wieder mit Voting und großer
-                Online-Galerie
-              </p>
-              <p>
-                Jedes Elternteil, das bis zum 5 November 2021 die Zeichnung
-                seines Kindes mithilfe des nachstehenden Kontaktformulares
-                hochlädt und einreicht, wird anschließend in der großen Sumsi
-                Galerie auf www.raiffeisen- sumsi at veröffentlicht Ich freue
-                mich auf viele bunte Zeichnungen
-              </p>
-              <p class="font-bold py-8 mb-20">Eure Raiffeisen Sumsi</p>
-            </div>
+          <div
+            class="w-full md:w-[80%] lg:w-[70%] xl:w-[60%] bg-[#ffeb00] text-center py-7 px-4 md:px-7 lg:px-10 xl:px-16 mb-10"
+          >
+            <p class="font-bold mt-8">Liebe Kinder, liebe Eltern,</p>
+            <p class="py-5">
+              Wie jedes Jahr gibt es auch heuer unseren traditionellen Sumsi
+              Malwettbewerb. Wieder digital, wieder mit Voting und großer
+              Online-Galerie.
+            </p>
+            <p>
+              Jedes Elternteil, das bis zum 5. November 2021 die Zeichnung
+              seines Kindes mithilfe des nachstehenden Kontaktformulares
+              hochlädt und einreicht, wird anschließend in der großen Sumsi
+              Galerie auf www.raiffeisen-sumsi.at veröffentlicht. Ich freue mich
+              auf viele bunte Zeichnungen.
+            </p>
+            <p class="font-bold py-8 mb-10">Eure Raiffeisen Sumsi</p>
           </div>
         </div>
       </div>
+
       <!-- PAGE 2 -------------------------------------------------------->
       <div
         class="h-auto relative flex flex-col justify-center content-center container bg-white"
       >
-        <h1 class="text-center font-bold text-2xl mt-16">
+        <h1
+          class="text-center font-bold text-2xl mt-16 max-sm:text-xl max-sm:w-[20rem]"
+        >
           Der beste Malwettbewerb aller Zeiten.
         </h1>
 
-        <h2 class="text-center font-bold text-2xl mb-16">
+        <h2
+          class="text-center font-bold text-2xl mb-16 max-sm:text-xl max-sm:w-[20rem]"
+        >
           Und so funktioniert's
         </h2>
         <img
-          class="w-[18rem] ml-[5rem] aspect-auto object-cover"
+          class="w-[20rem] ml-[7rem]"
           src="/assets/img/gallery/jumpingbee.jpg"
-          alt="Sumsy icon"
-          layout="responsive"
+          alt=""
         />
 
         <!-- CARDS -->
         <div
-          class="grid grid-cols-4 space-x-5 m-[2rem] relative translate-y-[-25%]"
+          class="grid grid-cols-4 space-x-5 m-[2rem] relative translate-y-[-25%] max-sm:grid-cols-1 max-sm:gap-20 max-sm:w-[18rem]"
         >
           <!-- CARD 1 -->
           <div
             class="bg-[#F63799] text-center items-center flex flex-col relative pt-[4rem] p-[1rem]"
           >
             <img
-              class="rounded-full border-[#ffeb00] border-solid border-[0.5rem] w-[7rem] h-[7rem] content-center absolute top-0 translate-y-[-50%] aspect-square object-cover"
+              class="rounded-full border-[#ffeb00] border-solid border-[0.5rem] w-[7rem] h-[7rem] absolute top-0 translate-y-[-50%]"
               src="/assets/img/paintingBeepng.png"
               alt="painting bee"
-              layout="responsive"
             />
 
             <h2 class="font-bold">ZEICHNEN</h2>
@@ -204,10 +271,9 @@
             class="bg-[#249264] text-center items-center flex flex-col relative pt-[4rem] p-[1rem]"
           >
             <img
-              class="rounded-full border-[#ffeb00] border-solid border-[0.5rem] w-[7rem] h-[7rem] absolute top-0 translate-y-[-50%] aspect-square object-cover"
+              class="rounded-full border-[#ffeb00] border-solid border-[0.5rem] w-[7rem] h-[7rem] absolute top-0 translate-y-[-50%]"
               src="/assets/img/mobileBee.png"
               alt="painting bee"
-              layout="responsive"
             />
 
             <h2 class="font-bold">DIGITALISIEREN</h2>
@@ -222,10 +288,9 @@
             class="bg-[#2eafe4] text-center items-center flex flex-col relative pt-[4rem] p-[1rem]"
           >
             <img
-              class="rounded-full border-[#ffeb00] border-solid border-[0.5rem] w-[7rem] h-[7rem] absolute top-0 translate-y-[-50%] aspect-square object-cover"
+              class="rounded-full border-[#ffeb00] border-solid border-[0.5rem] w-[7rem] h-[7rem] absolute top-0 translate-y-[-50%]"
               src="/assets/img/laptopBee.png"
               alt="painting bee"
-              layout="responsive"
             />
 
             <h2 class="font-bold">AUSSTELLEN</h2>
@@ -240,10 +305,9 @@
             class="bg-[#f9861c] text-center items-center flex flex-col relative pt-[4rem] p-[1rem]"
           >
             <img
-              class="rounded-full border-[#ffeb00] border-solid border-[0.5rem] w-[7rem] h-[7rem] absolute top-0 translate-y-[-50%] aspect-square object-cover"
+              class="rounded-full border-[#ffeb00] border-solid border-[0.5rem] w-[7rem] h-[7rem] absolute top-0 translate-y-[-50%]"
               src="/assets/img/gallery/jumpingbee.jpg"
               alt="painting bee"
-              layout="responsive"
             />
 
             <h2 class="font-bold">GEWINNEN</h2>
@@ -255,116 +319,129 @@
         </div>
       </div>
       <!-- PAGE 3 --------------------->
-      <div class="h-[90vh] flex flex-col container mx-auto bg-white mt-8">
+      <div class="h-full flex flex-col container mx-auto bg-white mt-8">
         <!-- LOGO -->
         <img
-          class="logoCompany ml-16 mt-5"
+          class="w-[15rem] mt-5 ml-16"
           src="/assets/ci_rlb_kaernten/Logo RLB/RLB_Logo_4c_NEW.png"
           alt="logo"
-          layout="responsive"
         />
         <!-- BACKGROUND IMAGE -->
         <div
-          class="container items-center content-center flex flex-col overflow-hidden mt-4 relative"
+          class="container items-center content-center flex flex-col overflow-hidden mt-4 relative max-sm:h-full"
         >
           <img
-            class="object-cover h-full w-[90%] aspect-auto"
-            src="/assets/img/gallery/shutterstock_.jpg"
-            alt="Bild mit farbe"
-            sizes="(min-width: 120px) 50vw, 100vw"
-            width="1.33"
-            height="1"
-            layout="responsive"
+            class="object-cover h-full w-full max-sm:h-[100vh]"
+            src="/assets/img/gallery/shutterstock_605013488.jpg"
+            alt=""
           />
           <!-- FLOATING PARTS -->
           <!-- TEXT TITLE -->
           <div
-            class="absolute flex flex-col top-0 text-5xl font-bold pt-7 left-[5%]"
+            class="absolute flex flex-col top-0 text-5xl font-bold pt-7 left-[5%] max-sm:text-lg max-sm:w-fit max-lg:flex-row max-lg:left-0"
           >
-            <h1 class="bg-[#ffeb00] py-5 px-20 w-fit">Sumsi Malwettbewerb</h1>
-            <h2 class="bg-black text-white py-5 px-20 ml-[16rem]">
+            <h1
+              class="bg-[#ffeb00] py-5 px-20 w-fit max-sm:w-fit max-sm:p-1 max-lg:text-xl max-lg:p-1"
+            >
+              Sumsi Malwettbewerb
+            </h1>
+            <h2
+              class="bg-black text-white py-5 px-20 ml-[16rem] max-sm:p-1 max-sm:ml-0 max-lg:text-xl max-lg:ml-0 max-lg:p-1"
+            >
               Mach mit & gewinne!
             </h2>
           </div>
           <!-- TEXT -->
           <div
-            class="bg-[#ffeb00] w-[52%] h-[50%] absolute bottom-[2rem] left-[5%] p-[2rem] flex flex-wrap justify-start"
+            class="bg-[#ffeb00] space-y-6 w-[52%] h-fit absolute bottom-[2rem] left-[5%] p-[2rem] flex flex-col justify-start max-sm:p-4 max-sm:space-y-4 max-sm:justify-end max-sm:h-fit max-sm:w-[70%] max-lg:w-[70%] max-lg:py-0"
           >
-            <ul>
-              <li class="font-bold w-full">Zeichnen & malen</li>
+            <!-- Set margin and padding for the ul element -->
+            <li class="font-bold w-full max-sm:text-sm my-0">
+              Zeichnen & malen
+            </li>
 
-              <li class="w-full">
-                <span class="font-bold">Digitalisieren</span>(Foto oder Scan)
-              </li>
-              <li class="font-bold">
-                Hochladen und einreichen bis 5.Februar 2024
-              </li>
-              <li class="">
-                Die Ausstellung in der Sumsi Galerie läuft ab 20.Oktober 2023
-              </li>
-              <li class="">
-                Mit Glück einen der
-                <span class="font-bold">10 tollen Prises gewinnen</span>
-              </li>
-              <li class="font-bold">
-                Die Eltern der Gewinner werden per Mail verstandigt. Der
-                Rechtweg ist ausgeschossen.
-              </li>
-            </ul>
+            <li class="w-full my-0">
+              <span class="font-bold max-sm:text-sm">Digitalisieren</span>(Foto
+              oder Scan)
+            </li>
 
-            <p class="my-5">
-              Ich freu mich auf viele bunte Zeichnung, Macht mit und schicft mir
-              Eure Träumel
+            <li class="font-bold max-sm:text-sm my-0">
+              Hochladen und einreichen bis 5. Februar 2024
+            </li>
+
+            <li class="max-sm:text-sm my-0">
+              Die Ausstellung in der Sumsi Galerie läuft ab 20. Oktober 2023
+            </li>
+
+            <li class="max-sm:text-sm my-0">
+              Mit Glück einen der
+              <span class="font-bold max-sm:text-sm"
+                >10 tollen Preise gewinnen</span
+              >
+            </li>
+
+            <li class="font-bold max-sm:text-sm my-0">
+              Die Eltern der Gewinner werden per Mail verständigt. Der Rechtsweg
+              ist ausgeschlossen.
+            </li>
+
+            <p class="my-2 max-sm:text-sm">
+              Ich freu mich auf viele bunte Zeichnungen, Macht mit und schickt
+              mir Eure Träume!
             </p>
-            <p class="mt-2 font-bold">Eure Raiffeisen Sumsi</p>
+
+            <p class="font-bold max-sm:text-sm mt-2">Eure Raiffeisen Sumsi</p>
           </div>
+
           <img
-            class="w-[160px] h-[250px] absolute rounded-2xl bottom-14 left-[53%] aspect-square object-cover"
+            class="w-[200px] h-[300px] absolute rounded-2xl bottom-14 left-[53%] max-sm:hidden max-lg:hidden"
             src="/assets/img/gallery/boywithcup.jpg"
             alt="boy with cup"
-            width="1.33"
-            height="1"
-            layout="responsive"
           />
           <img
-            class="w-[180px] h-[180px] absolute left-[68%] top-56 rounded-2xl aspect-square object-cover"
+            class="w-[220px] h-[230px] absolute left-[68%] top-56 rounded-2xl max-sm:hidden max-lg:hidden"
             src="/assets/img/gallery/cup.avif"
             alt="cup"
-            layout="responsive"
-            width="1.33"
-            height="1"
           />
         </div>
       </div>
       <!-- PAGE 4 -->
-      <div
-        class="h-full mt-10 text-center flex flex-col justify-center items-center content-center container mx-auto mb-10"
-      >
-        <!-- TITLE -->
-
-        <!-- YELLOW PART -->
+      <div>
         <div
-          class="bg-[#ffeb00] w-full h-auto relative flex flex-wrap justify-center items-center content-center"
+          class="h-full mt-16 text-center flex flex-col justify-center items-center content-center mx-auto mb-24"
         >
-          <div class="text-black font-bold text-5xl mb-2 w-full uppercase mt-5">
-            <h1>Der beste Malwettbewerb aller Zeiten</h1>
-            <h2>Und so funktioniert's!</h2>
-            <hr class="border-dotted border-t-8 border-red-700 mt-10" />
-          </div>
-          <!-- FLOATING IMAGES -->
+          <!-- YELLOW PART -->
           <div
-            class="flex flex-wrap justify-center h-auto"
-            id="winnerOfGallery"
+            class="bg-[#ffeb00] w-full h-auto relative flex flex-col justify-center items-center content-center p-4 max-sm:w-[20rem]"
           >
-            <!-- IMAGE 1 -->
-            <!-- <div class="flex flex-col h-full w-96 p-4">
-              <img
-                class="h-60 object-cover"
-                src="/assets/img/gallery/gallery6.jpg"
-                alt=""
+            <div
+              class="text-[#F63799] font-bold w-full mt-5 max-sm:text-lg max-sm:w-[15rem]"
+            >
+              <h1 class="text-3xl sm:text-5xl mb-2 uppercase">
+                Der beste Malwettbewerb aller Zeiten
+              </h1>
+              <h2 class="text-3xl sm:text-5xl uppercase">
+                Und so funktioniert's!
+              </h2>
+              <hr
+                class="border-dotted border-t-4 sm:border-t-8 border-red-700 mt-4 sm:mt-10"
               />
-              <p class="bg-white">Nikolas.1</p>
-            </div> -->
+            </div>
+            <!-- FLOATING IMAGES -->
+            <div
+              class="flex flex-wrap justify-center h-auto max-sm:w-[20rem]"
+              id="winnerOfGallery"
+            >
+              <!-- IMAGE 1 -->
+              <div class="flex flex-col w-full sm:w-96 h-full p-4">
+                <img
+                  class="h-60 object-cover w-full"
+                  src="/assets/img/gallery/gallery6.jpg"
+                  alt=""
+                />
+                <p class="bg-white mt-2">Nikolas.1</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -378,20 +455,20 @@
       </div>
 
       <!-- CONTACT PAGE -->
-      <div class="flex flex-col container mx-auto mt-5">
+      <div class="flex flex-col container mx-auto mt-16">
         <!-- PART 1 -->
         <div
-          class="h-[40vh] bg-slate-300 my-14 text-center content-center items-center flex flex-col space-y-4"
+          class="h-[40vh] bg-slate-300 my-5 text-center content-center items-center flex flex-col space-y-4 max-sm:h-full"
         >
           <h1 class="font-bold text-2xl mt-16">
             Kontaktformular zum Bilder-Hochladen
           </h1>
-          <h1>
+          <h4>
             Bitte hier alle Pflichtfelder ausfüllen, den einzelnen Bedingungen
             zustimmen und das Bild hochladen!
-          </h1>
+          </h4>
           <div
-            class="bg-[#ffeb00] w-[70%] h-auto flex justify-center items-center content-center flex-col font-bold py-20 my-32"
+            class="bg-[#ffeb00] w-[70%] h-[30%] justify-center items-center content-center flex flex-col font-bold py-20"
           >
             <p>Vielen Dank für Deine Teilnahme!</p>
             <p>Dein Kunstwerk wird in Kürze in der Sumsi Galerie zu sehen</p>
@@ -399,9 +476,10 @@
           </div>
         </div>
         <!-- PART 2 -->
-        <div class="h-full">
+
+        <div class="h-[110vh] max-sm:h-[230vh]">
           <div
-            class="mx-auto bg-slate-300 text-center justify-center items-center content-center px-36 py-14"
+            class="mx-auto bg-slate-300 text-center justify-center items-center content-center px-6 sm:px-14 py-8 sm:py-14"
           >
             <h1 class="text-center text-2xl mb-6 pt-6">
               Kontaktformular zum Bilder-Hochladen
@@ -458,19 +536,21 @@
               /><br />
               <div class="mb-6 flex justify-center flex-wrap">
                 <label for="image" class="text-gray-700">Bild hochladen:</label>
-                <div class="imageBox w-[100%] flex justify-center pl-[45%]">
+                <div
+                  class="imageBox w-full sm:w-[50%] md:w-[45%] lg:w-[40%] xl:w-[35%] 2xl:w-[30%] flex justify-center mt-2"
+                >
                   <input
                     type="file"
                     name="image"
                     id="image"
-                    class="mt-1 rounded-md px-4 py-2 w-[100%]"
+                    class="mt-1 rounded-md px-4 py-2 w-full"
                   />
                 </div>
 
-                <p class="text-black mt-2">
+                <p class="text-gray-400 mt-2">
                   Erlaubte Dateiformate: jpg, jpeg, png, pdf
                 </p>
-                <p class="text-black mt-2">Maximale Dateigröße: 5 MB</p>
+                <p class="text-gray-400 mt-2">Maximale Dateigröße: 5 MB</p>
               </div>
               <hr />
               <!-- <input type="file" id="image" name="image" /><br /> -->
@@ -528,7 +608,9 @@
       </div>
     </main>
     <!-- FOOTER -->
-    <footer class="container mx-auto h-[430px]">
+    <footer
+      class="container mx-auto h-[430px] max-sm:flex max-sm:flex-col max-sm:justify-center max-sm:items-center max-sm:content-center"
+    >
       <div class="flex flex-col bg-[#ffeb00]">
         <!-- COLUMNS -->
         <div class="flex flex-wrap justify-evenly text-center my-14 h-auto">
@@ -565,35 +647,39 @@
             </div>
           </div>
           <!-- COLUMN 2 -->
-          <div class="flex flex-col">
+          <div class="flex flex-col max-sm:w-[70%]">
             <h1
               class="uppercase font-bold text-white text-3xl underline bg-black py-5 rounded-xl px-8 mb-4"
             >
               INFO / BEDINGUNGEN
             </h1>
             <div class="info_bedingungen flex flex-wrap justify-start w-96">
-              <div class="w-full">
-                <p class="my-2 text-start text-2xl font-normal">Datenschutz</p>
+              <div>
+                <p class="w-full my-2 text-start text-2xl font-normal">
+                  Datenschutz
+                </p>
               </div>
-              <hr class="bg-black h-[2px] w-full" />
+              <hr
+                class="bg-black h-[2px] w-full overflow-hidden max-sm:hidden"
+              />
               <div class="w-full">
                 <p class="my-2 text-start text-2xl font-normal">
                   Teilnahmebedinung
                 </p>
               </div>
-              <hr class="bg-black h-[2px] w-full" />
+              <hr class="bg-black h-[2px] w-full max-sm:hidden" />
               <div class="w-full">
                 <p class="my-2 text-start text-2xl font-normal">Impressum</p>
               </div>
-              <hr class="bg-black h-[2px] w-full" />
+              <hr class="bg-black h-[2px] w-full max-sm:hidden" />
               <div class="w-full">
                 <p class="my-2 text-start text-2xl font-normal">AGB</p>
               </div>
-              <hr class="bg-black h-[2px] w-full" />
+              <hr class="bg-black h-[2px] w-full max-sm:hidden" />
               <div class="w-full">
                 <p class="my-2 text-start text-2xl font-normal">Disclaimer</p>
               </div>
-              <hr class="bg-black h-[2px] w-full" />
+              <hr class="bg-black h-[2px] w-full max-sm:hidden" />
               <div class="w-full">
                 <p class="my-2 text-start text-2xl font-normal">
                   Cookie-Praefrenzen
@@ -631,7 +717,7 @@
           </div>
         </div>
         <!-- COPYRIGHT -->
-        <div class="text-center mt-16 bg-[#393956] text-yellow-400 py-3">
+        <div class="text-center mt-16 bg-slate-500 text-yellow-400 py-3">
           <p>
             &copy; WEBDESIGN&DEVELOPERS Tomas Matusef und Moin Levin Kärnten
             Villach 2023
