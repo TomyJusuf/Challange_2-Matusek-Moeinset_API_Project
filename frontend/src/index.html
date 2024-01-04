@@ -5,13 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- jQuery (required for Slick) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- Slick JS -->
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
-    ></script>
+
     <!-- STYLES -->
     <link rel="stylesheet" href="../dist/output.css" />
     <!-- GOOGLE ICONE -->
@@ -32,7 +28,7 @@
             id="logo"
             class="hidden sm:block w-[20rem] sm:w-1/2"
             src="/assets/ci_rlb_kaernten/Logo RLB/RLB_Logo_4c_NEW.png"
-            alt="logo"
+            alt="main logo"
           />
           <img
             id="logoMobile"
@@ -45,11 +41,21 @@
         <div
           class="hidden sm:flex space-x-6 uppercase font-bold text-2xl sm:text-xl"
         >
-          <a href="" class="hover:underline uppercase">home</a>
-          <a href="" class="hover:underline uppercase">teilnahmeinfos</a>
-          <a href="" class="hover:underline uppercase">sumsi galerie</a>
+          <a href="./index.html" accesskey="h" class="hover:underline uppercase"
+            >home</a
+          >
+          <a href="" accesskey="t" class="hover:underline uppercase"
+            >teilnahmeinfos</a
+          >
+          <a
+            href="./gallery.html"
+            accesskey="g"
+            class="hover:underline uppercase"
+            >sumsi galerie</a
+          >
         </div>
         <button
+          aria-label="mobile menu"
           class="sm:hidden text-2xl focus:outline-none"
           id="mobile-menu-button"
         >
@@ -69,13 +75,22 @@
           </svg>
         </button>
         <div class="sm:hidden" id="mobile-menu">
-          <a href="" class="block py-[0.5] hover:underline uppercase font-bold"
+          <a
+            href="./index.html"
+            accesskey="h"
+            class="block py-[0.5] hover:underline uppercase font-bold"
             >Home</a
           >
-          <a href="" class="block py-[0.5] hover:underline uppercase font-bold"
+          <a
+            href=""
+            accesskey="t"
+            class="block py-[0.5] hover:underline uppercase font-bold"
             >Teilnahmeinfos</a
           >
-          <a href="" class="block py-[0.5] hover:underline uppercase font-bold"
+          <a
+            href="./gallery.html"
+            accesskey="g"
+            class="block py-[0.5] hover:underline uppercase font-bold"
             >Sumsi Galerie</a
           >
         </div>
@@ -104,7 +119,7 @@
                   wilkommen beim
                 </h2>
                 <h1
-                  class="lg:text-6xl uppercase text-7xl font-semibold bg-[#ffeb00] md:text-4xl max-md:text-4xl max-sm:text-2xl"
+                  class="text-black lg:text-6xl uppercase text-7xl font-semibold bg-[#ffeb00] md:text-4xl max-md:text-4xl max-sm:text-2xl"
                 >
                   sumi malwettbewerb!
                 </h1>
@@ -125,18 +140,21 @@
               </p>
               <div class="flex flex-col space-y-1 max-sm:items-center">
                 <a
+                  accesskey="d"
                   class="underline font-bold"
                   href="https://sumsifliiiegt.dev.webundsoehne.com/datenschutz"
                   target="_blank"
                   >Datenschutz</a
                 >
                 <a
+                  accesskey="c"
                   class="underline font-bold"
                   href="https://sumsifliiiegt.dev.webundsoehne.com/cookie"
                   target="_blank"
                   >Cookie-Praeferenzen</a
                 >
                 <a
+                  accesskey="a"
                   class="bg-[#ffeb00] flex p-4 w-fit px-4 rounded-lg font-bold max-sm:p-1"
                   >COOKIES AKZEPTIEREN</a
                 >
@@ -148,7 +166,7 @@
               <img
                 class="w-[20rem]"
                 src="/assets/img/sumsi-logo.png"
-                alt="bee"
+                alt="sumsi logo bee"
               />
             </div> -->
             <div class="mx-[5%] mt-8 px-[5rem] flex flex-wrap max-sm:mx-0">
@@ -197,7 +215,7 @@
                       Mitmachen ist ganz einfach
                     </h1>
                     <h2
-                      class="uppercase text-5xl font-semibold bg-[#ffeb00] w-fit max-sm:text-2xl max-sm:text-center max-sm:w-full"
+                      class="text-black uppercase text-5xl font-semibold bg-[#ffeb00] w-fit max-sm:text-2xl max-sm:text-center max-sm:w-full"
                     >
                       So funktioniert's!
                     </h2>
@@ -219,7 +237,7 @@
                 <img
                   class="w-[20rem] space-x-8 max-sm:hidden"
                   src="/assets/img/paintingBeepng.png"
-                  alt="paintingBee"
+                  alt="painting Bee"
                 />
                 <div
                   class="flex flex-col space-y-4 max-sm:space-y-1 max-sm:text-center max-sm:justify-center max-sm:items-center max-sm:content-center"
@@ -282,7 +300,7 @@
                     <img
                       class="w-[20rem] h-[15rem] rounded-2xl mt-14 max-sm:w-[15rem]"
                       src="/assets/img/boyMobile.jpg"
-                      alt="painting girl"
+                      alt="boy with mobile"
                     />
                   </div>
                 </div>
@@ -293,7 +311,7 @@
                 <img
                   class="w-[20rem] space-x-8 max-sm:hidden"
                   src="/assets/img/mobileBee.png"
-                  alt="paintingBee"
+                  alt="bee with mobile"
                 />
                 <div
                   class="flex flex-col space-y-4 max-sm:space-y-1 max-sm:text-center max-sm:justify-center max-sm:items-center max-sm:content-center"
@@ -354,7 +372,7 @@
                     <img
                       class="w-[20rem] rounded-2xl mt-14 max-sm:w-[15rem]"
                       src="/assets/img/eltern.jpg"
-                      alt="painting girl"
+                      alt="eltern"
                     />
                   </div>
                 </div>
@@ -365,7 +383,7 @@
                 <img
                   class="w-[20rem] space-x-8 max-sm:hidden"
                   src="/assets/img/laptopBee.png"
-                  alt="paintingBee"
+                  alt="Bee with laptop"
                 />
                 <div
                   class="flex flex-col space-y-4 max-sm:space-y-1 max-sm:text-center max-sm:justify-center max-sm:items-center max-sm:content-center"
@@ -425,7 +443,7 @@
                     <img
                       class="w-[20rem] rounded-2xl mt-14 max-sm:w-[15rem]"
                       src="/assets/img/kidVotting.jpeg"
-                      alt="painting girl"
+                      alt="votting kid"
                     />
                   </div>
                 </div>
@@ -436,7 +454,7 @@
                 <img
                   class="w-[20rem] space-x-8 max-sm:hidden"
                   src="/assets/img/vottingBee.jpeg"
-                  alt="paintingBee"
+                  alt="votting Bee"
                 />
                 <div
                   class="flex flex-col space-y-4 max-sm:space-y-1 max-sm:text-center max-sm:justify-center max-sm:items-center max-sm:content-center"
@@ -749,8 +767,9 @@
             </div>
             <div class="top-24">
               <a
+                accesskey="i"
                 class="bg-red-600 text-white p-5 rounded-lg text-center uppercase font-bold text-3xl max-sm:text-2xl"
-                href=""
+                href="./gallery.html"
                 >Die Galerie ist hier</a
               >
             </div>
@@ -764,7 +783,7 @@
                 <img
                   class="w-[15rem] max-sm:hidden"
                   src="/assets/ci_rlb_kaernten/Logo RLB/RLB_Logo_4c_NEW_TypoWEISS.png"
-                  alt="logo"
+                  alt="logo of company"
                 />
               </div>
               <div

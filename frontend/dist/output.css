@@ -966,6 +966,10 @@ video {
   height: 110vh;
 }
 
+.h-\[120vh\] {
+  height: 120vh;
+}
+
 .h-\[15rem\] {
   height: 15rem;
 }
@@ -1201,6 +1205,10 @@ video {
 .translate-y-\[60\%\] {
   --tw-translate-y: 60%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .grid-cols-2 {
@@ -1788,11 +1796,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.text-yellow-400 {
-  --tw-text-opacity: 1;
-  color: rgb(250 204 21 / var(--tw-text-opacity));
 }
 
 .underline {
