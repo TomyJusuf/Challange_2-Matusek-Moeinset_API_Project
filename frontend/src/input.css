@@ -10,3 +10,9 @@
 .material-symbols-outlined {
   font-variation-settings: "FILL" 1, "wght" 900, "GRAD" 1, "opsz" 54;
 }
+span {
+  @apply cursor-pointer;
+}
+#slide_1 {
+  @apply lg:mt-[20rem];
+}

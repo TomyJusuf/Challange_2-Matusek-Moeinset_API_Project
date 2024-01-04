@@ -830,6 +830,10 @@ video {
   margin-bottom: 1.75rem;
 }
 
+.ml-10 {
+  margin-left: 2.5rem;
+}
+
 .ml-16 {
   margin-left: 4rem;
 }
@@ -860,10 +864,6 @@ video {
 
 .mr-2 {
   margin-right: 0.5rem;
-}
-
-.mt-0 {
-  margin-top: 0px;
 }
 
 .mt-1 {
@@ -922,6 +922,10 @@ video {
   margin-top: 5rem;
 }
 
+.mr-4 {
+  margin-right: 1rem;
+}
+
 .block {
   display: block;
 }
@@ -960,6 +964,10 @@ video {
 
 .h-\[100vh\] {
   height: 100vh;
+}
+
+.h-\[10rem\] {
+  height: 10rem;
 }
 
 .h-\[110vh\] {
@@ -1047,6 +1055,10 @@ video {
   height: 100%;
 }
 
+.min-h-\[90vh\] {
+  min-height: 90vh;
+}
+
 .w-14 {
   width: 3.5rem;
 }
@@ -1107,6 +1119,10 @@ video {
   width: 22rem;
 }
 
+.w-\[25rem\] {
+  width: 25rem;
+}
+
 .w-\[270px\] {
   width: 270px;
 }
@@ -1121,6 +1137,10 @@ video {
 
 .w-\[40em\] {
   width: 40em;
+}
+
+.w-\[40rem\] {
+  width: 40rem;
 }
 
 .w-\[52\%\] {
@@ -1157,8 +1177,8 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.translate-x-\[-12\%\] {
-  --tw-translate-x: -12%;
+.translate-x-\[-5\%\] {
+  --tw-translate-x: -5%;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -1793,6 +1813,11 @@ video {
   color: rgb(31 41 55 / var(--tw-text-opacity));
 }
 
+.text-slate-400 {
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1804,6 +1829,16 @@ video {
 
 .material-symbols-outlined {
   font-variation-settings: "FILL" 1, "wght" 900, "GRAD" 1, "opsz" 54;
+}
+
+span {
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  #slide_1 {
+    margin-top: 20rem;
+  }
 }
 
 .hover\:bg-black:hover {
@@ -1895,8 +1930,16 @@ video {
     margin-left: 0px;
   }
 
+  .max-sm\:ml-1 {
+    margin-left: 0.25rem;
+  }
+
   .max-sm\:ml-2 {
     margin-left: 0.5rem;
+  }
+
+  .max-sm\:ml-3 {
+    margin-left: 0.75rem;
   }
 
   .max-sm\:ml-4 {
@@ -1942,6 +1985,10 @@ video {
 
   .max-sm\:h-full {
     height: 100%;
+  }
+
+  .max-sm\:w-\[10rem\] {
+    width: 10rem;
   }
 
   .max-sm\:w-\[15rem\] {
@@ -2066,6 +2113,10 @@ video {
   .max-sm\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+
+  .max-sm\:text-\[1\.1rem\] {
+    font-size: 1.1rem;
   }
 
   .max-sm\:text-lg {
