@@ -31,3 +31,18 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", nextSlide);
   });
 });
+/// HIDDEN POP UP
+// Get all the links inside the popUp div
+let popupLinks = document.querySelectorAll("#popUp a");
+
+// Function to hide the popUp div
+function hidePopup() {
+  let popup = document.getElementById("popUp");
+  popup.style.display = "none";
+  return false; // Prevent the default behavior of the link
+}
+
+// Attach click event listeners to all links inside the popUp div
+popupLinks.forEach(function (link) {
+  link.addEventListener("click", hidePopup);
+});

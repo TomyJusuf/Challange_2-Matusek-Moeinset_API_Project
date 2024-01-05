@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', async () => {
-  await showData();
+  // await showData();
   await determineWinnerAndRest();
 });
 const demo = document.querySelector('.demo');
@@ -43,10 +43,10 @@ async function showData() {
     for (let i = 0; i < saveData.length; i++) {
       // console.log(i);
       html += `
-  <div class="flex even-picture border-black border-4" id="picture-${i}">
+  <div class="flex  border-black border-4" >
     <div class="voteBar ">
-      <i class="fa-solid fa-thumbs-up text-lg absolute mt-[205px] ml-[170px] text-white bg-slate-700 p-2 rounded-full border-4 border-yellow-400 hover:text-blue-400 hover:bg-black"
-      onclick="voting('${saveData[i].id}', '${saveData[i].email}')"></i>
+      <i class="fa-solid fa-thumbs-up text-lg absolute mt-[205px] ml-[170px] text-white bg-slate-700 p-2 rounded-full border-4 border-yellow-400 hover:text-blue-400 hover:bg-black even-picture" id="picture-${i}"
+      onclick="voting('${saveData[i].id}')"></i>
     </div>
     <img
       class="h-64 w-56 object-cover aspect-square"
@@ -76,7 +76,7 @@ async function showData() {
     }
   }
 }
-// showData();
+showData();
 let elementID;
 // VOTING METHOD
 let email;
@@ -100,13 +100,11 @@ async function voting(submissionId) {
           const responseText = await response.text();
           const validationErrors = JSON.parse(responseText);
           console.error('Validation Errors:', validationErrors);
-          // Display validation errors to the user or handle them accordingly
         } catch (jsonError) {
           console.error('Error parsing JSON:', jsonError);
         }
       } else {
         console.error('Response is not in JSON format.');
-        // Handle non-JSON response as needed
       }
     } else {
       const responseData = await response.json();
@@ -160,7 +158,7 @@ async function countVotes() {
   }
 }
 
-//submit
+//SUBMIT
 async function submitForm() {
   // Get the form element by its ID
   const firstName = document.getElementById('legalguardian_firstname').value;
@@ -224,7 +222,7 @@ async function submitForm() {
   showData();
 }
 
-// DELETE
+// DELETE USER
 async function deleteFn() {
   const localStorageData = localStorage.getItem('savedEmail');
   const index = saveData.findIndex((todo) => todo.email === localStorageData);
@@ -316,8 +314,8 @@ async function determineWinnerAndRest() {
     const index = saveData.findIndex((item) => item.email === winEmail);
 
     if (index !== -1) {
-      // console.log(saveData[index].email);
-      // console.log(saveData[index].child_firstname);
+      console.log(saveData[index].email);
+      console.log(saveData[index].child_firstname);
       html += `
       <div class="flex flex-wrap flex-col h-full w-96 p-4 ">
         <img
@@ -332,6 +330,5 @@ async function determineWinnerAndRest() {
 
   document.getElementById('winnerOfGallery').innerHTML = html;
 }
-// document.getElementById('showData').addEventListener('click', showData);
-// document.getElementById('vote').addEventListener('click', voting);
+
 document.getElementById('submit').addEventListener('click', submitForm);
