@@ -66,6 +66,7 @@ async function showData() {
       element.addEventListener('click', () => {
         email = saveData[i].email; // testing
         elementID = element.id;
+        console.log(email);
       });
     });
   } catch (error) {
